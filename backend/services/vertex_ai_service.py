@@ -17,8 +17,8 @@ import json
 logger = logging.getLogger(__name__)
 
 # Configuration
-PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "isu-research-search")
-LOCATION = os.environ.get("GCP_LOCATION", "global")
+PROJECT_ID = os.environ.get("GCP_PROJECT_ID", "rag-dspace")
+LOCATION = os.environ.get("GCP_LOCATION", "us-central1")
 DATA_STORE_ID = os.environ.get("VERTEX_DATASTORE_ID", "isu-research")
 ENGINE_ID = os.environ.get("VERTEX_ENGINE_ID", "isu-research-app")
 
