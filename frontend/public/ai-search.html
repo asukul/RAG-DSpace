@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Search - Iowa State CS</title>
+  <style>
+    /* CSS Variables */
+    :root {
+      --isu-red: #C8102E;
+      --isu-red-dark: #A00D26;
+      --isu-gold: #F1BE48;
+      --isu-gold-light: #FDF5E6;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --gradient-primary: linear-gradient(135deg, #C8102E 0%, #8B0000 100%);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon { font-size: 32px; }
+    
+    .logo-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--isu-red);
+    }
+
+    .logo-subtitle {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-link {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--isu-red); }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--isu-gold-light);
+      border: 1px solid var(--isu-gold);
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--gray-900);
+    }
+
+    .gradient-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* Search Box */
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      padding: 8px 8px 8px 24px;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--isu-red);
+      box-shadow: var(--shadow-xl), 0 0 0 4px rgba(200, 16, 46, 0.1);
+    }
+
+    .search-icon {
+      font-size: 20px;
+      margin-right: 12px;
+      color: var(--gray-400);
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: var(--gray-800);
+      background: transparent;
+    }
+
+    .search-input::placeholder { color: var(--gray-400); }
+
+    .search-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .search-button:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Search Hints */
+    .search-hints {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hint-label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .hint-chip {
+      padding: 6px 14px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .hint-chip:hover {
+      border-color: var(--isu-red);
+      color: var(--isu-red);
+    }
+
+    /* Stats */
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .stat { text-align: center; }
+
+    .stat-value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--isu-red);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--gray-200);
+    }
+
+    /* Floating Cards */
+    .floating-cards {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .float-card {
+      position: absolute;
+      padding: 12px 20px;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .card-1 { top: 15%; left: 5%; animation-delay: 0s; }
+    .card-2 { top: 25%; right: 8%; animation-delay: 1s; }
+    .card-3 { top: 60%; left: 3%; animation-delay: 2s; }
+    .card-4 { top: 70%; right: 5%; animation-delay: 3s; }
+    .card-5 { top: 40%; left: 8%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Research Areas */
+    .research-areas {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--gray-900);
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .area-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      background: white;
+      border: 2px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .area-card:hover {
+      border-color: var(--isu-red);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .area-icon { font-size: 32px; margin-bottom: 12px; }
+    .area-name { font-size: 15px; font-weight: 600; color: var(--gray-800); margin-bottom: 4px; }
+    .area-count { font-size: 13px; color: var(--gray-500); }
+
+    /* Featured Faculty */
+    .featured-faculty {
+      background: white;
+      padding: 60px 20px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 16px;
+      margin: -24px 0 40px;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .faculty-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .faculty-photo-container {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .faculty-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .faculty-card:hover .faculty-photo {
+      transform: scale(1.05);
+    }
+
+    .faculty-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(200, 16, 46, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .faculty-card:hover .faculty-overlay {
+      opacity: 1;
+    }
+
+    .faculty-overlay span {
+      color: white;
+      font-weight: 600;
+    }
+
+    .faculty-content {
+      padding: 20px;
+    }
+
+    .faculty-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--gray-900);
+    }
+
+    .faculty-rank {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+
+    .faculty-expertise {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .expertise-tag {
+      padding: 4px 10px;
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      color: var(--gray-600);
+    }
+
+    .view-all-link {
+      display: block;
+      text-align: center;
+      margin-top: 32px;
+      color: var(--isu-red);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Results Section */
+    .results-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      display: none;
+    }
+
+    .results-section.active {
+      display: block;
+    }
+
+    .answer-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .answer-header {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .answer-content {
+      padding: 24px;
+    }
+
+    .answer-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--gray-700);
+    }
+
+    .answer-footer {
+      padding: 16px 24px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .sources-count {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* Sources */
+    .sources-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--gray-800);
+    }
+
+    .sources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .source-card {
+      display: block;
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .source-card:hover {
+      border-color: var(--isu-red);
+      box-shadow: var(--shadow-md);
+    }
+
+    .source-type {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--gray-600);
+      margin-bottom: 8px;
+    }
+
+    .source-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+
+    .source-authors {
+      font-size: 14px;
+      color: var(--isu-red);
+      margin-bottom: 8px;
+    }
+
+    .source-snippet {
+      font-size: 14px;
+      color: var(--gray-600);
+      margin-bottom: 12px;
+    }
+
+    .source-meta {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .source-year { font-size: 13px; color: var(--gray-500); }
+    .source-link { font-size: 13px; color: var(--isu-red); font-weight: 500; }
+
+    /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: white;
+      padding: 60px 20px 24px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .footer-logo { font-size: 40px; }
+
+    .footer-brand h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 80px;
+    }
+
+    .footer-column h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--gray-300);
+    }
+
+    .footer-column a {
+      display: block;
+      font-size: 14px;
+      color: var(--gray-400);
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a:hover { color: white; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--gray-800);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .loading-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .loading-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--isu-red);
+      border-radius: 50%;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.5); opacity: 0.5; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 32px; }
+      .search-box { flex-direction: column; padding: 16px; }
+      .search-input { width: 100%; margin-bottom: 12px; }
+      .search-button { width: 100%; justify-content: center; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .stat-divider { display: none; }
+      .nav-links { display: none; }
+      .footer-content { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 32px; }
+      .float-card { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-icon">🌪️</span>
+        <div>
+          <div class="logo-title">Iowa State</div>
+          <div class="logo-subtitle">Digital Repository</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="/faculty" class="nav-link">Faculty</a>
+        <a href="/collections" class="nav-link">Collections</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="floating-cards">
+      <div class="float-card card-1">🧠 Deep Learning</div>
+      <div class="float-card card-2">🤖 Robotics</div>
+      <div class="float-card card-3">📊 Data Science</div>
+      <div class="float-card card-4">🔒 AI Security</div>
+      <div class="float-card card-5">🧬 Bioinformatics</div>
+    </div>
+
+    <div class="hero-badge">
+      <span>🔬</span>
+      <span>Computer Science & AI Research</span>
+    </div>
+
+    <h1 class="hero-title">
+      Explore <span class="gradient-text">AI Research</span> with AI
+    </h1>
+
+    <p class="hero-subtitle">
+      Search through 2,000+ research papers, theses, and dissertations 
+      from Iowa State's Computer Science department using natural language.
+    </p>
+
+    <div class="search-container">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          class="search-input" 
+          id="searchInput"
+          placeholder="Ask anything about CS & AI research..."
+        >
+        <button class="search-button" onclick="handleSearch()">
+          <span>Search</span>
+          <span>→</span>
+        </button>
+      </div>
+
+      <div class="search-hints">
+        <span class="hint-label">Try:</span>
+        <button class="hint-chip" onclick="setQuery('What deep learning methods are used for medical imaging?')">
+          Deep learning for medical imaging
+        </button>
+        <button class="hint-chip" onclick="setQuery('How do graph neural networks work?')">
+          Graph neural networks
+        </button>
+        <button class="hint-chip" onclick="setQuery('What is autonomous vehicle perception?')">
+          Autonomous vehicles
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value">2,000+</span>
+        <span class="stat-label">Documents</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">44</span>
+        <span class="stat-label">Faculty</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">50+</span>
+        <span class="stat-label">Years of Research</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section (Hidden by default) -->
+  <section class="results-section" id="resultsSection">
+    <div class="loading" id="loadingState" style="display: none;">
+      <div class="loading-dots">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+      </div>
+      <p>Searching through research papers...</p>
+    </div>
+
+    <div id="resultsContent" style="display: none;">
+      <div class="answer-card">
+        <div class="answer-header">
+          <span class="ai-badge">
+            <span>✨</span>
+            AI-Generated Answer
+          </span>
+        </div>
+        <div class="answer-content">
+          <p id="answerText"></p>
+        </div>
+        <div class="answer-footer">
+          <span class="sources-count">Based on 3 sources</span>
+        </div>
+      </div>
+
+      <h3 class="sources-title">📚 Sources</h3>
+      <div class="sources-list" id="sourcesList"></div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="research-areas" id="browseSection">
+    <h2 class="section-title">Browse by Research Area</h2>
+    <div class="areas-grid">
+      <div class="area-card">
+        <span class="area-icon">🧠</span>
+        <span class="area-name">Deep Learning</span>
+        <span class="area-count">156 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">📊</span>
+        <span class="area-name">Machine Learning</span>
+        <span class="area-count">234 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">👁️</span>
+        <span class="area-name">Computer Vision</span>
+        <span class="area-count">89 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">💬</span>
+        <span class="area-name">NLP</span>
+        <span class="area-count">67 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">🤖</span>
+        <span class="area-name">Robotics</span>
+        <span class="area-count">45 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">📈</span>
+        <span class="area-name">Data Science</span>
+        <span class="area-count">178 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">🧬</span>
+        <span class="area-name">Bioinformatics ML</span>
+        <span class="area-count">92 papers</span>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">🔒</span>
+        <span class="area-name">AI Security</span>
+        <span class="area-count">38 papers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Faculty -->
+  <section class="featured-faculty" id="facultySection">
+    <h2 class="section-title">Featured AI & ML Faculty</h2>
+    <p class="section-subtitle">
+      Explore research from our leading faculty in artificial intelligence and machine learning
+    </p>
+    
+    <div class="faculty-grid">
+      <a href="/faculty/wallapak-tavanapong" class="faculty-card">
+        <div class="faculty-photo-container">
+          <img src="https://www.cs.iastate.edu/files/styles/profile_picture/public/people/profilepictures/tavanapong_wallapak.jpg" alt="Wallapak Tavanapong" class="faculty-photo">
+          <div class="faculty-overlay"><span>View Profile →</span></div>
+        </div>
+        <div class="faculty-content">
+          <h3 class="faculty-name">Wallapak Tavanapong</h3>
+          <p class="faculty-rank">Professor, Kingland Chair</p>
+          <div class="faculty-expertise">
+            <span class="expertise-tag">Medical AI</span>
+            <span class="expertise-tag">Deep Learning</span>
+            <span class="expertise-tag">Computer Vision</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/faculty/hongyang-gao" class="faculty-card">
+        <div class="faculty-photo-container">
+          <img src="https://www.cs.iastate.edu/files/styles/profile_picture/public/people/profilepictures/img_1814_0.jpg" alt="Hongyang Gao" class="faculty-photo">
+          <div class="faculty-overlay"><span>View Profile →</span></div>
+        </div>
+        <div class="faculty-content">
+          <h3 class="faculty-name">Hongyang Gao</h3>
+          <p class="faculty-rank">Assistant Professor</p>
+          <div class="faculty-expertise">
+            <span class="expertise-tag">Graph Neural Networks</span>
+            <span class="expertise-tag">Deep Learning</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/faculty/myra-cohen" class="faculty-card">
+        <div class="faculty-photo-container">
+          <img src="https://www.cs.iastate.edu/files/styles/profile_picture/public/people/profilepictures/myra_cohen_0.jpg" alt="Myra Cohen" class="faculty-photo">
+          <div class="faculty-overlay"><span>View Profile →</span></div>
+        </div>
+        <div class="faculty-content">
+          <h3 class="faculty-name">Myra Cohen</h3>
+          <p class="faculty-rank">Professor, Nguyen Chair</p>
+          <div class="faculty-expertise">
+            <span class="expertise-tag">Software Testing</span>
+            <span class="expertise-tag">ML for SE</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/faculty/adisak-sukul" class="faculty-card">
+        <div class="faculty-photo-container">
+          <img src="https://www.cs.iastate.edu/files/styles/profile_picture/public/people/profilepictures/sukul_adisak.jpg" alt="Adisak Sukul" class="faculty-photo">
+          <div class="faculty-overlay"><span>View Profile →</span></div>
+        </div>
+        <div class="faculty-content">
+          <h3 class="faculty-name">Adisak Sukul</h3>
+          <p class="faculty-rank">Teaching Professor</p>
+          <div class="faculty-expertise">
+            <span class="expertise-tag">Data Science</span>
+            <span class="expertise-tag">Machine Learning</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <a href="/faculty" class="view-all-link">View all 44 faculty members →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">🌪️</span>
+        <div>
+          <h4>Iowa State University</h4>
+          <p>Department of Computer Science</p>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h5>Research</h5>
+          <a href="#">Computer Science</a>
+          <a href="#">AI & Machine Learning</a>
+          <a href="#">Theses & Dissertations</a>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <a href="https://dr.lib.iastate.edu">DSpace Repository</a>
+          <a href="https://www.cs.iastate.edu">CS Department</a>
+          <a href="#">API Documentation</a>
+        </div>
+        <div class="footer-column">
+          <h5>Connect</h5>
+          <a href="mailto:cs@iastate.edu">Contact Us</a>
+          <a href="#">GitHub</a>
+          <a href="#">Feedback</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 Iowa State University. Powered by Gemini AI.</p>
+    </div>
+  </footer>
+
+  <script>
+    function setQuery(query) {
+      document.getElementById('searchInput').value = query;
+    }
+
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value;
+      if (!query.trim()) return;
+
+      // Show results section, hide browse sections
+      document.getElementById('resultsSection').classList.add('active');
+      document.getElementById('browseSection').style.display = 'none';
+      document.getElementById('facultySection').style.display = 'none';
+      
+      // Show loading
+      document.getElementById('loadingState').style.display = 'block';
+      document.getElementById('resultsContent').style.display = 'none';
+
+      // Simulate API call
+      setTimeout(() => {
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('resultsContent').style.display = 'block';
+
+        // Set answer
+        document.getElementById('answerText').textContent = 
+          "Based on the research in Iowa State's repository, deep learning methods for medical image analysis primarily include Convolutional Neural Networks (CNNs) for image classification, U-Net architectures for segmentation, and attention mechanisms for focusing on relevant regions. Dr. Tavanapong's work on colonoscopy video analysis demonstrates the application of CNNs for polyp detection with real-time feedback systems. Recent work also explores active learning and self-supervised approaches to address limited labeled medical data.";
+
+        // Set sources
+        const sources = [
+          {
+            type: 'thesis',
+            title: 'Deep Learning Framework for Colonoscopy Quality Assessment',
+            authors: 'Qi, Lei; Tavanapong, Wallapak; Wong, Johnny',
+            year: 2020,
+            snippet: 'We propose a deep learning framework for automated colonoscopy quality assessment using convolutional neural networks...'
+          },
+          {
+            type: 'article',
+            title: 'VisActive: Visual-concept-based Active Learning for Medical Image Classification',
+            authors: 'Khaleel, Mohammed; Idris, Azeez; Tavanapong, Wallapak',
+            year: 2024,
+            snippet: 'Active learning approaches for medical image classification under class imbalance...'
+          },
+          {
+            type: 'article',
+            title: 'Synthesized Image Training for Medical AI',
+            authors: 'Idris, Azeez; Khaleel, Mohammed; Tavanapong, Wallapak',
+            year: 2025,
+            snippet: 'Novel training techniques using synthesized images to improve medical AI model performance...'
+          }
+        ];
+
+        const sourcesList = document.getElementById('sourcesList');
+        sourcesList.innerHTML = sources.map(s => `
+          <a href="#" class="source-card">
+            <span class="source-type">${s.type}</span>
+            <h4 class="source-title">${s.title}</h4>
+            <p class="source-authors">${s.authors}</p>
+            <p class="source-snippet">${s.snippet}</p>
+            <div class="source-meta">
+              <span class="source-year">${s.year}</span>
+              <span class="source-link">View in DSpace →</span>
+            </div>
+          </a>
+        `).join('');
+      }, 1500);
+    }
+
+    // Handle Enter key
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') handleSearch();
+    });
+  </script>
+</body>
+</html>

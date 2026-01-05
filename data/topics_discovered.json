@@ -1,0 +1,1622 @@
+{
+  "total_documents_analyzed": 701,
+  "total_topics_found": 72,
+  "categories": [
+    {
+      "name": "Other Topics",
+      "topics": [
+        {
+          "name": "Prediction",
+          "count": 50,
+          "documents": [
+            "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+            "626127e0-e340-434e-8d39-f108eb0cb242",
+            "f7d93974-4e65-44d5-8028-980d36a30337",
+            "5bf70d9e-648a-4422-bcb7-dac42de60515",
+            "218a8465-e6ec-4d2f-b9d2-3ce843546932",
+            "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+            "47ef6c15-22e2-4ce0-8b17-eefaf15883ad",
+            "525f1f95-732c-4802-a572-80cee89c54f5",
+            "9130138d-1f94-4176-980a-80cfa975ed6d",
+            "dabb22c7-e808-4556-ad23-05b83f469c68"
+          ]
+        },
+        {
+          "name": "Education",
+          "count": 34,
+          "documents": [
+            "81b58f5c-9434-44e4-bde6-370ae0bc4d76",
+            "666dc6be-fa39-44d2-9ba6-6f3dc2227693",
+            "61bcf06b-a467-4ba9-a41c-3deea85f22a0",
+            "2539ab3f-76eb-4751-a3fd-7e4329bdeb8d",
+            "a15648ab-da1b-4cef-bdb2-84a3ac7d2494",
+            "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+            "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+            "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+            "29377b3f-795b-4d7f-a8ed-ade7369819c1",
+            "8e0eb8cb-fef8-4b3d-8d58-2682a23a9486"
+          ]
+        },
+        {
+          "name": "Cyber",
+          "count": 28,
+          "documents": [
+            "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+            "490284c9-212c-4a84-935c-de0a6ff28f7c",
+            "60166a9b-d328-40a6-8145-dd8d9ba06ab0",
+            "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+            "33c149bc-e386-46c9-ae0e-90e574993d1a",
+            "9bfd627f-31de-4e7f-91fa-6717617e22d4",
+            "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+            "f6d4e170-3db5-4f44-acac-72e26129df12",
+            "1708cff0-46a4-46ef-811f-62213265ad6b",
+            "e7a63ec4-85b7-4ea6-ae57-749e723c7050"
+          ]
+        },
+        {
+          "name": "Classification",
+          "count": 28,
+          "documents": [
+            "f5c6ae13-3655-4781-8f6b-d265b69fe83e",
+            "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+            "d235c9f3-e9aa-41b6-9924-dd77eab83137",
+            "b0883d39-200a-44ae-ab8e-01b58ec4aff4",
+            "3b0cebdd-ca5b-4751-840a-f4c73e376d76",
+            "848839c1-d143-4ee8-bfae-a409c3e2415c",
+            "1356caf6-eb07-4594-b4f4-ea157bcd06e9",
+            "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+            "dce62f99-1c8d-43a0-87fe-cc39e8aed965",
+            "be832668-0d2c-4040-8576-148c53278ef5"
+          ]
+        },
+        {
+          "name": "Simulation",
+          "count": 23,
+          "documents": [
+            "ce65df4e-e4d6-4115-a7a5-bddf4bb0c3a8",
+            "626127e0-e340-434e-8d39-f108eb0cb242",
+            "f7d93974-4e65-44d5-8028-980d36a30337",
+            "bdf669cf-bbf1-4027-adf9-47a07b39362d",
+            "52b39df5-64ca-4dc9-b83e-8b21635483f7",
+            "1ee0b2d7-3827-49d1-b9e1-4e9a8b789cf6",
+            "e1e4fdea-7689-4594-ba65-67ee8fcba0d0",
+            "9130138d-1f94-4176-980a-80cfa975ed6d",
+            "c77c1d32-b401-409e-8bc7-6cc548f2a79d",
+            "272abefe-ac1c-4838-bb77-65f6dae76aca"
+          ]
+        },
+        {
+          "name": "Energy",
+          "count": 20,
+          "documents": [
+            "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+            "d74871db-238c-4286-9efa-eb18464f1eb5",
+            "4dafdc77-78b0-4a37-a6c3-3218e92bbb7a",
+            "04fc50b4-7f12-432c-9b4f-87829b1bbf97",
+            "43e503f9-5b5d-4b62-b03e-353f88669e91",
+            "d2e6a42b-1ef0-4fed-b6b3-d503e1812900",
+            "8262f194-46e1-4a0b-9fba-52ac2b42f5bc",
+            "6885a764-25ed-4be1-a801-668ed388e3f0",
+            "f2ca0c08-a1da-4df3-9550-3122776a6481",
+            "756f90f0-f240-4ca3-a022-61d10ab32877"
+          ]
+        },
+        {
+          "name": "Optimization",
+          "count": 19,
+          "documents": [
+            "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+            "0a27d160-1c1a-42ed-b907-e2bb5ea67a75",
+            "753d992e-359c-453e-9aa6-84c8662bb75f",
+            "43e503f9-5b5d-4b62-b03e-353f88669e91",
+            "af9b78b7-6dd6-4689-80a4-d5ec36b03621",
+            "498e63df-86c6-4c16-be9a-2c55e024fa72",
+            "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+            "be980b16-30bf-46fa-8cd0-bb7f12c9910b",
+            "800b659d-6ec5-4970-b8f5-4e3fe772c184",
+            "7f77163f-1917-45e4-a9f2-703ee752e40f"
+          ]
+        },
+        {
+          "name": "Computational",
+          "count": 18,
+          "documents": [
+            "626127e0-e340-434e-8d39-f108eb0cb242",
+            "f7d93974-4e65-44d5-8028-980d36a30337",
+            "52b39df5-64ca-4dc9-b83e-8b21635483f7",
+            "753d992e-359c-453e-9aa6-84c8662bb75f",
+            "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+            "0d1bc938-fae3-481d-88cd-eabc552d97d2",
+            "5deaa456-b61c-451a-b14d-fe3d4db39623",
+            "1758bc52-00f5-4c91-ab05-0ad27906640b",
+            "2547e101-9417-4d56-a8e1-cb3f5eab7221",
+            "44b27b0f-d550-4bff-abae-bc923a3a17a1"
+          ]
+        },
+        {
+          "name": "Real-Time",
+          "count": 17,
+          "documents": [
+            "490284c9-212c-4a84-935c-de0a6ff28f7c",
+            "47ef6c15-22e2-4ce0-8b17-eefaf15883ad",
+            "38cbc7d7-8483-44fc-8881-2004561c2379",
+            "530422b8-d2a8-4b28-bd72-465a551608ae",
+            "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+            "1dc4dffa-bef6-4f7b-bba5-98ae2f216baf",
+            "f84714fa-64be-4e24-a64f-88e69f5099fb",
+            "59448d16-3df2-49fd-9d96-5b1d2c571b45",
+            "9815d3e1-5708-4c7e-a493-3f8ca9619021",
+            "1abaf2d0-5f27-4108-b6b3-fe76904cf3b4"
+          ]
+        },
+        {
+          "name": "Transformer",
+          "count": 14,
+          "documents": [
+            "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+            "dbb7291d-bf33-422f-939c-182df7133fa7",
+            "9130138d-1f94-4176-980a-80cfa975ed6d",
+            "363d2703-fc38-41c6-8b6c-7a57aaf34c33",
+            "f84714fa-64be-4e24-a64f-88e69f5099fb",
+            "fe2c97a9-91c9-46fb-be91-1e374a3c4efb",
+            "969056d3-b720-4b15-819f-a5b7a4d6008b",
+            "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+            "5e80d1e8-4330-46ed-bdef-81b95cd0bc99",
+            "259a0fc8-ebc3-47ba-98d6-c07764a0aa52"
+          ]
+        },
+        {
+          "name": "Sensor",
+          "count": 14,
+          "documents": [
+            "525f1f95-732c-4802-a572-80cee89c54f5",
+            "38cbc7d7-8483-44fc-8881-2004561c2379",
+            "1d3778d9-8f70-446b-a27b-a7320561d3f7",
+            "bcd79d01-245e-4d4d-bb0d-328308b4c3c9",
+            "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+            "6d89ee15-14c0-4f60-bd23-3d9dd2a7cc56",
+            "ce9600cd-6c3a-4d66-90e7-98a97a7a19cd",
+            "1abaf2d0-5f27-4108-b6b3-fe76904cf3b4",
+            "9a31d398-4a7d-484c-9e6d-dfe203f1377d",
+            "425b39af-4208-45ab-9c16-ce8ad084c5ea"
+          ]
+        },
+        {
+          "name": "Iot",
+          "count": 14,
+          "documents": [
+            "38cbc7d7-8483-44fc-8881-2004561c2379",
+            "cd639e5f-8bf2-4741-9271-f36d8f38f097",
+            "6238ba6c-3f0d-4578-b7df-fa00a8413e72",
+            "69b06892-709b-4fea-bfce-1e1b81e960d5",
+            "f10bf03c-5f70-466b-82c3-6181d8289c7d",
+            "ce772f27-518b-4e5c-93d0-ff033c14c703",
+            "6b9d4f66-375a-4784-8074-bf6d86a4ef6e",
+            "ad1f488f-0708-472f-bae2-48a9a04c5dc1",
+            "d73cd6ef-8e50-4151-8908-3821d501d278",
+            "7b39cbdf-cad1-4fbd-a142-1e9275060703"
+          ]
+        },
+        {
+          "name": "Climate",
+          "count": 13,
+          "documents": [
+            "a7f3c673-80c8-46eb-b92f-0c1f5a761b1e",
+            "1a864cc8-5221-4b4d-8593-13b768b23a23",
+            "c77c1d32-b401-409e-8bc7-6cc548f2a79d",
+            "69f275dd-a961-4364-a42f-fa721d4a299d",
+            "8e38802f-08ec-47c9-b979-27561bc81c44",
+            "e3b6942e-5899-4729-88be-76af172ac63a",
+            "dbab4ac3-2296-48ab-bd14-6c236435017c",
+            "0e66ad01-4b7b-4aeb-9d6b-9510e7f889d6",
+            "2b4bf129-05a7-4ede-8156-4829f2a16630",
+            "f3c5bd69-8448-45d7-b667-6af821f5095f"
+          ]
+        },
+        {
+          "name": "Anomaly Detection",
+          "count": 10,
+          "documents": [
+            "704eba1b-fb76-47aa-ba02-dee22c2ecfa4",
+            "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+            "498e63df-86c6-4c16-be9a-2c55e024fa72",
+            "f84714fa-64be-4e24-a64f-88e69f5099fb",
+            "4784b3ac-24bb-4134-a2a1-5f67e39e72fc",
+            "ce772f27-518b-4e5c-93d0-ff033c14c703",
+            "a11e7ac1-8206-41fb-a7ec-c26a843f6b0a",
+            "7b39cbdf-cad1-4fbd-a142-1e9275060703",
+            "4a0a9f32-ddab-4e24-a99f-0a737a670aac",
+            "334e00f9-58f0-49b8-8dbe-6c93e6797315"
+          ]
+        },
+        {
+          "name": "Generative",
+          "count": 9,
+          "documents": [
+            "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+            "15a62ed0-6952-4da9-9181-651e57304811",
+            "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+            "0aa4ce6e-4c58-4695-a904-f72039100668",
+            "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+            "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+            "8e5cb84c-136e-4a68-b4f6-c290d33a22c2",
+            "6a9dc54e-e3ed-490f-9562-341fbdb527a3",
+            "1b4d4d14-9905-47bc-985f-bb7730377c99"
+          ]
+        },
+        {
+          "name": "Regression",
+          "count": 9,
+          "documents": [
+            "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+            "fd7467eb-d747-4b21-8bde-28035ff8683c",
+            "126e0630-b3e4-4e71-970e-93e984d4c6db",
+            "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+            "58b28916-30cd-4471-b16f-ca6a882b1ed1",
+            "2ada8e93-d440-401d-bf28-3d216c6a87e3",
+            "b678ff44-9c77-4e93-9a5f-b8815a3c6aad",
+            "06d3a62d-56fa-4bd5-af89-9aeee06db89f",
+            "a1246ad4-3bca-46a1-bd07-ff93e615496e"
+          ]
+        },
+        {
+          "name": "Requirements",
+          "count": 8,
+          "documents": [
+            "490284c9-212c-4a84-935c-de0a6ff28f7c",
+            "29e309ba-b65e-4c63-9b72-e9dcac77ce1e",
+            "7aae7fe7-a881-468a-8daa-78c28c40233c",
+            "6d89ee15-14c0-4f60-bd23-3d9dd2a7cc56",
+            "9a31d398-4a7d-484c-9e6d-dfe203f1377d",
+            "f0cdac91-bb72-4242-820f-bbdedcbcb5d7",
+            "8d0446f5-5955-4fee-8948-467fd041c005",
+            "6f0b7d4d-c413-4968-a556-58157c7f9857"
+          ]
+        },
+        {
+          "name": "Social Media",
+          "count": 7,
+          "documents": [
+            "28c0cb81-1cc4-43a5-88db-476b1240b9e9",
+            "68bfa8a4-2ca9-475c-87b8-d75f940a9d5b",
+            "21036863-dcca-42b1-a000-f01a1d91aaa2",
+            "fb2a4f8a-3adf-4f3c-a31a-344aab0f05e6",
+            "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+            "0d1bc938-fae3-481d-88cd-eabc552d97d2",
+            "d18a0d82-6bbc-4810-abc6-3ee49a82e0e9"
+          ]
+        },
+        {
+          "name": "Reinforcement Learning",
+          "count": 7,
+          "documents": [
+            "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+            "0aa4ce6e-4c58-4695-a904-f72039100668",
+            "1b3b2de7-9dc3-4e40-98d5-a55bb53855ae",
+            "8b85af43-f71b-4d34-a978-77de3967bbde",
+            "f10e687c-d082-4ecd-8bce-bad05bb94803",
+            "a0059675-7a2d-4760-979a-9a11508c136e",
+            "1f0b6740-2881-447d-ab46-d0cb7bbb7b6c"
+          ]
+        },
+        {
+          "name": "Verification",
+          "count": 5,
+          "documents": [
+            "626127e0-e340-434e-8d39-f108eb0cb242",
+            "a730aaf7-04d2-49e5-b2ec-74e1c4db286e",
+            "29e309ba-b65e-4c63-9b72-e9dcac77ce1e",
+            "e1e4fdea-7689-4594-ba65-67ee8fcba0d0",
+            "d0cc1ecd-8d33-42c3-9dc5-a8c41633bffe"
+          ]
+        },
+        {
+          "name": "Virtual Reality",
+          "count": 5,
+          "documents": [
+            "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+            "33c149bc-e386-46c9-ae0e-90e574993d1a",
+            "fda63503-7c81-4ff6-94d6-42cdb684a64a",
+            "e1f67c87-75db-4ee4-bcf1-f1326fb35a16",
+            "2de49dd1-6d6b-4ce1-aac1-0cf079391dca"
+          ]
+        },
+        {
+          "name": "Visualization",
+          "count": 5,
+          "documents": [
+            "d74871db-238c-4286-9efa-eb18464f1eb5",
+            "490284c9-212c-4a84-935c-de0a6ff28f7c",
+            "9d5a26b1-ea1d-4b19-9dcb-fd377b789d14",
+            "20bd52e1-b175-4622-896b-7ffa53e0c39d",
+            "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3"
+          ]
+        },
+        {
+          "name": "Probabilistic",
+          "count": 4,
+          "documents": [
+            "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+            "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+            "f0fcfe6b-693e-4f45-8e26-d93551948763",
+            "69ae91b4-e5d4-4dc7-8931-3233f7e38420"
+          ]
+        },
+        {
+          "name": "Cybersickness",
+          "count": 3,
+          "documents": [
+            "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+            "33c149bc-e386-46c9-ae0e-90e574993d1a",
+            "e1f67c87-75db-4ee4-bcf1-f1326fb35a16"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "count": 3,
+          "documents": [
+            "e9674750-bda4-413f-b0a4-4063f199301f",
+            "26c352c5-3a23-4035-9a44-5bc1946cc293",
+            "2ec8d760-e675-437e-9dcf-631279db2717"
+          ]
+        },
+        {
+          "name": "Genomics",
+          "count": 3,
+          "documents": [
+            "69b06892-709b-4fea-bfce-1e1b81e960d5",
+            "bd0f0a46-c9b6-4cf5-8f62-6ff02a506cf2",
+            "2a5c6f32-8c42-4f6e-b7af-81f60b0d6c89"
+          ]
+        },
+        {
+          "name": "Internet Of Things",
+          "count": 3,
+          "documents": [
+            "ce772f27-518b-4e5c-93d0-ff033c14c703",
+            "381f2d17-878c-4599-90ef-e9f88c0dfb30",
+            "7b39cbdf-cad1-4fbd-a142-1e9275060703"
+          ]
+        },
+        {
+          "name": "Feature Extraction",
+          "count": 3,
+          "documents": [
+            "ee705db6-c73c-40a9-9bba-1ebb89d708fb",
+            "d24187eb-ae12-4aba-8ce0-5c0c7150e7a1",
+            "43c2501b-a6ce-469a-8975-e207e88a0dbb"
+          ]
+        },
+        {
+          "name": "User Experience",
+          "count": 2,
+          "documents": [
+            "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+            "7eebcdb1-2cba-4be2-a251-f0f9f83e6212"
+          ]
+        },
+        {
+          "name": "High Performance",
+          "count": 2,
+          "documents": [
+            "525f1f95-732c-4802-a572-80cee89c54f5",
+            "498e63df-86c6-4c16-be9a-2c55e024fa72"
+          ]
+        },
+        {
+          "name": "Manipulation",
+          "count": 2,
+          "documents": [
+            "69b06892-709b-4fea-bfce-1e1b81e960d5",
+            "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22"
+          ]
+        },
+        {
+          "name": "Intrusion Detection",
+          "count": 2,
+          "documents": [
+            "6d24b409-3b71-4e86-9264-df6a0e0fce25",
+            "2fa9848d-a108-4b10-ac9a-174778a09477"
+          ]
+        },
+        {
+          "name": "Malware",
+          "count": 2,
+          "documents": [
+            "4784b3ac-24bb-4134-a2a1-5f67e39e72fc",
+            "bed7728d-32a4-4a14-a862-660a8f68d81a"
+          ]
+        },
+        {
+          "name": "Wind Turbine",
+          "count": 1,
+          "documents": [
+            "64352ec9-121c-499c-9822-1a7897e5f99f"
+          ]
+        },
+        {
+          "name": "Time Series",
+          "count": 1,
+          "documents": [
+            "5bf70d9e-648a-4422-bcb7-dac42de60515"
+          ]
+        },
+        {
+          "name": "Formal Methods",
+          "count": 1,
+          "documents": [
+            "29e309ba-b65e-4c63-9b72-e9dcac77ce1e"
+          ]
+        },
+        {
+          "name": "Human Factors",
+          "count": 1,
+          "documents": [
+            "f5f5cb56-1d7f-4fb7-8e1a-28e69578e2f2"
+          ]
+        },
+        {
+          "name": "Augmented Reality",
+          "count": 1,
+          "documents": [
+            "7eebcdb1-2cba-4be2-a251-f0f9f83e6212"
+          ]
+        },
+        {
+          "name": "Motion Planning",
+          "count": 1,
+          "documents": [
+            "b3b73d06-3b44-4015-b32d-54e4efbd26ef"
+          ]
+        },
+        {
+          "name": "Vulnerability",
+          "count": 1,
+          "documents": [
+            "ce772f27-518b-4e5c-93d0-ff033c14c703"
+          ]
+        },
+        {
+          "name": "Stochastic",
+          "count": 1,
+          "documents": [
+            "7529d338-bd6c-48c4-8602-005747a9f982"
+          ]
+        },
+        {
+          "name": "Encryption",
+          "count": 1,
+          "documents": [
+            "6b9d4f66-375a-4784-8074-bf6d86a4ef6e"
+          ]
+        },
+        {
+          "name": "Dimensionality",
+          "count": 1,
+          "documents": [
+            "7e93b4f3-6eb2-407f-ac88-85079127789b"
+          ]
+        },
+        {
+          "name": "Authentication",
+          "count": 1,
+          "documents": [
+            "7b39cbdf-cad1-4fbd-a142-1e9275060703"
+          ]
+        },
+        {
+          "name": "Clustering",
+          "count": 1,
+          "documents": [
+            "69ae91b4-e5d4-4dc7-8931-3233f7e38420"
+          ]
+        }
+      ],
+      "total_docs": 398
+    },
+    {
+      "name": "AI & Machine Learning",
+      "topics": [
+        {
+          "name": "Neural Network",
+          "count": 76,
+          "documents": [
+            "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+            "55982443-2d59-4c7d-91f5-0eb1d5b1c503",
+            "3a6543ed-0416-40a1-aefd-7c4c5cc3fb92",
+            "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+            "3cc286fe-4815-411e-b59d-b9d0424ee38d",
+            "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+            "8c8ecb8a-1c88-4479-845f-20eebaef37c7",
+            "800b659d-6ec5-4970-b8f5-4e3fe772c184",
+            "95140a9b-b4f0-411c-aada-07479dabb0a6",
+            "0eeb42a1-07d9-46f8-a1c1-3f8769ec07ad"
+          ]
+        },
+        {
+          "name": "Machine Learning",
+          "count": 76,
+          "documents": [
+            "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+            "3a3f2fac-e9fc-4770-82f9-cdbe74e268da",
+            "e7af698b-af7f-4c04-bee5-956679a91cf5",
+            "9130138d-1f94-4176-980a-80cfa975ed6d",
+            "704eba1b-fb76-47aa-ba02-dee22c2ecfa4",
+            "43e503f9-5b5d-4b62-b03e-353f88669e91",
+            "551befb4-9564-49c8-bc43-3f037c7af62d",
+            "cbca24d8-bd84-4067-a9a8-b8036146c71b",
+            "1f94754b-810a-456c-a74f-cf88be456975",
+            "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a"
+          ]
+        },
+        {
+          "name": "Deep Learning",
+          "count": 44,
+          "documents": [
+            "dabb22c7-e808-4556-ad23-05b83f469c68",
+            "20bd52e1-b175-4622-896b-7ffa53e0c39d",
+            "848839c1-d143-4ee8-bfae-a409c3e2415c",
+            "dce62f99-1c8d-43a0-87fe-cc39e8aed965",
+            "592f9e53-7714-4615-a877-824191139389",
+            "9815d3e1-5708-4c7e-a493-3f8ca9619021",
+            "0e52e96b-be53-4a3d-a483-c2f60da00cfc",
+            "d6321194-5c65-452b-87da-1bbb8eeb93bf",
+            "7f77163f-1917-45e4-a9f2-703ee752e40f",
+            "ec66e582-21da-4a32-bf32-14c21c592bb7"
+          ]
+        },
+        {
+          "name": "Artificial Intelligence",
+          "count": 30,
+          "documents": [
+            "970b18b9-a685-41a3-a842-12a1125fea42",
+            "4af2320a-a150-45f4-95a3-43d872d8f807",
+            "68bfa8a4-2ca9-475c-87b8-d75f940a9d5b",
+            "94da163a-72ea-4ac1-955a-00c98d227e7e",
+            "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+            "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+            "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+            "29377b3f-795b-4d7f-a8ed-ade7369819c1",
+            "8c0e3057-5cec-4596-9496-02330e42944f",
+            "a1a1b518-c416-4d67-8706-431c9f506de0"
+          ]
+        },
+        {
+          "name": "Sustainability",
+          "count": 10,
+          "documents": [
+            "f636a60d-2209-4681-bbb5-8e9bb2f420a5",
+            "04fc50b4-7f12-432c-9b4f-87829b1bbf97",
+            "bbc97a81-0efe-4a59-b89e-0509436e991c",
+            "69e62922-c16d-4f4b-985e-0edb30e205ca",
+            "2832832a-9602-41e4-bb81-43ed6fa9ef49",
+            "756f90f0-f240-4ca3-a022-61d10ab32877",
+            "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+            "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+            "de45de95-e5f8-41b3-af22-192a5d8670ae",
+            "1da36701-1526-4437-8dfd-1b1c22858130"
+          ]
+        },
+        {
+          "name": "Convolutional Neural",
+          "count": 8,
+          "documents": [
+            "ef9b7c8e-847a-4933-bcd9-f11be7844980",
+            "a0584fb3-c466-44f2-b4a8-1f7bf40d1805",
+            "8bcf8434-6b79-4413-a190-585f874e3c6f",
+            "a60af5be-bea0-4da9-8b25-6e9b5b9ccfa8",
+            "2de49dd1-6d6b-4ce1-aac1-0cf079391dca",
+            "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+            "6f0b7d4d-c413-4968-a556-58157c7f9857",
+            "5e80d1e8-4330-46ed-bdef-81b95cd0bc99"
+          ]
+        },
+        {
+          "name": "Recurrent Neural",
+          "count": 1,
+          "documents": [
+            "ef9b7c8e-847a-4933-bcd9-f11be7844980"
+          ]
+        }
+      ],
+      "total_docs": 245
+    },
+    {
+      "name": "Theory & Algorithms",
+      "topics": [
+        {
+          "name": "Algorithm",
+          "count": 33,
+          "documents": [
+            "93b5674c-d70c-4e8e-b4a5-8553aad31b50",
+            "753d992e-359c-453e-9aa6-84c8662bb75f",
+            "43e503f9-5b5d-4b62-b03e-353f88669e91",
+            "1f94754b-810a-456c-a74f-cf88be456975",
+            "af9b78b7-6dd6-4689-80a4-d5ec36b03621",
+            "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+            "0aa4ce6e-4c58-4695-a904-f72039100668",
+            "4784b3ac-24bb-4134-a2a1-5f67e39e72fc",
+            "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+            "a80d826d-9bae-4677-994a-86f935fe5bbd"
+          ]
+        },
+        {
+          "name": "Complexity",
+          "count": 9,
+          "documents": [
+            "970b18b9-a685-41a3-a842-12a1125fea42",
+            "d7bb4b6a-abbd-44d4-aa14-5ccd832a3b46",
+            "97655347-e5de-4b3c-8dbb-f0ef0a3e1a5a",
+            "3b0cebdd-ca5b-4751-840a-f4c73e376d76",
+            "1b3b2de7-9dc3-4e40-98d5-a55bb53855ae",
+            "7d7c5482-a1fc-4f09-b488-773b6d913147",
+            "7e93b4f3-6eb2-407f-ac88-85079127789b",
+            "84d17352-040d-4c5e-8794-5781dd59ada5",
+            "c581e69b-8a76-41e8-8c6f-ea4b7cf81857"
+          ]
+        }
+      ],
+      "total_docs": 42
+    },
+    {
+      "name": "Security & Privacy",
+      "topics": [
+        {
+          "name": "Security",
+          "count": 34,
+          "documents": [
+            "60166a9b-d328-40a6-8145-dd8d9ba06ab0",
+            "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+            "38cbc7d7-8483-44fc-8881-2004561c2379",
+            "9bfd627f-31de-4e7f-91fa-6717617e22d4",
+            "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+            "4350f650-6d67-4f83-8424-db1b7acd8fb9",
+            "498e63df-86c6-4c16-be9a-2c55e024fa72",
+            "f6d4e170-3db5-4f44-acac-72e26129df12",
+            "1708cff0-46a4-46ef-811f-62213265ad6b",
+            "e7a63ec4-85b7-4ea6-ae57-749e723c7050"
+          ]
+        },
+        {
+          "name": "Privacy",
+          "count": 3,
+          "documents": [
+            "ab256937-6c9c-4f2d-b987-7472d83a63af",
+            "6b9d4f66-375a-4784-8074-bf6d86a4ef6e",
+            "68ffa772-8e79-4c69-844f-d1dd397dcd72"
+          ]
+        },
+        {
+          "name": "Cryptography",
+          "count": 1,
+          "documents": [
+            "af41c0b9-698a-4356-8dd1-a2d9ff7854e0"
+          ]
+        }
+      ],
+      "total_docs": 38
+    },
+    {
+      "name": "Data Science",
+      "topics": [
+        {
+          "name": "Analytics",
+          "count": 17,
+          "documents": [
+            "1dc4dffa-bef6-4f7b-bba5-98ae2f216baf",
+            "e41ab75c-f82e-441e-8cc5-da9537cc5c76",
+            "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+            "8c0e3057-5cec-4596-9496-02330e42944f",
+            "95fc0bb0-6b59-4cd9-b364-9ea4d671151d",
+            "3eccf30d-92a3-40ec-868e-eca847544892",
+            "fea499a6-953e-44f5-86dc-f771ab1f9047",
+            "5deaa456-b61c-451a-b14d-fe3d4db39623",
+            "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3",
+            "89b882aa-a10b-45de-b0e7-e424bdce60bb"
+          ]
+        },
+        {
+          "name": "Big Data",
+          "count": 10,
+          "documents": [
+            "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+            "fea499a6-953e-44f5-86dc-f771ab1f9047",
+            "592f9e53-7714-4615-a877-824191139389",
+            "a80d826d-9bae-4677-994a-86f935fe5bbd",
+            "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3",
+            "89b882aa-a10b-45de-b0e7-e424bdce60bb",
+            "642c2637-89da-4d6c-b04b-ad71a519d2d0",
+            "0bb0503a-2a78-4e50-94b2-16ddeb243cd2",
+            "b678ff44-9c77-4e93-9a5f-b8815a3c6aad",
+            "d091f70a-02fd-4981-888b-b2a912cdcab1"
+          ]
+        },
+        {
+          "name": "Data Mining",
+          "count": 4,
+          "documents": [
+            "8e5cb84c-136e-4a68-b4f6-c290d33a22c2",
+            "126e0630-b3e4-4e71-970e-93e984d4c6db",
+            "842f7fa8-2937-4fc2-aed3-b8c53f8ae73c",
+            "0530de27-bca4-4e17-957f-b751e990e297"
+          ]
+        }
+      ],
+      "total_docs": 31
+    },
+    {
+      "name": "Bioinformatics & Health",
+      "topics": [
+        {
+          "name": "Healthcare",
+          "count": 26,
+          "documents": [
+            "ab256937-6c9c-4f2d-b987-7472d83a63af",
+            "8c0e3057-5cec-4596-9496-02330e42944f",
+            "3eccf30d-92a3-40ec-868e-eca847544892",
+            "fea499a6-953e-44f5-86dc-f771ab1f9047",
+            "66efa472-1ff9-4328-9b51-9a239ac4751c",
+            "663d8800-c422-491a-afbd-b2436e2951e4",
+            "c12a5255-cfb3-4b66-8386-d687e4d92549",
+            "126e0630-b3e4-4e71-970e-93e984d4c6db",
+            "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+            "d529a41d-92b1-4fe5-8014-a8906095eeac"
+          ]
+        },
+        {
+          "name": "Bioinformatics",
+          "count": 1,
+          "documents": [
+            "ed2d8c23-646d-4589-a31e-045e5188667b"
+          ]
+        },
+        {
+          "name": "Medical Imaging",
+          "count": 1,
+          "documents": [
+            "8c0e3057-5cec-4596-9496-02330e42944f"
+          ]
+        }
+      ],
+      "total_docs": 28
+    },
+    {
+      "name": "Computer Vision",
+      "topics": [
+        {
+          "name": "Computer Vision",
+          "count": 20,
+          "documents": [
+            "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+            "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a",
+            "8bcf8434-6b79-4413-a190-585f874e3c6f",
+            "2de49dd1-6d6b-4ce1-aac1-0cf079391dca",
+            "969056d3-b720-4b15-819f-a5b7a4d6008b",
+            "308c45f3-4d19-411b-9b1f-fa3b6d1e41d5",
+            "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+            "f30a488e-a61f-4e95-8a6f-dc25ea36cdd3",
+            "4c87deb2-40dc-4083-89dc-85495094e461",
+            "bb7a2657-8157-4a75-924d-d5d6e38b2aad"
+          ]
+        }
+      ],
+      "total_docs": 20
+    },
+    {
+      "name": "Agriculture & Environment",
+      "topics": [
+        {
+          "name": "Agriculture",
+          "count": 17,
+          "documents": [
+            "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+            "4af2320a-a150-45f4-95a3-43d872d8f807",
+            "c7407edd-2307-457c-a93c-4664e7a38dcd",
+            "05b3d71c-fac0-4972-80f0-208bff087301",
+            "8e38802f-08ec-47c9-b979-27561bc81c44",
+            "756f90f0-f240-4ca3-a022-61d10ab32877",
+            "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+            "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a",
+            "ce772f27-518b-4e5c-93d0-ff033c14c703",
+            "be832668-0d2c-4040-8576-148c53278ef5"
+          ]
+        }
+      ],
+      "total_docs": 17
+    },
+    {
+      "name": "Robotics",
+      "topics": [
+        {
+          "name": "Autonomous",
+          "count": 15,
+          "documents": [
+            "61bcf06b-a467-4ba9-a41c-3deea85f22a0",
+            "d0cc1ecd-8d33-42c3-9dc5-a8c41633bffe",
+            "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+            "3a6543ed-0416-40a1-aefd-7c4c5cc3fb92",
+            "9c3da151-2612-4e7f-a92b-3ac499f793ec",
+            "72247a81-84a0-4b75-b138-86eb32516d8f",
+            "eb1a8b20-09bf-4f4a-91b1-bd71ff071b10",
+            "8274244b-d033-4fbc-9221-78b38db582ae",
+            "5e051223-4e8a-4108-befe-860f158aa13a",
+            "51b1cc96-9508-4b42-a181-48a780e2456d"
+          ]
+        },
+        {
+          "name": "Robotics",
+          "count": 2,
+          "documents": [
+            "f636a60d-2209-4681-bbb5-8e9bb2f420a5",
+            "e41ab75c-f82e-441e-8cc5-da9537cc5c76"
+          ]
+        }
+      ],
+      "total_docs": 17
+    },
+    {
+      "name": "Software Engineering",
+      "topics": [
+        {
+          "name": "Testing",
+          "count": 8,
+          "documents": [
+            "5f40531b-6c4e-416d-b4f3-f45761000a3c",
+            "f2ca0c08-a1da-4df3-9550-3122776a6481",
+            "94da163a-72ea-4ac1-955a-00c98d227e7e",
+            "b3b73d06-3b44-4015-b32d-54e4efbd26ef",
+            "1758bc52-00f5-4c91-ab05-0ad27906640b",
+            "da0fcf10-4165-4385-b459-c8602aa3a92f",
+            "06d3a62d-56fa-4bd5-af89-9aeee06db89f",
+            "4f237d98-39eb-463b-80e0-192a6e44d23d"
+          ]
+        },
+        {
+          "name": "Software Engineering",
+          "count": 3,
+          "documents": [
+            "a60af5be-bea0-4da9-8b25-6e9b5b9ccfa8",
+            "172ca382-a94d-46e4-a94c-3c9c858f9609",
+            "06d3a62d-56fa-4bd5-af89-9aeee06db89f"
+          ]
+        }
+      ],
+      "total_docs": 11
+    },
+    {
+      "name": "Natural Language Processing",
+      "topics": [
+        {
+          "name": "Natural Language Processing",
+          "count": 8,
+          "documents": [
+            "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+            "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+            "5deaa456-b61c-451a-b14d-fe3d4db39623",
+            "ae01866f-8a4d-4112-a822-01ff061f4f45",
+            "172ca382-a94d-46e4-a94c-3c9c858f9609",
+            "ec72f0eb-d87f-497d-bae9-5ff3a861c732",
+            "07993cb5-a4a4-46eb-bbab-6eaad3d83b68",
+            "969056d3-b720-4b15-819f-a5b7a4d6008b"
+          ]
+        }
+      ],
+      "total_docs": 8
+    },
+    {
+      "name": "Systems & Networks",
+      "topics": [
+        {
+          "name": "Cloud Computing",
+          "count": 2,
+          "documents": [
+            "498e63df-86c6-4c16-be9a-2c55e024fa72",
+            "d091f70a-02fd-4981-888b-b2a912cdcab1"
+          ]
+        },
+        {
+          "name": "Distributed Systems",
+          "count": 1,
+          "documents": [
+            "00f10d35-30c0-4d37-a9c1-628d9d913b3f"
+          ]
+        }
+      ],
+      "total_docs": 3
+    }
+  ],
+  "top_topics": [
+    {
+      "name": "Neural Network",
+      "count": 76,
+      "documents": [
+        "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+        "55982443-2d59-4c7d-91f5-0eb1d5b1c503",
+        "3a6543ed-0416-40a1-aefd-7c4c5cc3fb92",
+        "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+        "3cc286fe-4815-411e-b59d-b9d0424ee38d",
+        "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+        "8c8ecb8a-1c88-4479-845f-20eebaef37c7",
+        "800b659d-6ec5-4970-b8f5-4e3fe772c184",
+        "95140a9b-b4f0-411c-aada-07479dabb0a6",
+        "0eeb42a1-07d9-46f8-a1c1-3f8769ec07ad"
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "count": 76,
+      "documents": [
+        "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+        "3a3f2fac-e9fc-4770-82f9-cdbe74e268da",
+        "e7af698b-af7f-4c04-bee5-956679a91cf5",
+        "9130138d-1f94-4176-980a-80cfa975ed6d",
+        "704eba1b-fb76-47aa-ba02-dee22c2ecfa4",
+        "43e503f9-5b5d-4b62-b03e-353f88669e91",
+        "551befb4-9564-49c8-bc43-3f037c7af62d",
+        "cbca24d8-bd84-4067-a9a8-b8036146c71b",
+        "1f94754b-810a-456c-a74f-cf88be456975",
+        "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a"
+      ]
+    },
+    {
+      "name": "Prediction",
+      "count": 50,
+      "documents": [
+        "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+        "626127e0-e340-434e-8d39-f108eb0cb242",
+        "f7d93974-4e65-44d5-8028-980d36a30337",
+        "5bf70d9e-648a-4422-bcb7-dac42de60515",
+        "218a8465-e6ec-4d2f-b9d2-3ce843546932",
+        "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+        "47ef6c15-22e2-4ce0-8b17-eefaf15883ad",
+        "525f1f95-732c-4802-a572-80cee89c54f5",
+        "9130138d-1f94-4176-980a-80cfa975ed6d",
+        "dabb22c7-e808-4556-ad23-05b83f469c68"
+      ]
+    },
+    {
+      "name": "Deep Learning",
+      "count": 44,
+      "documents": [
+        "dabb22c7-e808-4556-ad23-05b83f469c68",
+        "20bd52e1-b175-4622-896b-7ffa53e0c39d",
+        "848839c1-d143-4ee8-bfae-a409c3e2415c",
+        "dce62f99-1c8d-43a0-87fe-cc39e8aed965",
+        "592f9e53-7714-4615-a877-824191139389",
+        "9815d3e1-5708-4c7e-a493-3f8ca9619021",
+        "0e52e96b-be53-4a3d-a483-c2f60da00cfc",
+        "d6321194-5c65-452b-87da-1bbb8eeb93bf",
+        "7f77163f-1917-45e4-a9f2-703ee752e40f",
+        "ec66e582-21da-4a32-bf32-14c21c592bb7"
+      ]
+    },
+    {
+      "name": "Education",
+      "count": 34,
+      "documents": [
+        "81b58f5c-9434-44e4-bde6-370ae0bc4d76",
+        "666dc6be-fa39-44d2-9ba6-6f3dc2227693",
+        "61bcf06b-a467-4ba9-a41c-3deea85f22a0",
+        "2539ab3f-76eb-4751-a3fd-7e4329bdeb8d",
+        "a15648ab-da1b-4cef-bdb2-84a3ac7d2494",
+        "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+        "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+        "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+        "29377b3f-795b-4d7f-a8ed-ade7369819c1",
+        "8e0eb8cb-fef8-4b3d-8d58-2682a23a9486"
+      ]
+    },
+    {
+      "name": "Security",
+      "count": 34,
+      "documents": [
+        "60166a9b-d328-40a6-8145-dd8d9ba06ab0",
+        "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+        "38cbc7d7-8483-44fc-8881-2004561c2379",
+        "9bfd627f-31de-4e7f-91fa-6717617e22d4",
+        "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+        "4350f650-6d67-4f83-8424-db1b7acd8fb9",
+        "498e63df-86c6-4c16-be9a-2c55e024fa72",
+        "f6d4e170-3db5-4f44-acac-72e26129df12",
+        "1708cff0-46a4-46ef-811f-62213265ad6b",
+        "e7a63ec4-85b7-4ea6-ae57-749e723c7050"
+      ]
+    },
+    {
+      "name": "Algorithm",
+      "count": 33,
+      "documents": [
+        "93b5674c-d70c-4e8e-b4a5-8553aad31b50",
+        "753d992e-359c-453e-9aa6-84c8662bb75f",
+        "43e503f9-5b5d-4b62-b03e-353f88669e91",
+        "1f94754b-810a-456c-a74f-cf88be456975",
+        "af9b78b7-6dd6-4689-80a4-d5ec36b03621",
+        "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+        "0aa4ce6e-4c58-4695-a904-f72039100668",
+        "4784b3ac-24bb-4134-a2a1-5f67e39e72fc",
+        "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+        "a80d826d-9bae-4677-994a-86f935fe5bbd"
+      ]
+    },
+    {
+      "name": "Artificial Intelligence",
+      "count": 30,
+      "documents": [
+        "970b18b9-a685-41a3-a842-12a1125fea42",
+        "4af2320a-a150-45f4-95a3-43d872d8f807",
+        "68bfa8a4-2ca9-475c-87b8-d75f940a9d5b",
+        "94da163a-72ea-4ac1-955a-00c98d227e7e",
+        "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+        "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+        "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+        "29377b3f-795b-4d7f-a8ed-ade7369819c1",
+        "8c0e3057-5cec-4596-9496-02330e42944f",
+        "a1a1b518-c416-4d67-8706-431c9f506de0"
+      ]
+    },
+    {
+      "name": "Cyber",
+      "count": 28,
+      "documents": [
+        "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+        "490284c9-212c-4a84-935c-de0a6ff28f7c",
+        "60166a9b-d328-40a6-8145-dd8d9ba06ab0",
+        "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+        "33c149bc-e386-46c9-ae0e-90e574993d1a",
+        "9bfd627f-31de-4e7f-91fa-6717617e22d4",
+        "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+        "f6d4e170-3db5-4f44-acac-72e26129df12",
+        "1708cff0-46a4-46ef-811f-62213265ad6b",
+        "e7a63ec4-85b7-4ea6-ae57-749e723c7050"
+      ]
+    },
+    {
+      "name": "Classification",
+      "count": 28,
+      "documents": [
+        "f5c6ae13-3655-4781-8f6b-d265b69fe83e",
+        "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+        "d235c9f3-e9aa-41b6-9924-dd77eab83137",
+        "b0883d39-200a-44ae-ab8e-01b58ec4aff4",
+        "3b0cebdd-ca5b-4751-840a-f4c73e376d76",
+        "848839c1-d143-4ee8-bfae-a409c3e2415c",
+        "1356caf6-eb07-4594-b4f4-ea157bcd06e9",
+        "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+        "dce62f99-1c8d-43a0-87fe-cc39e8aed965",
+        "be832668-0d2c-4040-8576-148c53278ef5"
+      ]
+    },
+    {
+      "name": "Healthcare",
+      "count": 26,
+      "documents": [
+        "ab256937-6c9c-4f2d-b987-7472d83a63af",
+        "8c0e3057-5cec-4596-9496-02330e42944f",
+        "3eccf30d-92a3-40ec-868e-eca847544892",
+        "fea499a6-953e-44f5-86dc-f771ab1f9047",
+        "66efa472-1ff9-4328-9b51-9a239ac4751c",
+        "663d8800-c422-491a-afbd-b2436e2951e4",
+        "c12a5255-cfb3-4b66-8386-d687e4d92549",
+        "126e0630-b3e4-4e71-970e-93e984d4c6db",
+        "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+        "d529a41d-92b1-4fe5-8014-a8906095eeac"
+      ]
+    },
+    {
+      "name": "Simulation",
+      "count": 23,
+      "documents": [
+        "ce65df4e-e4d6-4115-a7a5-bddf4bb0c3a8",
+        "626127e0-e340-434e-8d39-f108eb0cb242",
+        "f7d93974-4e65-44d5-8028-980d36a30337",
+        "bdf669cf-bbf1-4027-adf9-47a07b39362d",
+        "52b39df5-64ca-4dc9-b83e-8b21635483f7",
+        "1ee0b2d7-3827-49d1-b9e1-4e9a8b789cf6",
+        "e1e4fdea-7689-4594-ba65-67ee8fcba0d0",
+        "9130138d-1f94-4176-980a-80cfa975ed6d",
+        "c77c1d32-b401-409e-8bc7-6cc548f2a79d",
+        "272abefe-ac1c-4838-bb77-65f6dae76aca"
+      ]
+    },
+    {
+      "name": "Computer Vision",
+      "count": 20,
+      "documents": [
+        "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+        "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a",
+        "8bcf8434-6b79-4413-a190-585f874e3c6f",
+        "2de49dd1-6d6b-4ce1-aac1-0cf079391dca",
+        "969056d3-b720-4b15-819f-a5b7a4d6008b",
+        "308c45f3-4d19-411b-9b1f-fa3b6d1e41d5",
+        "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+        "f30a488e-a61f-4e95-8a6f-dc25ea36cdd3",
+        "4c87deb2-40dc-4083-89dc-85495094e461",
+        "bb7a2657-8157-4a75-924d-d5d6e38b2aad"
+      ]
+    },
+    {
+      "name": "Energy",
+      "count": 20,
+      "documents": [
+        "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+        "d74871db-238c-4286-9efa-eb18464f1eb5",
+        "4dafdc77-78b0-4a37-a6c3-3218e92bbb7a",
+        "04fc50b4-7f12-432c-9b4f-87829b1bbf97",
+        "43e503f9-5b5d-4b62-b03e-353f88669e91",
+        "d2e6a42b-1ef0-4fed-b6b3-d503e1812900",
+        "8262f194-46e1-4a0b-9fba-52ac2b42f5bc",
+        "6885a764-25ed-4be1-a801-668ed388e3f0",
+        "f2ca0c08-a1da-4df3-9550-3122776a6481",
+        "756f90f0-f240-4ca3-a022-61d10ab32877"
+      ]
+    },
+    {
+      "name": "Optimization",
+      "count": 19,
+      "documents": [
+        "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+        "0a27d160-1c1a-42ed-b907-e2bb5ea67a75",
+        "753d992e-359c-453e-9aa6-84c8662bb75f",
+        "43e503f9-5b5d-4b62-b03e-353f88669e91",
+        "af9b78b7-6dd6-4689-80a4-d5ec36b03621",
+        "498e63df-86c6-4c16-be9a-2c55e024fa72",
+        "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+        "be980b16-30bf-46fa-8cd0-bb7f12c9910b",
+        "800b659d-6ec5-4970-b8f5-4e3fe772c184",
+        "7f77163f-1917-45e4-a9f2-703ee752e40f"
+      ]
+    },
+    {
+      "name": "Computational",
+      "count": 18,
+      "documents": [
+        "626127e0-e340-434e-8d39-f108eb0cb242",
+        "f7d93974-4e65-44d5-8028-980d36a30337",
+        "52b39df5-64ca-4dc9-b83e-8b21635483f7",
+        "753d992e-359c-453e-9aa6-84c8662bb75f",
+        "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+        "0d1bc938-fae3-481d-88cd-eabc552d97d2",
+        "5deaa456-b61c-451a-b14d-fe3d4db39623",
+        "1758bc52-00f5-4c91-ab05-0ad27906640b",
+        "2547e101-9417-4d56-a8e1-cb3f5eab7221",
+        "44b27b0f-d550-4bff-abae-bc923a3a17a1"
+      ]
+    },
+    {
+      "name": "Real-Time",
+      "count": 17,
+      "documents": [
+        "490284c9-212c-4a84-935c-de0a6ff28f7c",
+        "47ef6c15-22e2-4ce0-8b17-eefaf15883ad",
+        "38cbc7d7-8483-44fc-8881-2004561c2379",
+        "530422b8-d2a8-4b28-bd72-465a551608ae",
+        "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+        "1dc4dffa-bef6-4f7b-bba5-98ae2f216baf",
+        "f84714fa-64be-4e24-a64f-88e69f5099fb",
+        "59448d16-3df2-49fd-9d96-5b1d2c571b45",
+        "9815d3e1-5708-4c7e-a493-3f8ca9619021",
+        "1abaf2d0-5f27-4108-b6b3-fe76904cf3b4"
+      ]
+    },
+    {
+      "name": "Agriculture",
+      "count": 17,
+      "documents": [
+        "ed04db81-6347-46fa-88ce-fe17dcaa3e62",
+        "4af2320a-a150-45f4-95a3-43d872d8f807",
+        "c7407edd-2307-457c-a93c-4664e7a38dcd",
+        "05b3d71c-fac0-4972-80f0-208bff087301",
+        "8e38802f-08ec-47c9-b979-27561bc81c44",
+        "756f90f0-f240-4ca3-a022-61d10ab32877",
+        "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+        "ac84303a-2d03-47e2-bf6c-3cc15d6d0c8a",
+        "ce772f27-518b-4e5c-93d0-ff033c14c703",
+        "be832668-0d2c-4040-8576-148c53278ef5"
+      ]
+    },
+    {
+      "name": "Analytics",
+      "count": 17,
+      "documents": [
+        "1dc4dffa-bef6-4f7b-bba5-98ae2f216baf",
+        "e41ab75c-f82e-441e-8cc5-da9537cc5c76",
+        "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+        "8c0e3057-5cec-4596-9496-02330e42944f",
+        "95fc0bb0-6b59-4cd9-b364-9ea4d671151d",
+        "3eccf30d-92a3-40ec-868e-eca847544892",
+        "fea499a6-953e-44f5-86dc-f771ab1f9047",
+        "5deaa456-b61c-451a-b14d-fe3d4db39623",
+        "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3",
+        "89b882aa-a10b-45de-b0e7-e424bdce60bb"
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "count": 15,
+      "documents": [
+        "61bcf06b-a467-4ba9-a41c-3deea85f22a0",
+        "d0cc1ecd-8d33-42c3-9dc5-a8c41633bffe",
+        "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+        "3a6543ed-0416-40a1-aefd-7c4c5cc3fb92",
+        "9c3da151-2612-4e7f-a92b-3ac499f793ec",
+        "72247a81-84a0-4b75-b138-86eb32516d8f",
+        "eb1a8b20-09bf-4f4a-91b1-bd71ff071b10",
+        "8274244b-d033-4fbc-9221-78b38db582ae",
+        "5e051223-4e8a-4108-befe-860f158aa13a",
+        "51b1cc96-9508-4b42-a181-48a780e2456d"
+      ]
+    },
+    {
+      "name": "Transformer",
+      "count": 14,
+      "documents": [
+        "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+        "dbb7291d-bf33-422f-939c-182df7133fa7",
+        "9130138d-1f94-4176-980a-80cfa975ed6d",
+        "363d2703-fc38-41c6-8b6c-7a57aaf34c33",
+        "f84714fa-64be-4e24-a64f-88e69f5099fb",
+        "fe2c97a9-91c9-46fb-be91-1e374a3c4efb",
+        "969056d3-b720-4b15-819f-a5b7a4d6008b",
+        "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+        "5e80d1e8-4330-46ed-bdef-81b95cd0bc99",
+        "259a0fc8-ebc3-47ba-98d6-c07764a0aa52"
+      ]
+    },
+    {
+      "name": "Sensor",
+      "count": 14,
+      "documents": [
+        "525f1f95-732c-4802-a572-80cee89c54f5",
+        "38cbc7d7-8483-44fc-8881-2004561c2379",
+        "1d3778d9-8f70-446b-a27b-a7320561d3f7",
+        "bcd79d01-245e-4d4d-bb0d-328308b4c3c9",
+        "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+        "6d89ee15-14c0-4f60-bd23-3d9dd2a7cc56",
+        "ce9600cd-6c3a-4d66-90e7-98a97a7a19cd",
+        "1abaf2d0-5f27-4108-b6b3-fe76904cf3b4",
+        "9a31d398-4a7d-484c-9e6d-dfe203f1377d",
+        "425b39af-4208-45ab-9c16-ce8ad084c5ea"
+      ]
+    },
+    {
+      "name": "Iot",
+      "count": 14,
+      "documents": [
+        "38cbc7d7-8483-44fc-8881-2004561c2379",
+        "cd639e5f-8bf2-4741-9271-f36d8f38f097",
+        "6238ba6c-3f0d-4578-b7df-fa00a8413e72",
+        "69b06892-709b-4fea-bfce-1e1b81e960d5",
+        "f10bf03c-5f70-466b-82c3-6181d8289c7d",
+        "ce772f27-518b-4e5c-93d0-ff033c14c703",
+        "6b9d4f66-375a-4784-8074-bf6d86a4ef6e",
+        "ad1f488f-0708-472f-bae2-48a9a04c5dc1",
+        "d73cd6ef-8e50-4151-8908-3821d501d278",
+        "7b39cbdf-cad1-4fbd-a142-1e9275060703"
+      ]
+    },
+    {
+      "name": "Climate",
+      "count": 13,
+      "documents": [
+        "a7f3c673-80c8-46eb-b92f-0c1f5a761b1e",
+        "1a864cc8-5221-4b4d-8593-13b768b23a23",
+        "c77c1d32-b401-409e-8bc7-6cc548f2a79d",
+        "69f275dd-a961-4364-a42f-fa721d4a299d",
+        "8e38802f-08ec-47c9-b979-27561bc81c44",
+        "e3b6942e-5899-4729-88be-76af172ac63a",
+        "dbab4ac3-2296-48ab-bd14-6c236435017c",
+        "0e66ad01-4b7b-4aeb-9d6b-9510e7f889d6",
+        "2b4bf129-05a7-4ede-8156-4829f2a16630",
+        "f3c5bd69-8448-45d7-b667-6af821f5095f"
+      ]
+    },
+    {
+      "name": "Sustainability",
+      "count": 10,
+      "documents": [
+        "f636a60d-2209-4681-bbb5-8e9bb2f420a5",
+        "04fc50b4-7f12-432c-9b4f-87829b1bbf97",
+        "bbc97a81-0efe-4a59-b89e-0509436e991c",
+        "69e62922-c16d-4f4b-985e-0edb30e205ca",
+        "2832832a-9602-41e4-bb81-43ed6fa9ef49",
+        "756f90f0-f240-4ca3-a022-61d10ab32877",
+        "3ffe4642-69d7-4976-aabc-e865ae18e1d7",
+        "5844bf9b-129c-4ca2-a5a8-1ef3927d9dd8",
+        "de45de95-e5f8-41b3-af22-192a5d8670ae",
+        "1da36701-1526-4437-8dfd-1b1c22858130"
+      ]
+    },
+    {
+      "name": "Anomaly Detection",
+      "count": 10,
+      "documents": [
+        "704eba1b-fb76-47aa-ba02-dee22c2ecfa4",
+        "3c942bf5-ad1a-44b2-bfd7-8b90faf99d22",
+        "498e63df-86c6-4c16-be9a-2c55e024fa72",
+        "f84714fa-64be-4e24-a64f-88e69f5099fb",
+        "4784b3ac-24bb-4134-a2a1-5f67e39e72fc",
+        "ce772f27-518b-4e5c-93d0-ff033c14c703",
+        "a11e7ac1-8206-41fb-a7ec-c26a843f6b0a",
+        "7b39cbdf-cad1-4fbd-a142-1e9275060703",
+        "4a0a9f32-ddab-4e24-a99f-0a737a670aac",
+        "334e00f9-58f0-49b8-8dbe-6c93e6797315"
+      ]
+    },
+    {
+      "name": "Big Data",
+      "count": 10,
+      "documents": [
+        "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+        "fea499a6-953e-44f5-86dc-f771ab1f9047",
+        "592f9e53-7714-4615-a877-824191139389",
+        "a80d826d-9bae-4677-994a-86f935fe5bbd",
+        "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3",
+        "89b882aa-a10b-45de-b0e7-e424bdce60bb",
+        "642c2637-89da-4d6c-b04b-ad71a519d2d0",
+        "0bb0503a-2a78-4e50-94b2-16ddeb243cd2",
+        "b678ff44-9c77-4e93-9a5f-b8815a3c6aad",
+        "d091f70a-02fd-4981-888b-b2a912cdcab1"
+      ]
+    },
+    {
+      "name": "Generative",
+      "count": 9,
+      "documents": [
+        "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+        "15a62ed0-6952-4da9-9181-651e57304811",
+        "13e8e9d6-d5b5-4292-9c43-d6ffb468813e",
+        "0aa4ce6e-4c58-4695-a904-f72039100668",
+        "4bec8872-a8e0-45ca-a8f6-b9122c1f2098",
+        "12519aa0-4c2d-4e7c-ad8a-cf6cd18d85a4",
+        "8e5cb84c-136e-4a68-b4f6-c290d33a22c2",
+        "6a9dc54e-e3ed-490f-9562-341fbdb527a3",
+        "1b4d4d14-9905-47bc-985f-bb7730377c99"
+      ]
+    },
+    {
+      "name": "Complexity",
+      "count": 9,
+      "documents": [
+        "970b18b9-a685-41a3-a842-12a1125fea42",
+        "d7bb4b6a-abbd-44d4-aa14-5ccd832a3b46",
+        "97655347-e5de-4b3c-8dbb-f0ef0a3e1a5a",
+        "3b0cebdd-ca5b-4751-840a-f4c73e376d76",
+        "1b3b2de7-9dc3-4e40-98d5-a55bb53855ae",
+        "7d7c5482-a1fc-4f09-b488-773b6d913147",
+        "7e93b4f3-6eb2-407f-ac88-85079127789b",
+        "84d17352-040d-4c5e-8794-5781dd59ada5",
+        "c581e69b-8a76-41e8-8c6f-ea4b7cf81857"
+      ]
+    },
+    {
+      "name": "Regression",
+      "count": 9,
+      "documents": [
+        "ac2a02a8-88c5-48e2-a73a-381a85984f69",
+        "fd7467eb-d747-4b21-8bde-28035ff8683c",
+        "126e0630-b3e4-4e71-970e-93e984d4c6db",
+        "191a21ea-aa03-43f0-8ac3-0fd3100e5c5b",
+        "58b28916-30cd-4471-b16f-ca6a882b1ed1",
+        "2ada8e93-d440-401d-bf28-3d216c6a87e3",
+        "b678ff44-9c77-4e93-9a5f-b8815a3c6aad",
+        "06d3a62d-56fa-4bd5-af89-9aeee06db89f",
+        "a1246ad4-3bca-46a1-bd07-ff93e615496e"
+      ]
+    },
+    {
+      "name": "Natural Language Processing",
+      "count": 8,
+      "documents": [
+        "57b8779c-7f92-4d78-8465-fc3b50f3151e",
+        "fd5c4f13-e40e-43f5-ab29-3643b7fe7af1",
+        "5deaa456-b61c-451a-b14d-fe3d4db39623",
+        "ae01866f-8a4d-4112-a822-01ff061f4f45",
+        "172ca382-a94d-46e4-a94c-3c9c858f9609",
+        "ec72f0eb-d87f-497d-bae9-5ff3a861c732",
+        "07993cb5-a4a4-46eb-bbab-6eaad3d83b68",
+        "969056d3-b720-4b15-819f-a5b7a4d6008b"
+      ]
+    },
+    {
+      "name": "Requirements",
+      "count": 8,
+      "documents": [
+        "490284c9-212c-4a84-935c-de0a6ff28f7c",
+        "29e309ba-b65e-4c63-9b72-e9dcac77ce1e",
+        "7aae7fe7-a881-468a-8daa-78c28c40233c",
+        "6d89ee15-14c0-4f60-bd23-3d9dd2a7cc56",
+        "9a31d398-4a7d-484c-9e6d-dfe203f1377d",
+        "f0cdac91-bb72-4242-820f-bbdedcbcb5d7",
+        "8d0446f5-5955-4fee-8948-467fd041c005",
+        "6f0b7d4d-c413-4968-a556-58157c7f9857"
+      ]
+    },
+    {
+      "name": "Testing",
+      "count": 8,
+      "documents": [
+        "5f40531b-6c4e-416d-b4f3-f45761000a3c",
+        "f2ca0c08-a1da-4df3-9550-3122776a6481",
+        "94da163a-72ea-4ac1-955a-00c98d227e7e",
+        "b3b73d06-3b44-4015-b32d-54e4efbd26ef",
+        "1758bc52-00f5-4c91-ab05-0ad27906640b",
+        "da0fcf10-4165-4385-b459-c8602aa3a92f",
+        "06d3a62d-56fa-4bd5-af89-9aeee06db89f",
+        "4f237d98-39eb-463b-80e0-192a6e44d23d"
+      ]
+    },
+    {
+      "name": "Convolutional Neural",
+      "count": 8,
+      "documents": [
+        "ef9b7c8e-847a-4933-bcd9-f11be7844980",
+        "a0584fb3-c466-44f2-b4a8-1f7bf40d1805",
+        "8bcf8434-6b79-4413-a190-585f874e3c6f",
+        "a60af5be-bea0-4da9-8b25-6e9b5b9ccfa8",
+        "2de49dd1-6d6b-4ce1-aac1-0cf079391dca",
+        "edbfe919-ca5d-43bc-9ed9-54a64c46ea7d",
+        "6f0b7d4d-c413-4968-a556-58157c7f9857",
+        "5e80d1e8-4330-46ed-bdef-81b95cd0bc99"
+      ]
+    },
+    {
+      "name": "Social Media",
+      "count": 7,
+      "documents": [
+        "28c0cb81-1cc4-43a5-88db-476b1240b9e9",
+        "68bfa8a4-2ca9-475c-87b8-d75f940a9d5b",
+        "21036863-dcca-42b1-a000-f01a1d91aaa2",
+        "fb2a4f8a-3adf-4f3c-a31a-344aab0f05e6",
+        "cc6d8fc5-df83-4418-8e82-3a34b40c04e4",
+        "0d1bc938-fae3-481d-88cd-eabc552d97d2",
+        "d18a0d82-6bbc-4810-abc6-3ee49a82e0e9"
+      ]
+    },
+    {
+      "name": "Reinforcement Learning",
+      "count": 7,
+      "documents": [
+        "64835f96-54ec-44d7-98d4-dfdfd24b5fd7",
+        "0aa4ce6e-4c58-4695-a904-f72039100668",
+        "1b3b2de7-9dc3-4e40-98d5-a55bb53855ae",
+        "8b85af43-f71b-4d34-a978-77de3967bbde",
+        "f10e687c-d082-4ecd-8bce-bad05bb94803",
+        "a0059675-7a2d-4760-979a-9a11508c136e",
+        "1f0b6740-2881-447d-ab46-d0cb7bbb7b6c"
+      ]
+    },
+    {
+      "name": "Verification",
+      "count": 5,
+      "documents": [
+        "626127e0-e340-434e-8d39-f108eb0cb242",
+        "a730aaf7-04d2-49e5-b2ec-74e1c4db286e",
+        "29e309ba-b65e-4c63-9b72-e9dcac77ce1e",
+        "e1e4fdea-7689-4594-ba65-67ee8fcba0d0",
+        "d0cc1ecd-8d33-42c3-9dc5-a8c41633bffe"
+      ]
+    },
+    {
+      "name": "Virtual Reality",
+      "count": 5,
+      "documents": [
+        "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+        "33c149bc-e386-46c9-ae0e-90e574993d1a",
+        "fda63503-7c81-4ff6-94d6-42cdb684a64a",
+        "e1f67c87-75db-4ee4-bcf1-f1326fb35a16",
+        "2de49dd1-6d6b-4ce1-aac1-0cf079391dca"
+      ]
+    },
+    {
+      "name": "Visualization",
+      "count": 5,
+      "documents": [
+        "d74871db-238c-4286-9efa-eb18464f1eb5",
+        "490284c9-212c-4a84-935c-de0a6ff28f7c",
+        "9d5a26b1-ea1d-4b19-9dcb-fd377b789d14",
+        "20bd52e1-b175-4622-896b-7ffa53e0c39d",
+        "3fe94794-d6f3-43e3-bafb-4f2c0c8611c3"
+      ]
+    },
+    {
+      "name": "Probabilistic",
+      "count": 4,
+      "documents": [
+        "1028bd80-8635-4f32-b97e-b912ba2a4eef",
+        "c77e5e9f-00bf-4175-be6f-5336e5f7bfdb",
+        "f0fcfe6b-693e-4f45-8e26-d93551948763",
+        "69ae91b4-e5d4-4dc7-8931-3233f7e38420"
+      ]
+    },
+    {
+      "name": "Data Mining",
+      "count": 4,
+      "documents": [
+        "8e5cb84c-136e-4a68-b4f6-c290d33a22c2",
+        "126e0630-b3e4-4e71-970e-93e984d4c6db",
+        "842f7fa8-2937-4fc2-aed3-b8c53f8ae73c",
+        "0530de27-bca4-4e17-957f-b751e990e297"
+      ]
+    },
+    {
+      "name": "Cybersickness",
+      "count": 3,
+      "documents": [
+        "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+        "33c149bc-e386-46c9-ae0e-90e574993d1a",
+        "e1f67c87-75db-4ee4-bcf1-f1326fb35a16"
+      ]
+    },
+    {
+      "name": "Statistics",
+      "count": 3,
+      "documents": [
+        "e9674750-bda4-413f-b0a4-4063f199301f",
+        "26c352c5-3a23-4035-9a44-5bc1946cc293",
+        "2ec8d760-e675-437e-9dcf-631279db2717"
+      ]
+    },
+    {
+      "name": "Privacy",
+      "count": 3,
+      "documents": [
+        "ab256937-6c9c-4f2d-b987-7472d83a63af",
+        "6b9d4f66-375a-4784-8074-bf6d86a4ef6e",
+        "68ffa772-8e79-4c69-844f-d1dd397dcd72"
+      ]
+    },
+    {
+      "name": "Genomics",
+      "count": 3,
+      "documents": [
+        "69b06892-709b-4fea-bfce-1e1b81e960d5",
+        "bd0f0a46-c9b6-4cf5-8f62-6ff02a506cf2",
+        "2a5c6f32-8c42-4f6e-b7af-81f60b0d6c89"
+      ]
+    },
+    {
+      "name": "Internet Of Things",
+      "count": 3,
+      "documents": [
+        "ce772f27-518b-4e5c-93d0-ff033c14c703",
+        "381f2d17-878c-4599-90ef-e9f88c0dfb30",
+        "7b39cbdf-cad1-4fbd-a142-1e9275060703"
+      ]
+    },
+    {
+      "name": "Software Engineering",
+      "count": 3,
+      "documents": [
+        "a60af5be-bea0-4da9-8b25-6e9b5b9ccfa8",
+        "172ca382-a94d-46e4-a94c-3c9c858f9609",
+        "06d3a62d-56fa-4bd5-af89-9aeee06db89f"
+      ]
+    },
+    {
+      "name": "Feature Extraction",
+      "count": 3,
+      "documents": [
+        "ee705db6-c73c-40a9-9bba-1ebb89d708fb",
+        "d24187eb-ae12-4aba-8ce0-5c0c7150e7a1",
+        "43c2501b-a6ce-469a-8975-e207e88a0dbb"
+      ]
+    },
+    {
+      "name": "User Experience",
+      "count": 2,
+      "documents": [
+        "c2c5190b-c75b-4676-a1d3-21e1daa2835e",
+        "7eebcdb1-2cba-4be2-a251-f0f9f83e6212"
+      ]
+    },
+    {
+      "name": "Robotics",
+      "count": 2,
+      "documents": [
+        "f636a60d-2209-4681-bbb5-8e9bb2f420a5",
+        "e41ab75c-f82e-441e-8cc5-da9537cc5c76"
+      ]
+    }
+  ],
+  "last_discovered": "2026-01-05T04:29:03.889889"
+}

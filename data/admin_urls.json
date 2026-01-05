@@ -1,0 +1,23 @@
+{
+  "scraper_urls": [
+    {
+      "department": "Test Dept",
+      "url": "http://test.com",
+      "id": "7b9bf79a-7701-48e2-b8b5-035d6db7e78d"
+    }
+  ],
+  "dspace_urls": [
+    {
+      "name": "Creative Components",
+      "url": "https://dr.lib.iastate.edu/handle/20.500.12876/6",
+      "type": "collection",
+      "id": "172fb1e8-ab0a-4b00-b5da-738d1c2fa2ca"
+    },
+    {
+      "name": "Theses and Dissertations",
+      "url": "https://dr.lib.iastate.edu/handle/20.500.12876/5",
+      "type": "collection",
+      "id": "b0f95afc-c208-4b19-a706-a059bdee21c2"
+    }
+  ]
+}
