@@ -1310,3 +1310,108 @@ async def get_faculty_document_counts():
     except Exception as e:
         logger.error(f"Error getting faculty document counts: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================================
+# Vertex AI Search Endpoints
+# ============================================================
+
+@router.post("/vertex/search")
+async def vertex_ai_search(
+    query: str = Body(..., embed=True),
+    limit: int = Body(10, embed=True),
+    filters: Optional[Dict] = Body(None, embed=True)
+):
+    """
+    Perform RAG-powered search using Vertex AI Search.
+    Returns AI-generated summary with citations.
+    """
+    try:
+        from services.vertex_ai_service import vertex_search_service
+        result = await vertex_search_service.search(query, limit, filters)
+        return result
+    except ImportError:
+        return {"error": "Vertex AI service not available", "answer": "", "sources": []}
+    except Exception as e:
+        logger.error(f"Vertex AI search error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/vertex/index-local")
+async def index_local_documents():
+    """
+    Index all local documents (from indexed_documents.json) to Vertex AI Search.
+    """
+    try:
+        from services.vertex_ai_service import vertex_search_service
+        
+        documents = []
+        if os.path.exists(INDEXED_DOCS_FILE):
+            with open(INDEXED_DOCS_FILE, "r", encoding="utf-8") as f:
+                documents = json.load(f)
+        
+        if os.path.exists(MANUAL_DOCS_FILE):
+            with open(MANUAL_DOCS_FILE, "r", encoding="utf-8") as f:
+                documents.extend(json.load(f))
+        
+        if not documents:
+            return {"message": "No documents to index", "indexed": 0}
+        
+        result = await vertex_search_service.index_documents_batch(documents)
+        return {
+            "message": f"Indexed {result['indexed']} documents to Vertex AI Search",
+            **result
+        }
+        
+    except ImportError:
+        return {"error": "Vertex AI service not available"}
+    except Exception as e:
+        logger.error(f"Vertex AI indexing error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/sync/dspace")
+async def sync_dspace_to_vertex():
+    """
+    Sync documents from DSpace to Vertex AI Search and Firestore.
+    """
+    try:
+        from services.dspace_sync_service import dspace_sync_service
+        
+        result = await dspace_sync_service.full_sync(
+            max_items=1000,
+            include_pdfs=False  # Set to True to also download PDFs
+        )
+        
+        return {
+            "message": "DSpace sync completed",
+            **result
+        }
+        
+    except ImportError:
+        return {"error": "DSpace sync service not available"}
+    except Exception as e:
+        logger.error(f"DSpace sync error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/vertex/status")
+async def get_vertex_status():
+    """
+    Get status of Vertex AI Search integration.
+    """
+    try:
+        from services.vertex_ai_service import vertex_search_service
+        
+        return {
+            "initialized": vertex_search_service.initialized,
+            "project_id": vertex_search_service.project_id,
+            "data_store_id": vertex_search_service.data_store_id,
+            "engine_id": vertex_search_service.engine_id
+        }
+        
+    except ImportError:
+        return {"initialized": False, "error": "Vertex AI service not available"}
+    except Exception as e:
+        return {"initialized": False, "error": str(e)}
+
