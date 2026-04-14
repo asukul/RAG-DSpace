@@ -271,6 +271,9 @@ This table is rewritten at every run. The agent pastes the latest aggregates her
 
 ---
 
+
+- **2026-04-14** (local run `20260414T225042`): goldens=0, backend_errors=0, divergences=0, regressions=0, hard_min_breaches=0.
+- **2026-04-14** (local run `20260414T225519`): goldens=15, backend_errors=0, divergences=4, regressions=0, hard_min_breaches=2.
 ## 10. Safety bounds (IMMUTABLE)
 
 The daily agent operates with these hard limits. Violating any of them requires explicit human override in this doc.
