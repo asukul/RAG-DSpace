@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sample-page-title",
+    "name": "SAMPLE PAGE TITLE",
+    "title": "",
+    "department": "Virtual Reality Applications Center",
+    "college": "Virtual Reality Applications Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "http://www.vrac.iastate.edu/directory",
+    "center_affiliation": "Virtual Reality Applications Center"
+  },
+  {
+    "id": "hci-degree-options",
+    "name": "HCI DEGREE OPTIONS",
+    "title": "",
+    "department": "Virtual Reality Applications Center",
+    "college": "Virtual Reality Applications Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "http://www.vrac.iastate.edu/directory",
+    "center_affiliation": "Virtual Reality Applications Center"
+  }
+]

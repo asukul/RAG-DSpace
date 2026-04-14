@@ -1,7 +1,32 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import './App.css'
+import NetworkPage from './NetworkPage'
+import KnowledgeGraphPage from './KnowledgeGraphPage'
+import PaperDetailModal from './PaperDetailModal'
+import FacultyProfileModal from './FacultyProfileModal'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8005'
+const GOOGLE_OAUTH_CLIENT_ID = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID || ''
+
+// LocalStorage keys
+const LS_TOKEN = 'isu_rag_token'
+const LS_DEV_MODE = 'isu_rag_dev_mode'
+
+// Auth-aware fetch wrapper — adds Bearer token if present and lifts a 401 to logout.
+function authHeaders() {
+  const token = localStorage.getItem(LS_TOKEN)
+  return token ? { Authorization: `Bearer ${token}` } : {}
+}
+
+async function apiFetch(path, options = {}) {
+  const headers = {
+    ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+    ...authHeaders(),
+    ...(options.headers || {}),
+  }
+  const res = await fetch(`${API_URL}${path}`, { ...options, headers })
+  return res
+}
 
 // Faculty data will be fetched from API
 const FACULTY_DATA_INITIAL = []
@@ -18,12 +43,110 @@ const DOC_TYPE_ICONS = {
   'default': '📁'
 }
 
+// Keyword expansion for the "Research Areas" filter. `faculty.research_areas`
+// is only populated for ~34 CS faculty in the current faculty.json (0.8% of
+// 4,322), so a strict `research_areas.includes(area)` filter hides the rest of
+// the university. We expose the same 8 broad topic buckets we use on the
+// Topics tile and expand matching via research_interests substring to catch
+// faculty whose research is adjacent to the area but whose structured
+// research_areas tags haven't been filled in.
+const RESEARCH_AREA_KEYWORDS = {
+  'AI and Machine Learning': [
+    'artificial intelligence', 'machine learning', 'deep learning',
+    'neural network', 'nlp', 'natural language', 'computer vision',
+    'reinforcement learning', 'graph neural', 'trustworthy ai',
+    'federated learning', ' ml ', 'medical ai', 'llm',
+    'large language model', 'generative', 'statistical learning',
+  ],
+  'Software Engineering': [
+    'software engineering', 'software testing', 'formal methods',
+    'program analysis', 'software design', 'requirements engineering',
+    'program verification', 'static analysis',
+  ],
+  'Systems and Networking': [
+    'operating system', 'distributed system', 'computer network',
+    'cloud computing', 'edge computing', 'iot', 'wireless network',
+    'mobile computing', 'parallel computing', 'high-performance computing',
+    'computer architecture', 'data center',
+  ],
+  'Theory': [
+    'theoretical computer science', 'algorithm design', 'computational complexity',
+    'discrete mathematics', 'combinator', 'information theory',
+    'graph theory', 'complexity theory', 'automata',
+  ],
+  'Robotics': [
+    'robotic', 'autonomous', 'motion planning', 'control systems',
+    'autonomous vehicle', 'self-driving',
+  ],
+  'Security': [
+    'security', 'cryptography', 'privacy', 'authentication',
+    'cybersecurity', 'network security', 'ml security', 'nlp security',
+  ],
+  'Human-Computer Interaction': [
+    'hci', 'human-computer', 'user experience', 'usability',
+    'accessibility', 'interaction design', 'visual analytics',
+    'data visualization',
+  ],
+  'Bioinformatics': [
+    'bioinformatics', 'computational biology', 'genomics',
+    'proteomics', 'medical ai', 'health informatics',
+  ],
+}
+
+function facultyMatchesResearchArea(f, area) {
+  // First the strict structured match (fast, exact):
+  if ((f.research_areas || []).includes(area)) return true
+  // Then the keyword-substring expansion over research_interests:
+  const kws = RESEARCH_AREA_KEYWORDS[area] || []
+  if (!kws.length) return false
+  const interests = (f.research_interests || []).map(r => ` ${(r || '').toLowerCase()} `)
+  return interests.some(interest => kws.some(kw => interest.includes(kw)))
+}
+
+// Some scraped faculty profiles have their entire bio paragraph stored as a
+// single entry in research_interests (e.g. Ben Van Dusen's 2000-char bio).
+// Real interests are short noun phrases like "machine learning", so strip
+// anything that looks like prose before rendering. Keyword matching uses the
+// raw array — this filter is display-only.
+function cleanDisplayInterests(interests) {
+  return (interests || []).filter(i => {
+    if (!i || typeof i !== 'string') return false
+    const s = i.trim()
+    if (!s) return false
+    if (s.length > 80) return false
+    if (/^I /.test(s)) return false            // first-person prose
+    if (s.includes('. ')) return false          // mid-sentence fragment
+    return true
+  })
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState('search')
   const [query, setQuery] = useState('')
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [searchDuration, setSearchDuration] = useState(null) // ms, for dev mode
   const [stats, setStats] = useState(null)
+
+  // Auth
+  const [currentUser, setCurrentUser] = useState(null)
+  const [authError, setAuthError] = useState(null)
+
+  // Autocomplete dropdown
+  const [suggestions, setSuggestions] = useState(null)  // {faculty, papers, authors, departments}
+  const [suggestionsOpen, setSuggestionsOpen] = useState(false)
+  const [suggestionFocus, setSuggestionFocus] = useState(-1)  // index into the flat list
+
+  // Developer Mode (persisted)
+  const [devMode, setDevMode] = useState(() => localStorage.getItem(LS_DEV_MODE) === '1')
+  useEffect(() => {
+    localStorage.setItem(LS_DEV_MODE, devMode ? '1' : '0')
+  }, [devMode])
+
+  // System / Admin dashboard data
+  const [adminSystemInfo, setAdminSystemInfo] = useState(null)
+  const [adminUsersList, setAdminUsersList] = useState([])
+  const [adminSearchesList, setAdminSearchesList] = useState([])
 
   // Data
   const [facultyData, setFacultyData] = useState([])
@@ -36,15 +159,17 @@ function App() {
   const [showResultFaculty, setShowResultFaculty] = useState(true)
   const [showResultPhotos, setShowResultPhotos] = useState(false)
   const [showResultDetails, setShowResultDetails] = useState(false)
+  const [showRetrievedChunks, setShowRetrievedChunks] = useState(false) // transparency panel for RAG chunks
 
   useEffect(() => {
     fetchStats()
     fetchFaculty()
+    fetchCurrentUser()
   }, [])
 
   const fetchFaculty = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/faculty`)
+      const res = await apiFetch('/api/faculty')
       if (res.ok) setFacultyData(await res.json())
     } catch (e) {
       console.error('Faculty fetch error:', e)
@@ -53,12 +178,110 @@ function App() {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/stats`)
+      const res = await apiFetch('/api/stats')
       if (res.ok) setStats(await res.json())
     } catch (e) {
       console.error('Stats error:', e)
     }
   }
+
+  // ----- Auth -----
+  const fetchCurrentUser = async () => {
+    if (!localStorage.getItem(LS_TOKEN)) {
+      setCurrentUser(null)
+      return
+    }
+    try {
+      const res = await apiFetch('/api/auth/me')
+      if (res.ok) {
+        const data = await res.json()
+        if (data.authenticated) setCurrentUser(data.user)
+        else {
+          localStorage.removeItem(LS_TOKEN)
+          setCurrentUser(null)
+        }
+      }
+    } catch (e) {
+      console.error('Auth me error:', e)
+    }
+  }
+
+  // Google Identity Services callback — sends the credential to our backend
+  const handleGoogleCredential = useCallback(async (response) => {
+    setAuthError(null)
+    try {
+      const res = await apiFetch('/api/auth/google', {
+        method: 'POST',
+        body: JSON.stringify({ credential: response.credential }),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        setAuthError(err.detail || 'Sign-in failed')
+        return
+      }
+      const data = await res.json()
+      localStorage.setItem(LS_TOKEN, data.token)
+      setCurrentUser(data.user)
+    } catch (e) {
+      setAuthError(String(e))
+    }
+  }, [])
+
+  const handleSignOut = async () => {
+    try { await apiFetch('/api/auth/logout', { method: 'POST' }) } catch {}
+    localStorage.removeItem(LS_TOKEN)
+    setCurrentUser(null)
+    if (activeTab === 'admin') setActiveTab('search')
+  }
+
+  // Mount Google Identity Services script + render the button when client id is set.
+  useEffect(() => {
+    if (currentUser || !GOOGLE_OAUTH_CLIENT_ID) return
+    if (document.getElementById('google-gis-script')) {
+      // Script already loaded — just (re)render the button.
+      window.google?.accounts?.id?.initialize?.({
+        client_id: GOOGLE_OAUTH_CLIENT_ID,
+        callback: handleGoogleCredential,
+      })
+      const el = document.getElementById('google-signin-btn')
+      if (el) window.google?.accounts?.id?.renderButton?.(el, { theme: 'outline', size: 'medium' })
+      return
+    }
+    const s = document.createElement('script')
+    s.id = 'google-gis-script'
+    s.src = 'https://accounts.google.com/gsi/client'
+    s.async = true
+    s.defer = true
+    s.onload = () => {
+      window.google?.accounts?.id?.initialize?.({
+        client_id: GOOGLE_OAUTH_CLIENT_ID,
+        callback: handleGoogleCredential,
+      })
+      const el = document.getElementById('google-signin-btn')
+      if (el) window.google?.accounts?.id?.renderButton?.(el, { theme: 'outline', size: 'medium' })
+    }
+    document.body.appendChild(s)
+  }, [currentUser, handleGoogleCredential])
+
+  // ----- Admin dashboard data -----
+  const fetchAdminDashboard = async () => {
+    try {
+      const [sysRes, usersRes, searchesRes] = await Promise.all([
+        apiFetch('/api/admin/system'),
+        apiFetch('/api/admin/users'),
+        apiFetch('/api/admin/searches?limit=100'),
+      ])
+      if (sysRes.ok) setAdminSystemInfo(await sysRes.json())
+      if (usersRes.ok) setAdminUsersList((await usersRes.json()).users || [])
+      if (searchesRes.ok) setAdminSearchesList((await searchesRes.json()).searches || [])
+    } catch (e) { console.error('Admin dashboard fetch error:', e) }
+  }
+
+  useEffect(() => {
+    if (activeTab === 'admin' && currentUser?.role === 'admin') {
+      fetchAdminDashboard()
+    }
+  }, [activeTab, currentUser])
 
   // Admin Data
   const [adminSubTab, setAdminSubTab] = useState('config') // config, faculty, docs
@@ -117,8 +340,20 @@ function App() {
   const [mismatchFacultySearch, setMismatchFacultySearch] = useState({}) // { [mismatchId]: searchTerm }
   const [mismatchDropdownOpen, setMismatchDropdownOpen] = useState({}) // { [mismatchId]: boolean }
 
+  // Dept Conflicts State
+  const [deptConflicts, setDeptConflicts] = useState(null)
+  const [deptConflictsView, setDeptConflictsView] = useState('items') // 'items' or 'faculty'
+  const [deptConflictsLoading, setDeptConflictsLoading] = useState(false)
+  const [facultyRemoveSelections, setFacultyRemoveSelections] = useState({}) // { [faculty_id]: Set of affiliations to remove }
+
   // Expanded Metadata State (for "See More" in search results)
   const [expandedMetadata, setExpandedMetadata] = useState(new Set())
+
+  // Paper Detail Modal — open with a canonical id like "paper:dspace:<uuid>"
+  const [openPaperId, setOpenPaperId] = useState(null)
+
+  // Faculty Profile Modal — open with a faculty id like "adisak-sukul"
+  const [openFacultyId, setOpenFacultyId] = useState(null)
 
   // Topic Discovery State
   const [discoveredTopics, setDiscoveredTopics] = useState(null)
@@ -243,6 +478,70 @@ function App() {
         .catch(() => setFlaggedMismatches([]))
     } catch (e) {
       console.error('Admin fetch error:', e)
+    }
+  }
+
+  const fetchDeptConflicts = async () => {
+    setDeptConflictsLoading(true)
+    try {
+      const res = await apiFetch('/api/admin/conflicts')
+      if (res.ok) {
+        setDeptConflicts(await res.json())
+      }
+    } catch (e) {
+      console.error('Dept conflicts fetch error:', e)
+    } finally {
+      setDeptConflictsLoading(false)
+    }
+  }
+
+  const resolveItemConflict = async (item_uuid, department) => {
+    try {
+      const res = await apiFetch('/api/admin/conflicts/item/resolve', {
+        method: 'POST',
+        body: JSON.stringify({ item_uuid, department }),
+      })
+      if (res.ok) {
+        showToast('Item conflict resolved', 'success')
+        fetchDeptConflicts()
+      } else {
+        showToast('Failed to resolve item conflict', 'error')
+      }
+    } catch (e) {
+      showToast('Error resolving item conflict', 'error')
+    }
+  }
+
+  const resolveFacultyConflict = async (faculty_id, primary_department, action, remove_affiliations) => {
+    try {
+      const res = await apiFetch('/api/admin/conflicts/faculty/resolve', {
+        method: 'POST',
+        body: JSON.stringify({ faculty_id, primary_department, action, remove_affiliations }),
+      })
+      if (res.ok) {
+        showToast('Faculty conflict resolved', 'success')
+        setFacultyRemoveSelections(prev => { const next = { ...prev }; delete next[faculty_id]; return next })
+        fetchDeptConflicts()
+      } else {
+        showToast('Failed to resolve faculty conflict', 'error')
+      }
+    } catch (e) {
+      showToast('Error resolving faculty conflict', 'error')
+    }
+  }
+
+  const bulkResolveItemConflicts = async () => {
+    try {
+      const res = await apiFetch('/api/admin/conflicts/item/bulk-resolve', { method: 'POST' })
+      if (res.ok) {
+        const data = await res.json()
+        showToast(`Bulk resolve complete: ${data.resolved || 0} items resolved`, 'success')
+        fetchDeptConflicts()
+      } else {
+        showToast('Bulk resolve failed', 'error')
+      }
+    } catch (e) {
+      showToast('Error during bulk resolve', 'error')
     }
   }
 
@@ -611,20 +910,150 @@ function App() {
     e.preventDefault()
     if (!query.trim()) return
 
+    setSuggestionsOpen(false)
     setLoading(true)
+    setSearchDuration(null)
+    const t0 = performance.now()
+
+    // Stream the search response. Phase 1: meta event with citations + sources
+    // + faculty arrives in ~500ms. Phase 2: incremental token events stream the
+    // AI answer in. Frontend shows results immediately and "types in" the answer.
     try {
-      const res = await fetch(`${API_URL}/api/search`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, limit: 50 })
-      })
-      if (res.ok) {
-        setResults(await res.json())
+      const token = localStorage.getItem(LS_TOKEN)
+      const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'text/event-stream',
       }
-    } catch (e) {
-      console.error('Search error:', e)
+      if (token) headers['Authorization'] = `Bearer ${token}`
+
+      const res = await fetch(`${API_URL}/api/search/stream`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ query, limit: 50 }),
+      })
+      if (!res.ok || !res.body) {
+        // Fallback to the legacy non-streaming endpoint
+        const fallback = await apiFetch('/api/search', {
+          method: 'POST',
+          body: JSON.stringify({ query, limit: 50 }),
+        })
+        if (fallback.ok) setResults(await fallback.json())
+        return
+      }
+
+      // Parse SSE manually from the ReadableStream
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let buf = ''
+      let working = null
+      let answerSoFar = ''
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        buf += decoder.decode(value, { stream: true })
+        // Split into SSE events on blank lines
+        const parts = buf.split('\n\n')
+        buf = parts.pop() || ''  // last partial event
+        for (const block of parts) {
+          let eventName = 'message'
+          const dataLines = []
+          for (const line of block.split('\n')) {
+            if (line.startsWith('event:')) eventName = line.slice(6).trim()
+            else if (line.startsWith('data:')) dataLines.push(line.slice(5).trimStart())
+          }
+          if (!dataLines.length) continue
+          let payload
+          try { payload = JSON.parse(dataLines.join('\n')) } catch { continue }
+
+          if (eventName === 'meta') {
+            // Initial render — citations + sources + faculty without the answer
+            working = { ...payload, answer: '' }
+            setResults(working)
+          } else if (eventName === 'token' && payload.text != null) {
+            answerSoFar += payload.text
+            if (working) {
+              working = { ...working, answer: answerSoFar }
+              setResults(working)
+            }
+          } else if (eventName === 'done') {
+            if (working) {
+              working = { ...working, answer: answerSoFar, duration_ms: payload.duration_ms }
+              setResults(working)
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Stream search error:', err)
     } finally {
+      setSearchDuration(Math.round(performance.now() - t0))
       setLoading(false)
+    }
+  }
+
+  // ----- Autocomplete -----
+  // Debounced fetch of /api/suggest. Triggers ~150ms after the user stops typing.
+  useEffect(() => {
+    const q = query.trim()
+    if (q.length < 2) {
+      setSuggestions(null)
+      setSuggestionsOpen(false)
+      return
+    }
+    const handle = setTimeout(async () => {
+      try {
+        const res = await apiFetch(`/api/suggest?q=${encodeURIComponent(q)}&limit=6`)
+        if (res.ok) {
+          const data = await res.json()
+          setSuggestions(data)
+          // Only auto-open if there's something to show
+          const hasAny = (data.faculty?.length || 0) + (data.papers?.length || 0) +
+                         (data.authors?.length || 0) + (data.departments?.length || 0) > 0
+          setSuggestionsOpen(hasAny)
+          setSuggestionFocus(-1)
+        }
+      } catch (e) {
+        // silently ignore — autocomplete is best-effort
+      }
+    }, 150)
+    return () => clearTimeout(handle)
+  }, [query])
+
+  // Build a flat ordered list of all suggestion items (for arrow-key nav).
+  const flatSuggestions = useMemo(() => {
+    if (!suggestions) return []
+    const out = []
+    ;(suggestions.faculty || []).forEach(f => out.push({ kind: 'faculty', value: f.name, label: f.name, sub: f.department, item: f }))
+    ;(suggestions.authors || []).forEach(a => out.push({ kind: 'author', value: a.name, label: a.name, sub: `${a.papers} papers`, item: a }))
+    ;(suggestions.papers || []).forEach(p => out.push({ kind: 'paper', value: p.title, label: p.title, sub: p.year || '', item: p }))
+    ;(suggestions.departments || []).forEach(d => out.push({ kind: 'department', value: d.name, label: d.name, sub: d.college, item: d }))
+    return out
+  }, [suggestions])
+
+  const pickSuggestion = (s) => {
+    if (!s) return
+    setQuery(s.value)
+    setSuggestionsOpen(false)
+    // Synthesize a submit event
+    setTimeout(() => {
+      const form = document.getElementById('main-search-form')
+      if (form) form.requestSubmit()
+    }, 0)
+  }
+
+  const handleSearchInputKeyDown = (e) => {
+    if (!suggestionsOpen || !flatSuggestions.length) return
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setSuggestionFocus(prev => (prev + 1) % flatSuggestions.length)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setSuggestionFocus(prev => prev <= 0 ? flatSuggestions.length - 1 : prev - 1)
+    } else if (e.key === 'Enter' && suggestionFocus >= 0) {
+      e.preventDefault()
+      pickSuggestion(flatSuggestions[suggestionFocus])
+    } else if (e.key === 'Escape') {
+      setSuggestionsOpen(false)
     }
   }
 
@@ -699,6 +1128,38 @@ function App() {
     return DOC_TYPE_ICONS[key] || DOC_TYPE_ICONS.default
   }
 
+  // Render an answer string, replacing [N] markers with clickable superscript citations.
+  // Safely splits on the regex and rebuilds as React nodes (no dangerouslySetInnerHTML).
+  const renderAnswerWithCitations = (answerText, citations) => {
+    if (!answerText) return null
+    if (!Array.isArray(citations) || citations.length === 0) {
+      return <>{answerText}</>
+    }
+    const citationMap = new Map(citations.map(c => [String(c.marker), c]))
+    const parts = answerText.split(/(\[\d+\])/g)
+    return parts.map((part, idx) => {
+      const match = part.match(/^\[(\d+)\]$/)
+      if (!match) return <span key={idx}>{part}</span>
+      const marker = match[1]
+      const cite = citationMap.get(marker)
+      if (!cite) return <span key={idx}>{part}</span>
+      const tooltipParts = [cite.doc_title, cite.heading, cite.page != null ? `p. ${cite.page}` : null].filter(Boolean)
+      const tooltip = tooltipParts.join(' — ')
+      return (
+        <a
+          key={idx}
+          href={cite.dspace_url || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="citation-link"
+          title={tooltip}
+        >
+          <sup>[{marker}]</sup>
+        </a>
+      )
+    })
+  }
+
   const renderResultItem = (source, index) => {
     const matchedFaculty = getMatchedFaculty(source)
     const isExpanded = false // TODO: per-item state if needed, simpler to rely on global for now or just standard details
@@ -771,6 +1232,15 @@ function App() {
             >
               {expandedMetadata.has(source.uuid) ? '📜 Hide Metadata' : '📝 See More'}
             </button>
+            {source.uuid && (
+              <button
+                className="see-more-btn"
+                onClick={() => setOpenPaperId(`paper:dspace:${source.uuid}`)}
+                title="Open merged sources view (DSpace + OpenAlex) and edit"
+              >
+                🔗 Details & sources
+              </button>
+            )}
           </div>
 
           {/* Expandable Full Metadata Panel */}
@@ -844,49 +1314,205 @@ function App() {
           {toast.message}
         </div>
       )}
-      <header className="header">
-        <div className="header-content">
-          <h1>🌪️ ISU Research Search</h1>
-          <p>AI-Powered Search for Iowa State Computer Science Research</p>
-          <nav className="nav">
-            <button className={activeTab === 'search' ? 'active' : ''} onClick={() => setActiveTab('search')}>
-              🔍 Search
-            </button>
-            <button className={activeTab === 'faculty' ? 'active' : ''} onClick={() => setActiveTab('faculty')}>
-              👥 Faculty
-            </button>
-            <button className={activeTab === 'topics' ? 'active' : ''} onClick={() => setActiveTab('topics')}>
-              🗺️ Topics
-            </button>
-            <button className={activeTab === 'admin' ? 'active' : ''} onClick={() => setActiveTab('admin')}>
-              ⚙️ Admin
-            </button>
-          </nav>
+      <header className="site-header">
+        <div className="site-header-top">
+          <div className="site-brand">
+            <span className="site-brand-mark">Iowa State University</span>
+            <span className="site-brand-sub">Digital Repository · Research Search</span>
+          </div>
+          <div className="site-header-right">
+            <label className="dev-toggle" title="Show technical details for the current session">
+              <input
+                type="checkbox"
+                checked={devMode}
+                onChange={(e) => setDevMode(e.target.checked)}
+              />
+              <span>Developer mode</span>
+            </label>
+            {currentUser ? (
+              <div className="user-chip">
+                {currentUser.picture && (
+                  <img src={currentUser.picture} alt="" className="user-chip-avatar" />
+                )}
+                <span className="user-chip-name">{currentUser.name || currentUser.email}</span>
+                {currentUser.role === 'admin' && <span className="user-chip-role">admin</span>}
+                <button type="button" className="user-chip-signout" onClick={handleSignOut}>
+                  Sign out
+                </button>
+              </div>
+            ) : (
+              <div className="signin-block">
+                {GOOGLE_OAUTH_CLIENT_ID
+                  ? <div id="google-signin-btn" />
+                  : <span className="signin-disabled">Sign-in not configured</span>}
+                {authError && <span className="signin-error">{authError}</span>}
+              </div>
+            )}
+          </div>
         </div>
+        <nav className="site-nav">
+          <button className={activeTab === 'search' ? 'active' : ''} onClick={() => setActiveTab('search')}>
+            Search
+          </button>
+          <button className={activeTab === 'faculty' ? 'active' : ''} onClick={() => setActiveTab('faculty')}>
+            Faculty
+          </button>
+          <button className={activeTab === 'topics' ? 'active' : ''} onClick={() => setActiveTab('topics')}>
+            Topics
+          </button>
+          <button className={activeTab === 'network' ? 'active' : ''} onClick={() => setActiveTab('network')}>
+            Network
+          </button>
+          <button className={activeTab === 'kg' ? 'active' : ''} onClick={() => setActiveTab('kg')}>
+            Knowledge Graph
+          </button>
+          {currentUser?.role === 'admin' && (
+            <button className={activeTab === 'admin' ? 'active' : ''} onClick={() => setActiveTab('admin')}>
+              Admin
+            </button>
+          )}
+        </nav>
       </header>
 
       <div className="main-container">
         <main className="main-content">
           {activeTab === 'search' && (
             <div className="search-page">
-              <form onSubmit={handleSearch} className="search-form">
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search research papers, theses, dissertations..."
-                  className="search-input"
-                />
-                <button type="submit" disabled={loading} className="search-btn">
-                  {loading ? '⏳' : '🔍'} Search
-                </button>
-              </form>
+              <div className="search-shell">
+                <form id="main-search-form" onSubmit={handleSearch} className="search-form">
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onFocus={() => suggestions && setSuggestionsOpen(true)}
+                    onBlur={() => setTimeout(() => setSuggestionsOpen(false), 150)}
+                    onKeyDown={handleSearchInputKeyDown}
+                    placeholder="Search research papers, theses, dissertations..."
+                    className="search-input"
+                    autoComplete="off"
+                  />
+                  <button type="submit" disabled={loading} className="search-btn">
+                    {loading ? 'Loading…' : 'Search'}
+                  </button>
+                </form>
+
+                {suggestionsOpen && flatSuggestions.length > 0 && (
+                  <div className="suggest-dropdown" role="listbox">
+                    {suggestions.faculty?.length > 0 && (
+                      <div className="suggest-group">
+                        <div className="suggest-group-label">Faculty</div>
+                        {suggestions.faculty.map((f, i) => {
+                          const flatIdx = flatSuggestions.findIndex(s => s.kind === 'faculty' && s.item.id === f.id)
+                          return (
+                            <div
+                              key={`fac-${f.id}`}
+                              className={`suggest-item ${suggestionFocus === flatIdx ? 'focused' : ''}`}
+                              onMouseDown={(e) => { e.preventDefault(); pickSuggestion(flatSuggestions[flatIdx]) }}
+                              role="option"
+                            >
+                              <span className="suggest-icon">FAC</span>
+                              <div className="suggest-body">
+                                <div className="suggest-label">{f.name}</div>
+                                <div className="suggest-sub">{f.department || ''}{f.rank ? ` · ${f.rank}` : ''}</div>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                    {suggestions.authors?.length > 0 && (
+                      <div className="suggest-group">
+                        <div className="suggest-group-label">Authors in DSpace</div>
+                        {suggestions.authors.map((a, i) => {
+                          const flatIdx = flatSuggestions.findIndex(s => s.kind === 'author' && s.value === a.name)
+                          return (
+                            <div
+                              key={`auth-${a.name}`}
+                              className={`suggest-item ${suggestionFocus === flatIdx ? 'focused' : ''}`}
+                              onMouseDown={(e) => { e.preventDefault(); pickSuggestion(flatSuggestions[flatIdx]) }}
+                              role="option"
+                            >
+                              <span className="suggest-icon">AUT</span>
+                              <div className="suggest-body">
+                                <div className="suggest-label">{a.name}</div>
+                                <div className="suggest-sub">{a.papers} papers</div>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                    {suggestions.papers?.length > 0 && (
+                      <div className="suggest-group">
+                        <div className="suggest-group-label">Papers</div>
+                        {suggestions.papers.map((p, i) => {
+                          const flatIdx = flatSuggestions.findIndex(s => s.kind === 'paper' && s.item.uuid === p.uuid)
+                          return (
+                            <div
+                              key={`pap-${p.uuid}`}
+                              className={`suggest-item ${suggestionFocus === flatIdx ? 'focused' : ''}`}
+                              onMouseDown={(e) => { e.preventDefault(); pickSuggestion(flatSuggestions[flatIdx]) }}
+                              role="option"
+                            >
+                              <span className="suggest-icon">DOC</span>
+                              <div className="suggest-body">
+                                <div className="suggest-label">{p.title}</div>
+                                <div className="suggest-sub">{p.year}</div>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                    {suggestions.departments?.length > 0 && (
+                      <div className="suggest-group">
+                        <div className="suggest-group-label">Departments</div>
+                        {suggestions.departments.map((d, i) => {
+                          const flatIdx = flatSuggestions.findIndex(s => s.kind === 'department' && s.value === d.name)
+                          return (
+                            <div
+                              key={`dep-${d.name}`}
+                              className={`suggest-item ${suggestionFocus === flatIdx ? 'focused' : ''}`}
+                              onMouseDown={(e) => { e.preventDefault(); pickSuggestion(flatSuggestions[flatIdx]) }}
+                              role="option"
+                            >
+                              <span className="suggest-icon">DPT</span>
+                              <div className="suggest-body">
+                                <div className="suggest-label">{d.name}</div>
+                                <div className="suggest-sub">{d.college || ''}</div>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
 
               {stats && (
                 <div className="stats-bar">
-                  <span>📚 {stats.indexed_documents || 0} indexed documents</span>
-                  <span>👥 {stats.faculty_count || 0} faculty</span>
-                  <span>🤖 Gemini RAG: {stats.gemini_enabled ? '✅' : '❌'}</span>
+                  <span>{(stats.indexed_documents || 0).toLocaleString()} indexed passages</span>
+                  <span>{(stats.faculty_count || 0).toLocaleString()} faculty</span>
+                  {devMode && (
+                    <>
+                      <span>RAG: {stats.rag_ready ? 'ready' : 'offline'}</span>
+                      <span>Vertex: {stats.gemini_enabled ? 'on' : 'off'}</span>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {devMode && results && (
+                <div className="dev-panel">
+                  <strong>Developer mode</strong>
+                  <span>round-trip {searchDuration ?? '–'}ms</span>
+                  <span>backend {results.duration_ms ?? '–'}ms</span>
+                  <span>mode {results.search_mode}</span>
+                  <span>files {results.files_searched}</span>
+                  <span>citations {results.citations?.length || 0}</span>
+                  <span>found_faculty {results.found_faculty?.length || 0}</span>
+                  <span>related_faculty {results.related_faculty?.length || 0}</span>
                 </div>
               )}
 
@@ -895,7 +1521,7 @@ function App() {
                 <>
                   {/* Regular Search Suggestions */}
                   <div className="search-suggestions">
-                    <p className="suggestions-label">🔍 Try searching for:</p>
+                    <p className="suggestions-label">Try searching for</p>
                     <div className="suggestions-chips">
                       {[
                         'Machine Learning',
@@ -921,7 +1547,7 @@ function App() {
 
                   {/* Cross-Discipline Search Suggestions */}
                   <div className="search-suggestions cross-discipline">
-                    <p className="suggestions-label">🔀 Or, try cross-discipline search:</p>
+                    <p className="suggestions-label">Cross-discipline ideas</p>
                     <div className="suggestions-chips">
                       {[
                         'Political Science and Deep Learning',
@@ -952,14 +1578,104 @@ function App() {
                   {results.answer && (
                     <div className="ai-answer">
                       <h3>🤖 AI Answer</h3>
-                      <div className="answer-content">{results.answer}</div>
+                      <div className="answer-content">
+                        {Array.isArray(results.citations) && results.citations.length > 0
+                          ? renderAnswerWithCitations(results.answer, results.citations)
+                          : results.answer}
+                      </div>
                       <div className="search-meta">
                         Mode: {results.search_mode} | Files searched: {results.files_searched} | Results: {results.total_results}
                       </div>
                     </div>
                   )}
 
-                  {results.sources && results.sources.length > 0 && (
+                  {/* NEW: citations-driven sources list (RAG backend). Falls back below to legacy sources. */}
+                  {Array.isArray(results.citations) && results.citations.length > 0 && (
+                    <div className="sources citations-block">
+                      <div className="results-header">
+                        <h3>📚 Citations ({results.citations.length})</h3>
+                      </div>
+                      <ol className="citations-list">
+                        {results.citations.map((cite, idx) => (
+                          <li key={`${cite.uuid || 'c'}-${cite.marker || idx}`} className="citation-item">
+                            <span className="citation-marker">[{cite.marker ?? idx + 1}]</span>
+                            <div className="citation-body">
+                              <div className="citation-title">
+                                <a
+                                  href={cite.dspace_url || '#'}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {cite.doc_title || 'Untitled document'}
+                                </a>
+                              </div>
+                              <div className="citation-meta">
+                                {(() => {
+                                  const list = Array.isArray(cite.authors_list)
+                                    ? cite.authors_list
+                                    : (typeof cite.authors === 'string'
+                                        ? cite.authors.split(/[,;]/).map(s => s.trim()).filter(Boolean)
+                                        : (cite.authors || []))
+                                  return list.join(', ')
+                                })()}
+                                {cite.year ? ` • ${cite.year}` : ''}
+                                {cite.type ? ` • ${cite.type}` : ''}
+                              </div>
+                              {Array.isArray(cite.advisors) && cite.advisors.length > 0 && (
+                                <div className="citation-advisors">
+                                  Major Professor: {cite.advisors.join(', ')}
+                                </div>
+                              )}
+                              <div className="citation-locator">
+                                {cite.heading ? <span className="citation-heading">§ {cite.heading}</span> : null}
+                                {cite.page != null ? <span className="citation-page">p. {cite.page}</span> : null}
+                                {typeof cite.score === 'number' ? <span className="citation-score">score {cite.score.toFixed(2)}</span> : null}
+                              </div>
+                              {cite.snippet && (
+                                <p className="citation-snippet"><em>"{cite.snippet}"</em></p>
+                              )}
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
+
+                  {/* NEW: Retrieved chunks transparency panel (for verifying model isn't hallucinating) */}
+                  {Array.isArray(results.retrieved_chunks) && results.retrieved_chunks.length > 0 && (
+                    <div className="retrieved-chunks-panel">
+                      <button
+                        type="button"
+                        className="retrieved-chunks-toggle"
+                        onClick={() => setShowRetrievedChunks(v => !v)}
+                        aria-expanded={showRetrievedChunks}
+                      >
+                        {showRetrievedChunks ? '▼' : '▶'} 📄 Retrieved chunks ({results.retrieved_chunks.length})
+                      </button>
+                      {showRetrievedChunks && (
+                        <ul className="retrieved-chunks-list">
+                          {results.retrieved_chunks.map((chunk, idx) => (
+                            <li key={`rc-${chunk.uuid || idx}-${idx}`} className="retrieved-chunk">
+                              <div className="chunk-header">
+                                <span className="chunk-title">{chunk.doc_title || 'Untitled'}</span>
+                                {typeof chunk.score === 'number' && (
+                                  <span className="chunk-score">score {chunk.score.toFixed(3)}</span>
+                                )}
+                              </div>
+                              <div className="chunk-locator">
+                                {chunk.heading ? <span>§ {chunk.heading}</span> : null}
+                                {chunk.page != null ? <span>p. {chunk.page}</span> : null}
+                              </div>
+                              {chunk.snippet && <p className="chunk-snippet">{chunk.snippet}</p>}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Legacy sources list: shown when backend returns old shape (no citations[]) */}
+                  {!Array.isArray(results.citations) && results.sources && results.sources.length > 0 && (
                     <div className="sources">
                       <div className="results-header">
                         <h3>📄 Sources ({results.sources.length})</h3>
@@ -1076,7 +1792,7 @@ function App() {
 
               {/* Filter Tabs */}
               <div className="people-filter-tabs" style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-                {['all', 'department', 'college', 'area', 'topic'].map(mode => (
+                {['all', 'department', 'college', 'center', 'area', 'topic'].map(mode => (
                   <button
                     key={mode}
                     className={`filter-tab ${peopleFilterMode === mode ? 'active' : ''}`}
@@ -1095,7 +1811,8 @@ function App() {
                     {mode === 'all' ? '👥 All' :
                       mode === 'department' ? '🏢 Departments' :
                         mode === 'college' ? '🎓 Colleges' :
-                          mode === 'area' ? '🔬 Research Areas' : '🏷️ Topics'}
+                          mode === 'center' ? '🏛️ Centers' :
+                            mode === 'area' ? '🔬 Research Areas' : '🏷️ Topics'}
                   </button>
                 ))}
               </div>
@@ -1109,8 +1826,26 @@ function App() {
                       values = [...new Set(facultyData.map(f => f.department).filter(Boolean))].sort();
                     } else if (peopleFilterMode === 'college') {
                       values = [...new Set(facultyData.map(f => f.college).filter(Boolean))].sort();
+                    } else if (peopleFilterMode === 'center') {
+                      values = [...new Set(facultyData.flatMap(f => f.affiliations || []))].sort();
                     } else if (peopleFilterMode === 'area') {
-                      values = [...new Set(facultyData.flatMap(f => f.research_areas || []))].sort();
+                      // `research_areas` is only populated for ~34 CS faculty in the
+                      // current faculty.json, so using only its distinct values would
+                      // hide the rest of the university. Instead, expose the same
+                      // fixed topic buckets we use on the Topics tile, and rely on
+                      // the keyword-substring matcher below to pull in faculty from
+                      // other departments whose `research_interests` mention AI/ML,
+                      // security, bioinformatics, etc.
+                      values = [
+                        'AI and Machine Learning',
+                        'Software Engineering',
+                        'Systems and Networking',
+                        'Theory',
+                        'Robotics',
+                        'Security',
+                        'Human-Computer Interaction',
+                        'Bioinformatics',
+                      ];
                     } else if (peopleFilterMode === 'topic') {
                       values = [...new Set(facultyData.flatMap(f => f.research_interests || []))].sort();
                     }
@@ -1150,8 +1885,10 @@ function App() {
                       filtered = filtered.filter(f => f.department === selectedFilterValue);
                     } else if (peopleFilterMode === 'college') {
                       filtered = filtered.filter(f => f.college === selectedFilterValue);
+                    } else if (peopleFilterMode === 'center') {
+                      filtered = filtered.filter(f => (f.affiliations || []).includes(selectedFilterValue));
                     } else if (peopleFilterMode === 'area') {
-                      filtered = filtered.filter(f => (f.research_areas || []).includes(selectedFilterValue));
+                      filtered = filtered.filter(f => facultyMatchesResearchArea(f, selectedFilterValue));
                     } else if (peopleFilterMode === 'topic') {
                       filtered = filtered.filter(f => (f.research_interests || []).includes(selectedFilterValue));
                     }
@@ -1172,23 +1909,50 @@ function App() {
                       filtered = filtered.filter(f => f.department === selectedFilterValue);
                     } else if (peopleFilterMode === 'college') {
                       filtered = filtered.filter(f => f.college === selectedFilterValue);
+                    } else if (peopleFilterMode === 'center') {
+                      filtered = filtered.filter(f => (f.affiliations || []).includes(selectedFilterValue));
                     } else if (peopleFilterMode === 'area') {
-                      filtered = filtered.filter(f => (f.research_areas || []).includes(selectedFilterValue));
+                      filtered = filtered.filter(f => facultyMatchesResearchArea(f, selectedFilterValue));
                     } else if (peopleFilterMode === 'topic') {
                       filtered = filtered.filter(f => (f.research_interests || []).includes(selectedFilterValue));
                     }
                   }
-                  return filtered.map(f => (
+                  return filtered.map(f => {
+                    // Click handler shared by photo + name. Same behavior as
+                    // the green publication-count badge: drop the faculty
+                    // name into the search box and switch to the Search tab.
+                    const goToSearchByFaculty = () => {
+                      setQuery(f.name)
+                      setActiveTab('search')
+                      // submit on next tick so the search-form picks up the new value
+                      setTimeout(() => {
+                        const form = document.getElementById('main-search-form')
+                        if (form) form.requestSubmit()
+                      }, 0)
+                    }
+                    return (
                     <div key={f.id} className="faculty-card" style={{ position: 'relative' }}>
-                      <img src={f.photo_url} alt={f.name} className="card-photo"
-                        onError={(e) => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/100?text=Photo' }} />
-                      <h3>{f.name}</h3>
+                      <img
+                        src={f.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff&size=100`}
+                        alt={f.name}
+                        className="card-photo card-photo-clickable"
+                        title={`Search for ${f.name}`}
+                        onClick={goToSearchByFaculty}
+                        onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff&size=100` }}
+                      />
+                      <h3
+                        className="card-name-clickable"
+                        title={`Search for ${f.name}`}
+                        onClick={goToSearchByFaculty}
+                      >
+                        {f.name}
+                      </h3>
 
                       {/* Document Count Badge */}
                       {facultyDocCounts[f.id] > 0 && (
                         <button
                           className="doc-count-badge"
-                          onClick={() => { setQuery(f.name); setActiveTab('search'); }}
+                          onClick={goToSearchByFaculty}
                           title={`Search for documents by ${f.name}`}
                           style={{
                             position: 'absolute',
@@ -1214,8 +1978,27 @@ function App() {
 
                       <div className="rank">{f.rank}</div>
                       {f.department && <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '0.5rem' }}>{f.department}</div>}
+                      {Array.isArray(f.affiliations) && f.affiliations.length > 0 && (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem', marginBottom: '0.5rem' }}>
+                          {f.affiliations.map((aff, i) => (
+                            <span
+                              key={i}
+                              style={{
+                                background: '#fffbeb',
+                                color: '#92400e',
+                                padding: '0.15rem 0.5rem',
+                                borderRadius: '10px',
+                                fontSize: '0.7rem',
+                                border: '1px solid #fde68a',
+                              }}
+                            >
+                              {aff}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                       <div className="interests">
-                        {(f.research_interests || []).slice(0, 3).map((int, i) => (
+                        {cleanDisplayInterests(f.research_interests).slice(0, 3).map((int, i) => (
                           <span
                             key={i}
                             className="interest-tag"
@@ -1226,11 +2009,34 @@ function App() {
                           </span>
                         ))}
                       </div>
-                      <a href={f.profile_url} target="_blank" rel="noopener noreferrer" className="profile-link">
-                        View Profile →
-                      </a>
+                      <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.4rem', flexWrap: 'wrap' }}>
+                        <button
+                          type="button"
+                          onClick={() => setOpenFacultyId(f.id)}
+                          className="profile-link"
+                          style={{
+                            background: 'linear-gradient(135deg, #c8102e, #991b1b)',
+                            color: 'white',
+                            border: 'none',
+                            cursor: 'pointer',
+                            padding: '0.35rem 0.7rem',
+                            borderRadius: '6px',
+                            fontSize: '0.78rem',
+                            fontWeight: 600,
+                          }}
+                          title="Show merged DSpace + OpenAlex publications"
+                        >
+                          📚 Publications
+                        </button>
+                        {f.profile_url && (
+                          <a href={f.profile_url} target="_blank" rel="noopener noreferrer" className="profile-link">
+                            View Profile →
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  ));
+                    )
+                  });
                 })()}
               </div>
             </div>
@@ -1351,19 +2157,152 @@ function App() {
             </div>
           )}
 
-          {activeTab === 'admin' && (
+          {activeTab === 'network' && (
+            <NetworkPage apiUrl={API_URL} />
+          )}
+
+          {activeTab === 'kg' && (
+            <KnowledgeGraphPage onOpenPaper={(canonicalId) => setOpenPaperId(canonicalId)} />
+          )}
+
+          {activeTab === 'admin' && currentUser?.role !== 'admin' && (
             <div className="admin-page">
-              <h1>⚙️ System Administration</h1>
+              <div className="admin-section">
+                <h2>Admin access required</h2>
+                <p>Sign in with an admin account to view this page.</p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'admin' && currentUser?.role === 'admin' && (
+            <div className="admin-page">
+              <h1>System Administration</h1>
 
               <div className="admin-tabs">
+                <button className={`admin-tab-btn ${adminSubTab === 'system' ? 'active' : ''}`} onClick={() => setAdminSubTab('system')}>System</button>
+                <button className={`admin-tab-btn ${adminSubTab === 'users' ? 'active' : ''}`} onClick={() => setAdminSubTab('users')}>Users</button>
+                <button className={`admin-tab-btn ${adminSubTab === 'searches' ? 'active' : ''}`} onClick={() => setAdminSubTab('searches')}>Recent Searches</button>
                 <button className={`admin-tab-btn ${adminSubTab === 'config' ? 'active' : ''}`} onClick={() => setAdminSubTab('config')}>Configuration</button>
                 <button className={`admin-tab-btn ${adminSubTab === 'groups' ? 'active' : ''}`} onClick={() => setAdminSubTab('groups')}>Group Manager</button>
                 <button className={`admin-tab-btn ${adminSubTab === 'faculty' ? 'active' : ''}`} onClick={() => setAdminSubTab('faculty')}>Faculty Manager</button>
                 <button className={`admin-tab-btn ${adminSubTab === 'docs' ? 'active' : ''}`} onClick={() => setAdminSubTab('docs')}>Document Manager</button>
                 <button className={`admin-tab-btn ${adminSubTab === 'mismatches' ? 'active' : ''}`} onClick={() => setAdminSubTab('mismatches')}>
-                  🚩 Mismatches {flaggedMismatches.filter(m => m.status === 'pending').length > 0 && <span className="badge">{flaggedMismatches.filter(m => m.status === 'pending').length}</span>}
+                  Mismatches {flaggedMismatches.filter(m => m.status === 'pending').length > 0 && <span className="badge">{flaggedMismatches.filter(m => m.status === 'pending').length}</span>}
+                </button>
+                <button className={`admin-tab-btn ${adminSubTab === 'dept-conflicts' ? 'active' : ''}`} onClick={() => { setAdminSubTab('dept-conflicts'); if (!deptConflicts) fetchDeptConflicts() }}>
+                  Dept Conflicts {deptConflicts?.stats?.conflicts_found > 0 && <span className="badge">{deptConflicts.stats.conflicts_found}</span>}
                 </button>
               </div>
+
+              {adminSubTab === 'system' && (
+                <div className="admin-section">
+                  <h2>System telemetry</h2>
+                  {!adminSystemInfo && <p>Loading…</p>}
+                  {adminSystemInfo && (
+                    <>
+                      <div className="admin-stat-grid">
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Backend version</div>
+                          <div className="stat-card-value">{adminSystemInfo.backend.version}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">RAG ready</div>
+                          <div className="stat-card-value">{adminSystemInfo.backend.rag_ready ? 'yes' : 'no'}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Embedding backend</div>
+                          <div className="stat-card-value">{adminSystemInfo.backend.embedding_backend}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Faculty embedded</div>
+                          <div className="stat-card-value">{adminSystemInfo.backend.embedding_count}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Qdrant collection</div>
+                          <div className="stat-card-value">{adminSystemInfo.qdrant.collection}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Qdrant points</div>
+                          <div className="stat-card-value">{adminSystemInfo.qdrant.points.toLocaleString()}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Faculty (total)</div>
+                          <div className="stat-card-value">{adminSystemInfo.data.faculty_total.toLocaleString()}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Users</div>
+                          <div className="stat-card-value">{adminSystemInfo.auth.user_count}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Searches (24h)</div>
+                          <div className="stat-card-value">{adminSystemInfo.auth.searches_last_24h}</div>
+                        </div>
+                      </div>
+                      <button className="btn-secondary" onClick={fetchAdminDashboard}>Refresh</button>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {adminSubTab === 'users' && (
+                <div className="admin-section">
+                  <h2>Users ({adminUsersList.length})</h2>
+                  <table className="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Created</th>
+                        <th>Last login</th>
+                        <th>Searches</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {adminUsersList.map(u => (
+                        <tr key={u.id}>
+                          <td>{u.email}</td>
+                          <td>{u.name || '–'}</td>
+                          <td>{u.role}</td>
+                          <td>{u.created_at?.replace('T', ' ').slice(0, 16)}</td>
+                          <td>{u.last_login ? u.last_login.replace('T', ' ').slice(0, 16) : '–'}</td>
+                          <td>{u.search_count}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {adminSubTab === 'searches' && (
+                <div className="admin-section">
+                  <h2>Recent searches ({adminSearchesList.length})</h2>
+                  <table className="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>User</th>
+                        <th>Query</th>
+                        <th>Mode</th>
+                        <th>Duration</th>
+                        <th>Results</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {adminSearchesList.map(s => (
+                        <tr key={s.id}>
+                          <td>{s.timestamp?.replace('T', ' ').slice(0, 19)}</td>
+                          <td>{s.user_email || <em>anon</em>}</td>
+                          <td>{s.query}</td>
+                          <td>{s.mode || '–'}</td>
+                          <td>{s.duration_ms} ms</td>
+                          <td>{s.result_count}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
 
               {/* === Configuration Tab === */}
               {adminSubTab === 'config' && (
@@ -2161,6 +3100,230 @@ function App() {
                 </div>
               )}
 
+              {adminSubTab === 'dept-conflicts' && (
+                <div className="admin-section full-width">
+                  <div className="modal-header">
+                    <h2>Dept Conflicts</h2>
+                    <button className="btn-secondary" onClick={fetchDeptConflicts} style={{ marginLeft: 'auto' }}>Refresh</button>
+                  </div>
+
+                  {deptConflictsLoading && <p style={{ textAlign: 'center', padding: '2rem', color: '#888' }}>Loading conflicts...</p>}
+
+                  {!deptConflictsLoading && deptConflicts && (
+                    <>
+                      {/* Stats Summary */}
+                      <div className="admin-stat-grid" style={{ marginBottom: '1.5rem' }}>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Items Enriched</div>
+                          <div className="stat-card-value">{deptConflicts.stats?.items_enriched ?? '---'}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Conflicts Found</div>
+                          <div className="stat-card-value" style={{ color: '#C8102E' }}>{deptConflicts.stats?.conflicts_found ?? '---'}</div>
+                        </div>
+                        <div className="stat-card-flat">
+                          <div className="stat-card-label">Faculty Conflicts</div>
+                          <div className="stat-card-value" style={{ color: '#C8102E' }}>{deptConflicts.stats?.faculty_conflicts ?? '---'}</div>
+                        </div>
+                      </div>
+
+                      {/* Toggle between Item and Faculty conflicts */}
+                      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+                        <button
+                          className={`admin-tab-btn ${deptConflictsView === 'items' ? 'active' : ''}`}
+                          onClick={() => setDeptConflictsView('items')}
+                        >
+                          Item Conflicts ({deptConflicts.item_conflicts?.length ?? 0})
+                        </button>
+                        <button
+                          className={`admin-tab-btn ${deptConflictsView === 'faculty' ? 'active' : ''}`}
+                          onClick={() => setDeptConflictsView('faculty')}
+                        >
+                          Faculty Conflicts ({deptConflicts.faculty_conflicts?.length ?? 0})
+                        </button>
+                      </div>
+
+                      {/* ── Item Conflicts ── */}
+                      {deptConflictsView === 'items' && (
+                        <div>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                            <span style={{ color: '#666', fontSize: '0.9rem' }}>
+                              {deptConflicts.item_conflicts?.filter(c => c.status === 'pending').length ?? 0} pending
+                            </span>
+                            <button
+                              className="btn-primary"
+                              style={{ background: '#C8102E', color: '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', cursor: 'pointer' }}
+                              onClick={bulkResolveItemConflicts}
+                            >
+                              Auto-resolve all pending
+                            </button>
+                          </div>
+
+                          {(!deptConflicts.item_conflicts || deptConflicts.item_conflicts.length === 0) ? (
+                            <p style={{ color: '#888', textAlign: 'center', padding: '2rem' }}>No item conflicts found.</p>
+                          ) : (
+                            <div style={{ overflowX: 'auto' }}>
+                              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+                                <thead>
+                                  <tr style={{ borderBottom: '2px solid #C8102E', textAlign: 'left' }}>
+                                    <th style={{ padding: '0.5rem' }}>Title</th>
+                                    <th style={{ padding: '0.5rem' }}>Authors</th>
+                                    <th style={{ padding: '0.5rem' }}>Departments Found</th>
+                                    <th style={{ padding: '0.5rem' }}>Current</th>
+                                    <th style={{ padding: '0.5rem' }}>Status</th>
+                                    <th style={{ padding: '0.5rem' }}>Resolve</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {deptConflicts.item_conflicts.map((item, idx) => (
+                                    <tr key={item.item_uuid || idx} style={{ borderBottom: '1px solid #eee' }}>
+                                      <td style={{ padding: '0.5rem', maxWidth: '250px' }} title={item.title}>
+                                        {item.title?.length > 60 ? item.title.substring(0, 60) + '...' : item.title}
+                                      </td>
+                                      <td style={{ padding: '0.5rem', maxWidth: '150px', color: '#555' }}>
+                                        {item.authors || '---'}
+                                      </td>
+                                      <td style={{ padding: '0.5rem' }}>
+                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                                          {(item.departments || []).map(dept => (
+                                            <button
+                                              key={dept}
+                                              onClick={() => resolveItemConflict(item.item_uuid, dept)}
+                                              style={{
+                                                padding: '2px 8px', borderRadius: '12px', border: '1px solid #C8102E',
+                                                background: item.current_department === dept ? '#C8102E' : '#fff',
+                                                color: item.current_department === dept ? '#fff' : '#C8102E',
+                                                cursor: 'pointer', fontSize: '0.8rem'
+                                              }}
+                                            >
+                                              {dept}
+                                            </button>
+                                          ))}
+                                        </div>
+                                      </td>
+                                      <td style={{ padding: '0.5rem', color: '#333', fontWeight: 500 }}>
+                                        {item.current_department || '---'}
+                                      </td>
+                                      <td style={{ padding: '0.5rem' }}>
+                                        <span style={{
+                                          padding: '2px 8px', borderRadius: '12px', fontSize: '0.75rem',
+                                          background: item.status === 'resolved' ? '#dcfce7' : '#fef3c7',
+                                          color: item.status === 'resolved' ? '#16a34a' : '#92400e'
+                                        }}>
+                                          {item.status || 'pending'}
+                                        </span>
+                                      </td>
+                                      <td style={{ padding: '0.5rem' }}>
+                                        <select
+                                          style={{ fontSize: '0.8rem', padding: '2px 4px', borderRadius: '4px', border: '1px solid #ccc' }}
+                                          value={item.current_department || ''}
+                                          onChange={(e) => { if (e.target.value) resolveItemConflict(item.item_uuid, e.target.value) }}
+                                        >
+                                          <option value="">-- pick --</option>
+                                          {(item.departments || []).map(dept => (
+                                            <option key={dept} value={dept}>{dept}</option>
+                                          ))}
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* ── Faculty Conflicts ── */}
+                      {deptConflictsView === 'faculty' && (
+                        <div>
+                          {(!deptConflicts.faculty_conflicts || deptConflicts.faculty_conflicts.length === 0) ? (
+                            <p style={{ color: '#888', textAlign: 'center', padding: '2rem' }}>No faculty conflicts found.</p>
+                          ) : (
+                            <div style={{ overflowX: 'auto' }}>
+                              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+                                <thead>
+                                  <tr style={{ borderBottom: '2px solid #C8102E', textAlign: 'left' }}>
+                                    <th style={{ padding: '0.5rem' }}>Name</th>
+                                    <th style={{ padding: '0.5rem' }}>Primary Department</th>
+                                    <th style={{ padding: '0.5rem' }}>Affiliations</th>
+                                    <th style={{ padding: '0.5rem' }}>Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {deptConflicts.faculty_conflicts.map((fac, idx) => {
+                                    const removeSet = facultyRemoveSelections[fac.faculty_id] || new Set()
+                                    return (
+                                      <tr key={fac.faculty_id || idx} style={{ borderBottom: '1px solid #eee' }}>
+                                        <td style={{ padding: '0.5rem', fontWeight: 500 }}>{fac.name}</td>
+                                        <td style={{ padding: '0.5rem', color: '#555' }}>{fac.primary_department || '---'}</td>
+                                        <td style={{ padding: '0.5rem' }}>
+                                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', alignItems: 'center' }}>
+                                            {(fac.affiliations || []).map(aff => (
+                                              <label key={aff} style={{
+                                                display: 'inline-flex', alignItems: 'center', gap: '3px',
+                                                padding: '2px 8px', borderRadius: '12px', fontSize: '0.8rem',
+                                                background: removeSet.has(aff) ? '#fee2e2' : '#F1BE48',
+                                                color: removeSet.has(aff) ? '#991b1b' : '#333',
+                                                cursor: 'pointer'
+                                              }}>
+                                                <input
+                                                  type="checkbox"
+                                                  checked={removeSet.has(aff)}
+                                                  onChange={() => {
+                                                    setFacultyRemoveSelections(prev => {
+                                                      const next = new Set(prev[fac.faculty_id] || [])
+                                                      if (next.has(aff)) next.delete(aff)
+                                                      else next.add(aff)
+                                                      return { ...prev, [fac.faculty_id]: next }
+                                                    })
+                                                  }}
+                                                  style={{ margin: 0, width: '12px', height: '12px' }}
+                                                />
+                                                {aff}
+                                              </label>
+                                            ))}
+                                          </div>
+                                        </td>
+                                        <td style={{ padding: '0.5rem' }}>
+                                          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                                            <button
+                                              className="btn-secondary"
+                                              style={{ fontSize: '0.75rem', padding: '2px 8px' }}
+                                              onClick={() => resolveFacultyConflict(fac.faculty_id, fac.primary_department, 'keep_all', [])}
+                                            >Keep All</button>
+                                            {removeSet.size > 0 && (
+                                              <button
+                                                style={{
+                                                  fontSize: '0.75rem', padding: '2px 8px', borderRadius: '4px',
+                                                  border: '1px solid #C8102E', background: '#C8102E', color: '#fff', cursor: 'pointer'
+                                                }}
+                                                onClick={() => resolveFacultyConflict(
+                                                  fac.faculty_id, fac.primary_department, 'remove',
+                                                  [...removeSet]
+                                                )}
+                                              >Remove Selected</button>
+                                            )}
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    )
+                                  })}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {!deptConflictsLoading && !deptConflicts && (
+                    <p style={{ color: '#888', textAlign: 'center', padding: '2rem' }}>Click Refresh to load department conflicts.</p>
+                  )}
+                </div>
+              )}
+
             </div>
           )}
 
@@ -2168,12 +3331,72 @@ function App() {
             <div className="topics-page">
               <h2>🗺️ Research Topics</h2>
               <div className="topics-grid">
-                {['AI and Machine Learning', 'Software Engineering', 'Systems and Networking', 'Theory', 'Robotics', 'Security', 'Human-Computer Interaction', 'Bioinformatics'].map(topic => (
-                  <div key={topic} className="topic-card" onClick={() => { setQuery(topic); setActiveTab('search'); }}>
-                    <h3>{topic}</h3>
-                    <p>{facultyData.filter(f => f.group === topic).length} faculty</p>
-                  </div>
-                ))}
+                {(() => {
+                  // Keyword sets for each topic — a faculty is counted in a
+                  // topic if either (a) their `group` field matches exactly,
+                  // or (b) any of their `research_interests` contains one of
+                  // the topic's keywords (case-insensitive substring match).
+                  // This replaces the old strict `group === topic` filter
+                  // which only returned ~7 faculty for 'AI and Machine
+                  // Learning' even though ~20 CS faculty clearly work in
+                  // that space.
+                  const TOPIC_KEYWORDS = {
+                    'AI and Machine Learning': [
+                      'artificial intelligence', 'machine learning', 'deep learning',
+                      'neural network', 'nlp', 'natural language', 'computer vision',
+                      'reinforcement learning', 'graph neural', 'trustworthy ai',
+                      'federated learning', ' ml ', 'medical ai', 'llm',
+                      'large language model', 'generative', 'statistical learning',
+                    ],
+                    'Software Engineering': [
+                      'software engineering', 'software testing', 'formal methods',
+                      'program analysis', 'software design', 'requirements engineering',
+                      'program verification', 'static analysis',
+                    ],
+                    'Systems and Networking': [
+                      'operating system', 'distributed system', 'network', 'cloud computing',
+                      'edge computing', 'iot', 'wireless', 'mobile computing', 'systems',
+                      'parallel computing', 'high-performance', 'computer architecture',
+                    ],
+                    'Theory': [
+                      'theory', 'algorithm', 'complexity', 'discrete math', 'theoretical',
+                      'combinator', 'optimization', 'information theory', 'graph theory',
+                    ],
+                    'Robotics': [
+                      'robotic', 'autonomous', 'motion planning', 'control systems',
+                      'autonomous vehicle', 'self-driving',
+                    ],
+                    'Security': [
+                      'security', 'cryptography', 'privacy', 'authentication',
+                      'cybersecurity', 'network security', 'ml security', 'nlp security',
+                    ],
+                    'Human-Computer Interaction': [
+                      'hci', 'human-computer', 'user experience', 'usability',
+                      'accessibility', 'interaction design', 'visual analytics',
+                      'data visualization',
+                    ],
+                    'Bioinformatics': [
+                      'bioinformatics', 'computational biology', 'genomics',
+                      'proteomics', 'medical ai', 'health informatics',
+                    ],
+                  };
+                  const topics = ['AI and Machine Learning', 'Software Engineering', 'Systems and Networking', 'Theory', 'Robotics', 'Security', 'Human-Computer Interaction', 'Bioinformatics'];
+                  const facultyMatchesTopic = (f, topic) => {
+                    if (f.group === topic) return true;
+                    const kws = TOPIC_KEYWORDS[topic] || [];
+                    const interests = (f.research_interests || []).map(r => ` ${(r || '').toLowerCase()} `);
+                    return interests.some(interest => kws.some(kw => interest.includes(kw)));
+                  };
+                  return topics.map(topic => {
+                    const count = facultyData.filter(f => facultyMatchesTopic(f, topic)).length;
+                    return (
+                      <div key={topic} className="topic-card" onClick={() => { setQuery(topic); setActiveTab('search'); }}>
+                        <h3>{topic}</h3>
+                        <p>{count} faculty</p>
+                      </div>
+                    );
+                  });
+                })()}
               </div>
             </div>
           )}
@@ -2193,20 +3416,29 @@ function App() {
             {/* Section 1: Experts Found (from results) */}
             {results?.found_faculty?.length > 0 && (
               <div className="sidebar-section">
-                <h3>🔍 Experts Found</h3>
+                <h3>Experts Found</h3>
+                <p className="sidebar-hint">
+                  Faculty whose names actually appear as authors or major
+                  professors on the papers returned for your query.
+                </p>
                 <div className="faculty-list">
                   {results.found_faculty.map(f => (
                     <div key={f.id} className="faculty-item" onClick={() => { setQuery(f.name) }}>
                       {showPhotos && (
-                        <img src={f.photo_url} alt={f.name} className="faculty-photo"
-                          onError={(e) => e.target.src = 'https://ui-avatars.com/api/?name=${f.name}&background=random'} />
+                        <img src={f.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff`} alt={f.name} className="faculty-photo"
+                          onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff` }} />
                       )}
                       <div className="faculty-info">
                         <a href={f.profile_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{f.name}</a>
-                        <span className="faculty-rank">{f.rank}</span>
-                        <span className="faculty-interests">
-                          {f.research_interests.slice(0, 2).join(', ')}
-                        </span>
+                        {f.rank && <span className="faculty-rank">{f.rank}</span>}
+                        {f.department && (
+                          <span className="faculty-dept">{f.department}</span>
+                        )}
+                        {cleanDisplayInterests(f.research_interests).length > 0 && (
+                          <span className="faculty-interests">
+                            {cleanDisplayInterests(f.research_interests).slice(0, 2).join(', ')}
+                          </span>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -2214,23 +3446,40 @@ function App() {
               </div>
             )}
 
-            {/* Section 2: Related Experts (from semantic search) */}
+            {/* Section 2: Related Experts (from semantic embedding search) */}
             {results?.related_faculty?.length > 0 && (
               <div className="sidebar-section" style={{ marginTop: '1.5rem', borderTop: '1px solid #eee', paddingTop: '1rem' }}>
-                <h3>💡 Related Experts</h3>
+                <h3>Related Experts</h3>
+                <p className="sidebar-hint">
+                  Faculty who research <em>similar topics</em> to your query
+                  but were not authors on the returned papers. Ranked by
+                  semantic similarity between your query and each professor's
+                  research profile.
+                </p>
                 <div className="faculty-list">
                   {results.related_faculty.map(f => (
                     <div key={f.id} className="faculty-item" onClick={() => { setQuery(f.name) }}>
                       {showPhotos && (
-                        <img src={f.photo_url} alt={f.name} className="faculty-photo"
-                          onError={(e) => e.target.src = 'https://ui-avatars.com/api/?name=${f.name}&background=random'} />
+                        <img src={f.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff`} alt={f.name} className="faculty-photo"
+                          onError={(e) => { e.target.onerror = null; e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(f.name)}&background=C41E3A&color=fff` }} />
                       )}
                       <div className="faculty-info">
                         <a href={f.profile_url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{f.name}</a>
-                        <span className="faculty-rank">{f.rank}</span>
-                        <span className="faculty-interests">
-                          {f.research_interests.slice(0, 2).join(', ')}
-                        </span>
+                        {f.rank && <span className="faculty-rank">{f.rank}</span>}
+                        {f.department && (
+                          <span className="faculty-dept">{f.department}</span>
+                        )}
+                        {cleanDisplayInterests(f.research_interests).length > 0 && (
+                          <span className="faculty-interests">
+                            {cleanDisplayInterests(f.research_interests).slice(0, 2).join(', ')}
+                          </span>
+                        )}
+                        {f._similarity && (
+                          <div className="similarity-bar">
+                            <div className="similarity-fill" style={{ width: `${Math.round(f._similarity * 100)}%` }} />
+                            <span className="similarity-label">{Math.round(f._similarity * 100)}% match</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -2241,8 +3490,8 @@ function App() {
             {/* Empty State */}
             {(!results?.found_faculty?.length && !results?.related_faculty?.length) && (
               <div className="sidebar-empty">
-                <p>🔍 Search for a topic to see related faculty experts</p>
-                <p className="hint">Try: "machine learning", "robotics", "software testing"</p>
+                <p>Search for a topic to see related faculty experts.</p>
+                <p className="hint">Try "machine learning", "robotics", or "software testing".</p>
               </div>
             )}
           </aside>
@@ -2250,12 +3499,36 @@ function App() {
       </div>
 
       <footer className="footer">
-        <p>ISU Research Search • by Adisak Sukul</p>
-        <p>Department of Computer Science, Iowa State University</p>
-        <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.7, fontFamily: 'monospace' }}>
-          Local Instance: D:\Dropbox\RAG-DSpace\AntiGravity Gemini 3 Pro\isu-research-search
+        <p>Iowa State University Digital Repository · Research Search</p>
+        <p>by Adisak Sukul · Department of Computer Science, Iowa State University</p>
+        <p style={{ fontSize: '0.78rem', marginTop: '0.4rem', opacity: 0.7 }}>
+          v6.0 · semantic search powered by Vertex AI and Qdrant
         </p>
       </footer>
+
+      {openPaperId && (
+        <PaperDetailModal
+          canonicalId={openPaperId}
+          onClose={() => setOpenPaperId(null)}
+          apiUrl={API_URL}
+          currentUser={currentUser}
+          showToast={showToast}
+        />
+      )}
+
+      {openFacultyId && (
+        <FacultyProfileModal
+          facultyId={openFacultyId}
+          onClose={() => setOpenFacultyId(null)}
+          apiUrl={API_URL}
+          currentUser={currentUser}
+          showToast={showToast}
+          onOpenPaper={(canonicalId) => {
+            setOpenFacultyId(null)
+            setOpenPaperId(canonicalId)
+          }}
+        />
+      )}
     </div>
   )
 }

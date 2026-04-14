@@ -1,0 +1,31 @@
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.venv
+venv
+env
+.env
+.env.*
+*.bak
+*.bak.*
+data/*.bak.*
+data/faculty.json.bak.*
+# Heavy artifacts not used at runtime — chunks live in Qdrant, not the image
+# (keep faculty_embeddings.json, topic_clusters.json, and document_embeddings.json
+# so semantic search and topic clusters are warm on cold start)
+data/chunk_embeddings.parquet
+data/document_chunks/
+archive-versions
+debug_*.py
+test_*.py
+scripts/
+merge_enrichment.py
+expand_index.py
+upsert_to_qdrant.py
+rebuild_courses.py
+.git
+.gitignore
+.vscode
+.idea
+*.log

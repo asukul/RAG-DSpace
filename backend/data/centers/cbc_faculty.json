@@ -1,0 +1,625 @@
+[
+  {
+    "id": "dr-kyaw-joe-aung",
+    "name": "Dr. Kyaw (Joe) Aung",
+    "title": "Member",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and genomics"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-carmen-bain",
+    "name": "Dr. Carmen Bain",
+    "title": "Member",
+    "department": "Department of Sociology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Governance and societal issues"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-diane-bassham",
+    "name": "Dr. Diane Bassham",
+    "title": "Member",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and genomics"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-thomas-baum",
+    "name": "Dr. Thomas Baum",
+    "title": "Member",
+    "department": "Department of Plant Pathology and Microbiology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-madan-bhattacharyya",
+    "name": "Dr. Madan Bhattacharyya",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-alan-culbertson",
+    "name": "Dr. Alan Culbertson",
+    "title": "Member",
+    "department": "Department of Biochemistry, Biophysics and Molecular Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "ABC transporter function"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-liang-dong",
+    "name": "Dr. Liang Dong",
+    "title": "Member",
+    "department": "Department of Electrical and Computer Engineering",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Micro/nano devices"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-shawn-dorius",
+    "name": "Dr. Shawn Dorius",
+    "title": "Member",
+    "department": "Department of Sociology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Demographics and societal issues"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-shui-zhang-fei",
+    "name": "Dr. Shui-zhang Fei",
+    "title": "Member",
+    "department": "Department of Horticulture",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Genetic and molecular tools"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-ursula-frei",
+    "name": "Dr. Ursula Frei",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Genetic and molecular tools"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-hongqing-michelle-guo",
+    "name": "Dr. Hongqing (Michelle) Guo",
+    "title": "Member",
+    "department": "Department of Genetics, Development, and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Genetic and molecular tools"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-jessica-ji",
+    "name": "Dr. Jessica Ji",
+    "title": "Member",
+    "department": "Crop Bioengineering Center",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Plant transformation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-shan-jiang",
+    "name": "Dr. Shan Jiang",
+    "title": "Member",
+    "department": "Department of Materials Science and Engineering",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Novel materials for molecule delivery"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-dior-kelley",
+    "name": "Dr. Dior Kelley",
+    "title": "Advisory council",
+    "department": "Department of Genetics, Development, and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-keunsub-lee",
+    "name": "Dr. Keunsub Lee",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Molecular and genome-editing technology"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-lingling-liu",
+    "name": "Dr. Lingling Liu",
+    "title": "Member",
+    "department": "Department of Agricultural and Biological Engineering",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Novel materials for molecule delivery"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-thomas-lubberstedt",
+    "name": "Dr. Thomas Lubberstedt",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation, and allele optimization"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-w-allen-miller",
+    "name": "Dr. W. Allen Miller",
+    "title": "Member",
+    "department": "Department of Plant Pathology and Microbiology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Cellular and molecular mechanisms"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-siddique-muhammad-aboobucker",
+    "name": "Dr. Siddique Muhammad-Aboobucker",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation and integration"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-david-peters",
+    "name": "Dr. David Peters",
+    "title": "Member",
+    "department": "Department of Sociology and Criminal Justice",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Demographics and societal issues"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-reuben-peters",
+    "name": "Dr. Reuben Peters",
+    "title": "Member",
+    "department": "Department of Biochemistry, Biophysics and Molecular Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation and integration"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-lulu-rodriguez",
+    "name": "Dr. Lulu Rodriguez",
+    "title": "Member",
+    "department": "Seed Science Center",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Risk communication science"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-maria-salas-fernandez",
+    "name": "Dr. Maria Salas-Fernandez",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation, and integration"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-dipali-sashital",
+    "name": "Dr. Dipali Sashital",
+    "title": "Advisory Council",
+    "department": "Roy J. Carver Department of Biochemistry, Biophysics and Molecular Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Understanding the CRISPR immune system"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-patrick-schnable",
+    "name": "Dr. Patrick Schnable",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Crop genome informatics, sequencing technology and trait discovery"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "josh-strable",
+    "name": "Josh Strable",
+    "title": "Member",
+    "department": "Department of Genetics, Development, and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "walter-suza",
+    "name": "Walter Suza",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "erica-unger-wallace",
+    "name": "Erica Unger-Wallace",
+    "title": "Member",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-erik-vollbrecht",
+    "name": "Dr. Erik Vollbrecht",
+    "title": "Advisory Council",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-justin-walley",
+    "name": "Dr. Justin Walley",
+    "title": "Member",
+    "department": "Department of Plant Pathology and Microbiology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-kan-wang",
+    "name": "Dr. Kan Wang",
+    "title": "Co-director",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Genetic transformation and genome editing technology development"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-steve-whitham",
+    "name": "Dr. Steve Whitham",
+    "title": "Advisory Council",
+    "department": "Department of Plant Pathology and Microbiology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-clark-wolf",
+    "name": "Dr. Clark Wolf",
+    "title": "Member",
+    "department": "Department of Philosophy and Religious Studies",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Societal impacts and bioethics"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-marna-d-yandeau-nelson",
+    "name": "Dr. Marna D. Yandeau-Nelson",
+    "title": "Member",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-yanhai-yin",
+    "name": "Dr. Yanhai Yin",
+    "title": "Member",
+    "department": "Department of Genetics, Development and Cell Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery and validation"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-jianming-yu",
+    "name": "Dr. Jianming Yu",
+    "title": "Member",
+    "department": "Department of Agronomy",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation and integration"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  },
+  {
+    "id": "dr-olga-zabotina",
+    "name": "Dr. Olga Zabotina",
+    "title": "Member",
+    "department": "Department of Biochemistry, Biophysics and Molecular Biology",
+    "college": "Crop Bioengineering Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [
+      "Trait discovery, validation and integration"
+    ],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.cropbioengineering.iastate.edu/members",
+    "center_affiliation": "Crop Bioengineering Center"
+  }
+]

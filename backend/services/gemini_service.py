@@ -1,36 +1,53 @@
 """
 Gemini AI Service for semantic search.
 
-Uses Google Gemini for:
+Uses Google Gemini (via Vertex AI) for:
 - Understanding natural language queries
 - Generating answers from document context
 - Suggesting related queries
 """
 
-import google.generativeai as genai
+import os
 from typing import Dict, List, Any, Optional
 import logging
 import json
+import asyncio
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from config import settings
 
 logger = logging.getLogger(__name__)
 
+GCP_PROJECT = os.getenv("GCP_PROJECT", "rag-dspace")
+GCP_LOCATION = os.getenv("GCP_LOCATION", "us-central1")
+GEMINI_GEN_MODEL = os.getenv("GEMINI_GEN_MODEL", "gemini-2.5-flash")
+
 
 class GeminiSearchService:
-    """Service for AI-powered search using Google Gemini."""
-    
+    """Service for AI-powered search using Gemini via Vertex AI."""
+
     def __init__(self):
-        """Initialize Gemini client."""
-        if settings.gemini_api_key:
-            genai.configure(api_key=settings.gemini_api_key)
-            self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        """Initialize the google-genai Vertex client."""
+        self.model_name = GEMINI_GEN_MODEL
+        self.client = None
+        try:
+            from google import genai as google_genai
+            self.client = google_genai.Client(
+                vertexai=True,
+                project=GCP_PROJECT,
+                location=GCP_LOCATION,
+            )
             self.initialized = True
-            logger.info("Gemini service initialized")
-        else:
+            logger.info(
+                f"Gemini (Vertex) service initialized: project={GCP_PROJECT}, "
+                f"location={GCP_LOCATION}, model={self.model_name}"
+            )
+        except ImportError:
             self.initialized = False
-            logger.warning("Gemini API key not configured")
+            logger.warning("google-genai not installed")
+        except Exception as e:
+            self.initialized = False
+            logger.warning(f"Gemini Vertex client init failed: {e}")
     
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
     async def search(
@@ -75,7 +92,11 @@ Instructions:
 
 Answer:"""
 
-            response = self.model.generate_content(prompt)
+            response = await asyncio.to_thread(
+                self.client.models.generate_content,
+                model=self.model_name,
+                contents=prompt,
+            )
             answer = response.text if response.text else "Unable to generate answer."
             
             # Get mock sources for now (in production, these come from Gemini File Search)
@@ -102,8 +123,12 @@ Answer:"""
 Generate 3 related follow-up questions that a researcher might want to ask.
 Return only the questions, one per line, no numbering or bullets."""
 
-            response = self.model.generate_content(prompt)
-            suggestions = response.text.strip().split('\n')
+            response = await asyncio.to_thread(
+                self.client.models.generate_content,
+                model=self.model_name,
+                contents=prompt,
+            )
+            suggestions = (response.text or "").strip().split('\n')
             return [s.strip() for s in suggestions if s.strip()][:3]
             
         except Exception as e:
@@ -181,9 +206,13 @@ Return only the questions, one per line, no numbering or bullets."""
         return mock_sources
     
     def _mock_search(self, query: str) -> Dict[str, Any]:
-        """Return mock results when Gemini is not available."""
+        """Return mock results when Gemini (Vertex) is not available."""
         return {
-            "answer": f"This is a demo response for: '{query}'. To get AI-powered answers, please configure your GEMINI_API_KEY in the .env file.",
+            "answer": (
+                f"This is a demo response for: '{query}'. To get AI-powered answers, "
+                "ensure Application Default Credentials are configured and the "
+                "Vertex AI API is enabled in your GCP project."
+            ),
             "sources": self._get_mock_sources(query),
             "query": query
         }

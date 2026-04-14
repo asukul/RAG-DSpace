@@ -1,0 +1,17 @@
+[
+  {
+    "id": "emeritus-faculty",
+    "name": "Emeritus Faculty",
+    "title": "",
+    "department": "Center for Technology in Learning and Teaching",
+    "college": "Center for Technology in Learning and Teaching",
+    "email": "eat@iastate.edu",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.ctlt.iastate.edu/faculty-and-staff/",
+    "center_affiliation": "Center for Technology in Learning and Teaching"
+  }
+]

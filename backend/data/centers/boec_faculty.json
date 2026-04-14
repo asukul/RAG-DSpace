@@ -1,0 +1,47 @@
+[
+  {
+    "id": "eric-hall",
+    "name": "Eric Hall",
+    "title": "",
+    "department": "Biotechnology Outreach Education Center",
+    "college": "Biotechnology Outreach Education Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://boec.biotech.iastate.edu/our-people/",
+    "center_affiliation": "Biotechnology Outreach Education Center"
+  },
+  {
+    "id": "diana-oberender",
+    "name": "Diana Oberender",
+    "title": "",
+    "department": "Biotechnology Outreach Education Center",
+    "college": "Biotechnology Outreach Education Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://boec.biotech.iastate.edu/our-people/",
+    "center_affiliation": "Biotechnology Outreach Education Center"
+  },
+  {
+    "id": "business-administrator",
+    "name": "Business Administrator",
+    "title": "",
+    "department": "Biotechnology Outreach Education Center",
+    "college": "Biotechnology Outreach Education Center",
+    "email": "",
+    "profile_url": "",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://boec.biotech.iastate.edu/our-people/",
+    "center_affiliation": "Biotechnology Outreach Education Center"
+  }
+]

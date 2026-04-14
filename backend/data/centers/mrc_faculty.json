@@ -1,0 +1,32 @@
+[
+  {
+    "id": "scientific-staff",
+    "name": "Scientific Staff",
+    "title": "",
+    "department": "Microelectronics Research Center",
+    "college": "Microelectronics Research Center",
+    "email": "biswasr@iastate.edu",
+    "profile_url": "https://www.mrc.iastate.edu/ranabiswas/",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.mrc.iastate.edu/directory-2/",
+    "center_affiliation": "Microelectronics Research Center"
+  },
+  {
+    "id": "affiliated-faculty",
+    "name": "Affiliated Faculty",
+    "title": "",
+    "department": "Microelectronics Research Center",
+    "college": "Microelectronics Research Center",
+    "email": "jcclauss@iastate.edu",
+    "profile_url": "https://www.mrc.iastate.edu/directory-2/cheng-huang/",
+    "photo_url": "",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.mrc.iastate.edu/directory-2/",
+    "center_affiliation": "Microelectronics Research Center"
+  }
+]

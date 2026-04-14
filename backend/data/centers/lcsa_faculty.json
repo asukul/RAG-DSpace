@@ -1,0 +1,47 @@
+[
+  {
+    "id": "stephen-dinsmore",
+    "name": "Stephen Dinsmore",
+    "title": "Department Chair",
+    "department": "Leopold Center for Sustainable Agriculture",
+    "college": "Leopold Center for Sustainable Agriculture",
+    "email": "cootjr@iastate.edu",
+    "profile_url": "https://www.leopold.iastate.edu/people/stephen-dinsmore",
+    "photo_url": "https://www.leopold.iastate.edu/files/styles/profile_picture_thumbnail/public/2025-10/windfarmsfor.jpg?itok=urYfEM0B",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.leopold.iastate.edu/people",
+    "center_affiliation": "Leopold Center for Sustainable Agriculture"
+  },
+  {
+    "id": "adam-janke",
+    "name": "Adam Janke",
+    "title": "Leopold Center Associate Director",
+    "department": "Leopold Center for Sustainable Agriculture",
+    "college": "Leopold Center for Sustainable Agriculture",
+    "email": "ajanke@iastate.edu",
+    "profile_url": "https://www.leopold.iastate.edu/people/adam-janke",
+    "photo_url": "https://www.leopold.iastate.edu/files/styles/profile_picture_thumbnail/public/2025-10/2022-img_8653.jpeg?itok=KzIG8FAZ",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.leopold.iastate.edu/people",
+    "center_affiliation": "Leopold Center for Sustainable Agriculture"
+  },
+  {
+    "id": "ann-robinson",
+    "name": "Ann Robinson",
+    "title": "Science Writer",
+    "department": "Leopold Center for Sustainable Agriculture",
+    "college": "Leopold Center for Sustainable Agriculture",
+    "email": "ayr@iastate.edu",
+    "profile_url": "https://www.leopold.iastate.edu/people/ann-robinson",
+    "photo_url": "https://www.leopold.iastate.edu/files/styles/profile_picture_thumbnail/public/2025-10/Robinson_Ann_2022_headshot.jpg?itok=dP7Qo2lL",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.leopold.iastate.edu/people",
+    "center_affiliation": "Leopold Center for Sustainable Agriculture"
+  }
+]

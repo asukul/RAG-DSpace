@@ -1,0 +1,594 @@
+[
+  {
+    "id": "abhay-b-ramachandra",
+    "name": "Abhay B. Ramachandra",
+    "email": "abhaybr@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "abhishek-halder",
+    "name": "Abhishek Halder",
+    "email": "ahalder@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "abram-anders",
+    "name": "Abram Anders",
+    "email": "adanders@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "adarsh-krishnamurthy",
+    "name": "Adarsh Krishnamurthy",
+    "email": "adarsh@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "aditya-ramamoorthy",
+    "name": "Aditya Ramamoorthy",
+    "email": "adityar@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "aishwarya-pawar",
+    "name": "Aishwarya Pawar",
+    "email": "arpawar@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ali-jannesari",
+    "name": "Ali Jannesari",
+    "email": "jannesar@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "angela-t-prince",
+    "name": "Angela T. Prince",
+    "email": "aprince@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "anuj-sharma",
+    "name": "Anuj Sharma",
+    "email": "anujs@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "anwesha-sarkar",
+    "name": "Anwesha Sarkar",
+    "email": "anweshas@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "arti-singh",
+    "name": "Arti Singh",
+    "email": "arti@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "asheesh-singh",
+    "name": "Asheesh Singh",
+    "email": "singhak@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "azadeh-sheidaei",
+    "name": "Azadeh Sheidaei",
+    "email": "sheidaei@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "baskar-ganapathysubramanian",
+    "name": "Baskar Ganapathysubramanian",
+    "email": "baskarg@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ben-van-dusen",
+    "name": "Ben Van Dusen",
+    "email": "bvd@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "cassandra-dorius",
+    "name": "Cassandra Dorius",
+    "email": "cdorius@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "cheng-wang",
+    "name": "Cheng Wang",
+    "email": "chengw@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "chengde-wu",
+    "name": "Chengde Wu",
+    "email": "cdwu@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "chong-wang",
+    "name": "Chong Wang",
+    "email": "chwang@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "cody-fleming",
+    "name": "Cody Fleming",
+    "email": "flemingc@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "daniel-nettleton",
+    "name": "Daniel Nettleton",
+    "email": "dnett@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "duane-d-johnson",
+    "name": "Duane D Johnson",
+    "email": "ddj@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "eliot-winer",
+    "name": "Eliot Winer",
+    "email": "ewiner@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "eric-weber",
+    "name": "Eric Weber",
+    "email": "esweber@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "eric-j-york",
+    "name": "Eric J. York",
+    "email": "eyork@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "hailiang-liu",
+    "name": "Hailiang Liu",
+    "email": "hliu@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "hongwei-zhang",
+    "name": "Hongwei Zhang",
+    "email": "hongwei@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "iddo-friedberg",
+    "name": "Iddo Friedberg",
+    "email": "idoerg@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "in-ho-cho",
+    "name": "In-Ho Cho",
+    "email": "icho@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "james-koltes",
+    "name": "James Koltes",
+    "email": "jekoltes@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "janette-thompson",
+    "name": "Janette Thompson",
+    "email": "jrrt@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "jennifer-margrett",
+    "name": "Jennifer Margrett",
+    "email": "margrett@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "jin-tian",
+    "name": "Jin Tian",
+    "email": "jtian@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "juan-ren",
+    "name": "Juan Ren",
+    "email": "juanren@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "jue-yan",
+    "name": "Jue Yan",
+    "email": "jyan@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "julie-dickerson",
+    "name": "Julie Dickerson",
+    "email": "julied@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "jundi-liu",
+    "name": "Jundi Liu",
+    "email": "jundiliu@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "karl-kerns",
+    "name": "Karl Kerns",
+    "email": "kkerns@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "kevin-scheibe",
+    "name": "Kevin Scheibe",
+    "email": "kscheibe@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "kristin-yvonne-rozier",
+    "name": "Kristin-Yvonne Rozier",
+    "email": "kyrozier@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "matthew-panthani",
+    "name": "Matthew Panthani",
+    "email": "panthani@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ming-chen-hsu",
+    "name": "Ming-Chen Hsu",
+    "email": "jmchsu@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "muslum-ilgu",
+    "name": "Muslum Ilgu",
+    "email": "ilgu@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "namrata-vaswani",
+    "name": "Namrata Vaswani",
+    "email": "namrata@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "nigel-reuel",
+    "name": "Nigel Reuel",
+    "email": "reuel@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "priyanka-jayashankar",
+    "name": "Priyanka Jayashankar",
+    "email": "priyanka@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "qi-an",
+    "name": "Qi An",
+    "email": "qan@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "qi-li",
+    "name": "Qi Li",
+    "email": "qli@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ratul-chowdhury",
+    "name": "Ratul Chowdhury",
+    "email": "ratul@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "raymond-kim",
+    "name": "Raymond Kim",
+    "email": "rkim0927@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ritwik-banerji",
+    "name": "Ritwik Banerji",
+    "email": "rbanerji@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "rizia-bardhan",
+    "name": "Rizia Bardhan",
+    "email": "rbardhan@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "robbyn-anand",
+    "name": "Robbyn Anand",
+    "email": "rkanand@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "rui-chen",
+    "name": "Rui Chen",
+    "email": "ruichen@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "saikat-mukherjee",
+    "name": "Saikat Mukherjee",
+    "email": "saikatm@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "sarah-ryan",
+    "name": "Sarah Ryan",
+    "email": "smryan@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "shana-moothedath",
+    "name": "Shana Moothedath",
+    "email": "mshana@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "shawn-dorius",
+    "name": "Shawn Dorius",
+    "email": "sdorius@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "simon-laflamme",
+    "name": "Simon Laflamme",
+    "email": "laflamme@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "soumik-sarkar",
+    "name": "Soumik Sarkar",
+    "email": "soumiks@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "sree-nilakanta",
+    "name": "Sree Nilakanta",
+    "email": "nilakant@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "tichakorn-wongpiromsarn",
+    "name": "Tichakorn Wongpiromsarn",
+    "email": "nok@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "tuhin-mukherjee",
+    "name": "Tuhin Mukherjee",
+    "email": "tuhinm@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ulrike-passe",
+    "name": "Ulrike Passe",
+    "email": "upasse@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "wei-le",
+    "name": "Wei Le",
+    "email": "weile@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "wei-zhang",
+    "name": "Wei Zhang",
+    "email": "wtzhang@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "wenjie-xia",
+    "name": "Wenjie Xia",
+    "email": "wxia@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "young-woong-park",
+    "name": "Young Woong Park",
+    "email": "ywpark@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "yunjeong-mo",
+    "name": "Yunjeong Mo",
+    "email": "ymo@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "zhengyuan-zhu",
+    "name": "Zhengyuan Zhu",
+    "email": "zhuz@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "evrim-baran",
+    "name": "Evrim Baran",
+    "email": "ebaran@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "han-gao",
+    "name": "Han Gao",
+    "email": "hgao1@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "qiang-zhong",
+    "name": "Qiang Zhong",
+    "email": "qzhong1@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  },
+  {
+    "id": "ames-ia-50011",
+    "name": "Ames, IA, 50011",
+    "email": "trac@iastate.edu",
+    "department": "Translational AI Research and Education Center",
+    "center_affiliation": "Translational AI Research and Education Center",
+    "source_url": "https://trac-ai.iastate.edu/about/faculty-experts/"
+  }
+]

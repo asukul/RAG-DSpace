@@ -1,0 +1,32 @@
+[
+  {
+    "id": "paul-chung",
+    "name": "Paul Chung",
+    "title": "",
+    "department": "Research Institute for Studies in Education",
+    "college": "Research Institute for Studies in Education",
+    "email": "",
+    "profile_url": "https://www.rise.hs.iastate.edu/profiles/paul-chung/",
+    "photo_url": "https://www.rise.hs.iastate.edu/wp-content/uploads/2023/02/PXL_20230905_163123102.PORTRAIT-scaled.jpg",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.rise.hs.iastate.edu/team/",
+    "center_affiliation": "Research Institute for Studies in Education"
+  },
+  {
+    "id": "jerry-jin",
+    "name": "Jerry Jin",
+    "title": "",
+    "department": "Research Institute for Studies in Education",
+    "college": "Research Institute for Studies in Education",
+    "email": "",
+    "profile_url": "https://www.rise.hs.iastate.edu/profiles/jerry-jin/",
+    "photo_url": "https://www.rise.hs.iastate.edu/wp-content/uploads/2023/02/JerryJin-scaled.jpg",
+    "research_interests": [],
+    "courses_taught": [],
+    "is_teaching_faculty": false,
+    "source_url": "https://www.rise.hs.iastate.edu/team/",
+    "center_affiliation": "Research Institute for Studies in Education"
+  }
+]

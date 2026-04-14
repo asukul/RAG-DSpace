@@ -12,10 +12,17 @@ env/
 *.swp
 *.swo
 
-# Environment
+# Environment + secrets
 .env
-.env.local
+.env.*
 *.env
+.jwt_secret_local
+*secret*
+*credentials*
+*.pem
+*.key
+*service-account*.json
+*token*.json
 
 # Logs
 *.log
@@ -25,6 +32,14 @@ npm-debug.log*
 dist/
 build/
 *.egg-info/
+frontend/dist/
+frontend/.vite/
+frontend/vite.config.js.timestamp-*.mjs
+
+# Windows reserved-name file created accidentally by a shell redirect
+# ("> nul" on PowerShell that wrote a real file instead of /dev/null).
+# Git can't index it because NUL is a Windows device name.
+frontend/nul.css
 
 # OS files
 .DS_Store
@@ -37,13 +52,101 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+*.bak
+*.bak.*
 
-# Secrets (never commit these)
-*secret*
-*credentials*
-*.pem
-*.key
+# Local Qdrant data (huge, Dropbox-corrupting, never in git)
+qdrant-local-data/
+**/qdrant-local-data/
 
-# Data files (will be migrated to Firestore)
-# Keep in git for now, remove after migration
-# data/*.json
+# User database (contains local user state — do not commit)
+backend/data/users.db
+backend/data/users.db-wal
+backend/data/users.db-shm
+
+# Backup faculty files (keep the latest, not timestamped backups)
+backend/data/faculty.json.bak*
+
+# ----------------------------------------------------------------------------
+# Large data dirs — NEVER commit these.  Mirrors .gcloudignore.
+# ----------------------------------------------------------------------------
+
+# Raw PDFs (~360 GB)
+backend/data/pdfs/
+backend/data/pdfs_by_subject/
+
+# Chunk/embedding artifacts (~15 GB)
+backend/data/document_chunks/
+backend/data/document_embeddings.json
+backend/data/chunk_embeddings.parquet
+backend/data/embed_state/
+
+# Entire dspace/ directory — 33+ GB of harvest + Vertex pipeline artifacts.
+# Backend doesn't need any of it at runtime (vectors are in remote Qdrant,
+# BM25 vocab is baked into the Docker image). All build-time only.
+backend/data/dspace/
+
+# Qdrant local backups (1.3 GB)
+backend/data/qdrant-backups/
+
+# Oversized build artifacts that exceed GitHub's 100 MB file limit
+backend/data/bm25_vocab_vertex.json
+backend/data/bm25_vocab.json
+backend/data/faculty_embeddings.json
+backend/data/openalex_cache.db
+backend/data/dspace_index.db
+backend/data/openscribe_benchmark/
+backend/data/ocr_text/
+backend/data/eval/
+backend/data/prt/
+
+# Alternate harvest output dirs (only dspace/ carries the active index)
+backend/data/dspace_slow/
+backend/data/dspace_adaptive/
+backend/data/dspace_first_run/
+
+# MIT DSpace + arXiv research corpora
+backend/data/mit_dspace/
+backend/data/arxiv_cs/
+
+# OpenAlex dumps
+backend/data/openalex_works_isu.jsonl
+backend/data/openalex_isu_authors.json
+
+# Vertex batch outputs at root (if any)
+vertex_batch_output_part*/
+
+# NTFS junction point that mirrors backend/data/ — must NEVER be in git,
+# or it would double-count the whole data tree.  See .gcloudignore for
+# the full cautionary tale.
+tenants/
+
+# Research paper WIP drafts with large PDFs — keep drafts but skip huge assets
+papers/**/*.pdf
+papers/**/fig_*.png
+papers/**/supplementary/
+
+# Archived / old versions — not worth committing
+archive-enhancements/
+backend/archive-versions/
+
+# Platform / multi-tenant scaffolding (pre-alpha, not ready for commit)
+platform/
+
+# Claude Code local agent output (ephemeral per-run artifacts)
+.claude/
+
+# Ephemeral quality-loop artifacts that change every run
+# (KEEP bug_log.jsonl, runs.jsonl, triage_log.jsonl, lessons.md, TEST_PLAN.md,
+# and run_summary_*.md — those are the memory the system needs).
+quality/golden_results_*.jsonl
+quality/metrics_*.json
+quality/regression_flags_*.json
+quality/cr_delta_*.json
+quality/pending_investigations.jsonl
+quality/cr_state/
+
+# Test runner results (large, noisy)
+tests/results/*.log
+tests/results/*.json
+tests/results/*.md

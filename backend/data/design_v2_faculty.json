@@ -1,0 +1,2182 @@
+[
+  {
+    "name": "Mark Raymond",
+    "title": "Chair - Architecture / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mark01/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mark01.jpg",
+    "email": "mark01@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "mark-raymond"
+  },
+  {
+    "name": "Douglas Spencer PhD",
+    "title": "Associate Professor / Pickard Chilton Professor in Architecture / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/dcs1/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/dcs1.jpg",
+    "email": "dcs1@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "douglas-spencer"
+  },
+  {
+    "name": "Leila Ammar Heredia",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/ammarl/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ammarl.jpg",
+    "email": "ammarl@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "leila-ammar-heredia"
+  },
+  {
+    "name": "Anna Aversing",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/aversing/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/aversing.jpg",
+    "email": "aversing@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "anna-aversing"
+  },
+  {
+    "name": "Eric Badding",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ebadding/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ebadding.jpg",
+    "email": "ebadding@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "eric-badding"
+  },
+  {
+    "name": "Andrew Ballard",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/ballard2/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ballard2.jpg",
+    "email": "ballard2@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "andrew-ballard"
+  },
+  {
+    "name": "Merate Barakat PhD, AIA, UK-FHEA",
+    "title": "Associate Professor / FRK Faculty Fellow",
+    "profile_url": "https://www.design.iastate.edu/profiles/mbarakat/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mbarakat.jpg",
+    "email": "mbarakat@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "merate-barakat-aia-uk-fhea"
+  },
+  {
+    "name": "Donovan Bunn",
+    "title": "Assistant Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/ddbunn/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ddbunn.jpg",
+    "email": "ddbunn@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "donovan-bunn"
+  },
+  {
+    "name": "Justin Burnham",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/burnham/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/burnham.jpg",
+    "email": "burnham@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "justin-burnham"
+  },
+  {
+    "name": "Cameron Campbell",
+    "title": "Associate Professor / Monson Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/cameronc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cameronc.jpg",
+    "email": "cameronc@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "cameron-campbell"
+  },
+  {
+    "name": "Roman Chikerinets",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/romanc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/romanc.jpg",
+    "email": "romanc@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "roman-chikerinets"
+  },
+  {
+    "name": "Shelby Doyle AIA LEED AP",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/doyle/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/doyle.jpg",
+    "email": "doyle@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "shelby-doyle-aia-leed-ap"
+  },
+  {
+    "name": "Firat Erdim",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/firat/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/firat.jpg",
+    "email": "firat@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "firat-erdim"
+  },
+  {
+    "name": "Nathalie Frankowski",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/nfrankow/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nfrankow.jpg",
+    "email": "nfrankow@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "nathalie-frankowsk"
+  },
+  {
+    "name": "Cruz Garcia",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/cruzg/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cruzg.jpg",
+    "email": "cruzg@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "cruz-garcia"
+  },
+  {
+    "name": "Andrew Gleeson",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/agleeson/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/agleeson.jpg",
+    "email": "agleeson@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "andrew-gleeson"
+  },
+  {
+    "name": "Pete Goche",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/goche/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/goche.jpg",
+    "email": "goche@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "pete-goche"
+  },
+  {
+    "name": "Kristen Greteman",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/kristen5/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/kristen5.jpg",
+    "email": "kristen5@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "kristen-greteman"
+  },
+  {
+    "name": "Emily Guo",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/emilyguo/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "emilyguo@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "emily-guo"
+  },
+  {
+    "name": "Deborah Hauptmann PhD",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/deborah/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/deborah.jpg",
+    "email": "deborah@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "deborah-hauptmann"
+  },
+  {
+    "name": "Bosuk Hur",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/bhur/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bhur.jpg",
+    "email": "bhur@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "bosuk-hur"
+  },
+  {
+    "name": "Ayodele Iyanalu",
+    "title": "Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/aiyanalu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/aiyanalu.jpg",
+    "email": "aiyanalu@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "ayodele-iyanalu"
+  },
+  {
+    "name": "Rod Kruse FAIA",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/rodk/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rodk.jpg",
+    "email": "rodk@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "rod-kruse-faia"
+  },
+  {
+    "name": "Vladimir Kulic PhD",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/vkulic/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/vkulic.jpg",
+    "email": "vkulic@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "vladimir-kulic"
+  },
+  {
+    "name": "Kevin Lair",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/klair/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/klair.jpg",
+    "email": "klair@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "kevin-lair"
+  },
+  {
+    "name": "Patience Lueth",
+    "title": "Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/popiyo/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/popiyo.jpg",
+    "email": "popiyo@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "patience-lueth"
+  },
+  {
+    "name": "Paul Mankins FAIA",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/pmankins/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pmankins.jpg",
+    "email": "pmankins@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "paul-mankins-faia"
+  },
+  {
+    "name": "Virginia Melnyk",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/vemelnyk/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/vemelnyk.jpg",
+    "email": "vemelnyk@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "virginia-melnyk"
+  },
+  {
+    "name": "Consuelo Nuñez Ciuffa",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/consuelo/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/consuelo.jpg",
+    "email": "consuelo@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "consuelo-nunez-ciuffa"
+  },
+  {
+    "name": "Megen O'Toole",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/motoole/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "motoole@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "megen-o-toole"
+  },
+  {
+    "name": "Erin Olson-Douglas",
+    "title": "Associate Dean for Extension and Outreach / Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/eod/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/eod.jpg",
+    "email": "eod@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "erin-olson-douglas"
+  },
+  {
+    "name": "Arvid Osterberg PhD",
+    "title": "University Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/arvido/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/arvido.jpg",
+    "email": "arvido@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "arvid-osterberg"
+  },
+  {
+    "name": "Ulrike Passe",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/upasse/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/upasse.jpg",
+    "email": "upasse@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "ulrike-passe"
+  },
+  {
+    "name": "Rob Reinders",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/rreinder/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rreinder.jpg",
+    "email": "rreinder@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "rob-reinders"
+  },
+  {
+    "name": "Luis Rico-Gutierrez",
+    "title": "Dean / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/lrico/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/lrico.jpg",
+    "email": "lrico@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "luis-rico-gutierrez"
+  },
+  {
+    "name": "Brent Schipper",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/brents/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/brents.jpg",
+    "email": "brents@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "brent-schipper"
+  },
+  {
+    "name": "Nicholas Senske",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/nsenske/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nsenske.jpg",
+    "email": "nsenske@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "nicholas-senske"
+  },
+  {
+    "name": "Dakota Smith",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/daksmith/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "daksmith@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "dakota-smith"
+  },
+  {
+    "name": "Mitchell Squire",
+    "title": "Morrill Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/msquire/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/msquire.jpg",
+    "email": "msquire@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "mitchell-squire"
+  },
+  {
+    "name": "Brian Warthen",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/bwarthen/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "bwarthen@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "brian-warthen"
+  },
+  {
+    "name": "Andrea Wheeler PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/andrea1/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/andrea1.jpg",
+    "email": "andrea1@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "andrea-wheeler"
+  },
+  {
+    "name": "Rob Whitehead FAIA",
+    "title": "Associate Dean for Academic Programs and Student Success / Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/rwhitehd/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rwhitehd.jpg",
+    "email": "rwhitehd@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "rob-whitehead-faia"
+  },
+  {
+    "name": "Chengde Wu PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/cdwu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cdwu.jpg",
+    "email": "cdwu@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "chengde-wu"
+  },
+  {
+    "name": "Kimberly Elman Zarecor PhD",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/zarecor/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/zarecor.jpg",
+    "email": "zarecor@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "kimberly-elman-zarecor"
+  },
+  {
+    "name": "Peter Zuroweste AIA",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/peterz/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/peterz.jpg",
+    "email": "peterz@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "peter-zuroweste-aia"
+  },
+  {
+    "name": "Bruce Bassler",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "babby@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "bruce-bassler"
+  },
+  {
+    "name": "Karen Bermann",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/kbermann.jpg",
+    "email": "kbermann@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "karen-bermann"
+  },
+  {
+    "name": "Clare Cardinal-Pett",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ccardp.jpg",
+    "email": "",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "clare-cardinal-pett"
+  },
+  {
+    "name": "Chiu-Shui Chan PhD",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cschan.jpg",
+    "email": "cschan@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "chiu-shu-chan"
+  },
+  {
+    "name": "Robert Findlay FAIA",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rfindlay.jpg",
+    "email": "rfindlay@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "robert-findlay-faia"
+  },
+  {
+    "name": "Jamie Horwitz",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "jhorwitz@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "jamie-horwitz"
+  },
+  {
+    "name": "John Maves",
+    "title": "Assistant Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jmaves.jpg",
+    "email": "jhmaves@yahoo.com",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "john-maves"
+  },
+  {
+    "name": "Michael (Mikesch) Muecke PhD, MArch",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mikesch.jpg",
+    "email": "mikesch@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "michael-mikesch-muecke-march"
+  },
+  {
+    "name": "Lynn Paxson PhD",
+    "title": "University Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "lpaxson@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "lynn-paxson"
+  },
+  {
+    "name": "Paul Shao",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pshao.jpg",
+    "email": "pshao@iastate.edu",
+    "department": "Architecture",
+    "college": "College of Design",
+    "id": "paul-shao"
+  },
+  {
+    "name": "Sarah Kyle PhD",
+    "title": "Chair - Art and Visual Culture / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/skyle/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/skyle.jpg",
+    "email": "skyle@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "sarah-kyle"
+  },
+  {
+    "name": "Teresa Paschke",
+    "title": "Professor / Director of Undergraduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/tpaschke/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tpaschke.jpg",
+    "email": "tpaschke@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "teresa-paschke"
+  },
+  {
+    "name": "Emily Morgan PhD",
+    "title": "Associate Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/emorgan/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/emorgan.jpg",
+    "email": "emorgan@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "emily-morgan"
+  },
+  {
+    "name": "Barbara Caldwell EdD",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/bacald/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bacald.jpg",
+    "email": "bacald@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "barbara-caldwell"
+  },
+  {
+    "name": "Clark Colby",
+    "title": "Assistant Teaching Professor / Arts, Communication and Design Program Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/cacolby3/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cacolby3.jpg",
+    "email": "cacolby3@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "clark-colby"
+  },
+  {
+    "name": "Natalie Deam",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/ndeam/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "ndeam@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "natalie-deam"
+  },
+  {
+    "name": "Johnny DiBlasi",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jdiblasi/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jdiblasi.jpg",
+    "email": "jdiblasi@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "johnny-diblas"
+  },
+  {
+    "name": "Jennifer Drinkwater",
+    "title": "Associate Professor / Community Art Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/jd1/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jd1.jpg",
+    "email": "jd1@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "jennifer-drinkwater"
+  },
+  {
+    "name": "Katie DuVal Mihelich",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/kaduval/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/kaduval.jpg",
+    "email": "kaduval@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "katie-duval-mihelich"
+  },
+  {
+    "name": "Nathan Edwards",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/nedwards/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nedwards.jpg",
+    "email": "nedwards@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "nathan-edwards"
+  },
+  {
+    "name": "April Eisman PhD",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/eismana/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/eismana.jpg",
+    "email": "eismana@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "april-eisman"
+  },
+  {
+    "name": "Amy Harris",
+    "title": "Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/aharris/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/aharris.jpg",
+    "email": "aharris@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "amy-harris"
+  },
+  {
+    "name": "Brent Holland",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/bh1/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bh1.jpg",
+    "email": "bh1@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "brent-holland"
+  },
+  {
+    "name": "Evan Hume",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ehume/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ehume.jpg",
+    "email": "ehume@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "evan-hume"
+  },
+  {
+    "name": "Raluca Iancu MFA",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/riancu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/riancu.jpg",
+    "email": "riancu@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "raluca-iancu-mfa"
+  },
+  {
+    "name": "Mike Jackson",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mikejack/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "mikejack@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "mike-jackson"
+  },
+  {
+    "name": "Brenda Jones",
+    "title": "University Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/eppright/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/eppright.jpg",
+    "email": "eppright@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "brenda-jones"
+  },
+  {
+    "name": "Em Kief",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/elkief/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "elkief@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "em-kief"
+  },
+  {
+    "name": "Liz Koerner",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/lkoerner/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "lkoerner@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "liz-koerner"
+  },
+  {
+    "name": "Ingrid Lilligren",
+    "title": "University Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ililligr/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ililligr.jpg",
+    "email": "ililligr@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "ingrid-lilligren"
+  },
+  {
+    "name": "Kyra Litwin",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/kmlitwin/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "kmlitwin@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "kyra-litwin"
+  },
+  {
+    "name": "LeeReyna Lopez Leyva",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/leyva/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/leyva.jpg",
+    "email": "leyva@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "leereyna-lopez-leyva"
+  },
+  {
+    "name": "Isabel McWilliams PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/imcw/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/imcw.jpg",
+    "email": "imcw@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "isabel-mcwilliams"
+  },
+  {
+    "name": "Kimberly Moss",
+    "title": "Associate Professor / Director, Biological/Premedical Illustration Program",
+    "profile_url": "https://www.design.iastate.edu/profiles/moss/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/moss.jpg",
+    "email": "moss@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "kimberly-moss"
+  },
+  {
+    "name": "Vianna Newman Dennis PhD",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/vnd/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/vnd.jpg",
+    "email": "vnd@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "vianna-newman-dennis"
+  },
+  {
+    "name": "Wendy Parker",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/waparker/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "waparker@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "wendy-parker"
+  },
+  {
+    "name": "William Pettit",
+    "title": "Lecturer / Lecturer (Rome)",
+    "profile_url": "https://www.design.iastate.edu/profiles/wpettit/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/wpettit.jpg",
+    "email": "wpettit@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "william-pettit"
+  },
+  {
+    "name": "Lynette Pohlman",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/lpohlman/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/lpohlman.jpg",
+    "email": "lpohlman@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "lynette-pohlman"
+  },
+  {
+    "name": "Peter Scheidt",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/pscheidt/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pscheidt.jpg",
+    "email": "pscheidt@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "peter-scheidt"
+  },
+  {
+    "name": "Anna Segner",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ansegner/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ansegner.jpg",
+    "email": "ansegner@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "anna-segner"
+  },
+  {
+    "name": "Austin Stewart MFA",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/astewart/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/astewart.jpg",
+    "email": "astewart@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "austin-stewart-mfa"
+  },
+  {
+    "name": "Olivia Valentine",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ovalen/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ovalen.jpg",
+    "email": "ovalen@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "olivia-valentine"
+  },
+  {
+    "name": "Barbara Walton",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/bewalton/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bewalton.jpg",
+    "email": "bewalton@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "barbara-walton"
+  },
+  {
+    "name": "May Wilson",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mayw/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mayw.jpg",
+    "email": "mayw@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "may-wilson"
+  },
+  {
+    "name": "Christopher Yanulis",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/cyanulis/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "cyanulis@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "christopher-yanulis"
+  },
+  {
+    "name": "Li Zhang",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/alizhang/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/alizhang.jpg",
+    "email": "alizhang@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "l-zhang"
+  },
+  {
+    "name": "Lu Bro",
+    "title": "Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "lu-bro"
+  },
+  {
+    "name": "Barbara Bruene",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "bbruene@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "barbara-bruene"
+  },
+  {
+    "name": "Mark Chidister",
+    "title": "Senior Associate Dean / Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/markchid.jpg",
+    "email": "markchid@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "mark-chidister"
+  },
+  {
+    "name": "C. Arthur Croyle",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cacroyle.jpg",
+    "email": "cacroyle@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "c-arthur-croyle"
+  },
+  {
+    "name": "John Cunnally PhD",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cunnally.jpg",
+    "email": "cunnally@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "john-cunnally"
+  },
+  {
+    "name": "Dennis Dake",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ddake.jpg",
+    "email": "ddake@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "dennis-dake"
+  },
+  {
+    "name": "Katherine Gibbs",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/kgibbs.jpg",
+    "email": "kgibbs@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "katherine-gibbs"
+  },
+  {
+    "name": "April Katz",
+    "title": "Morrill Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/akatz.jpg",
+    "email": "akatz@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "april-katz"
+  },
+  {
+    "name": "Ed Lehner",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "elehner@frontier.net",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "ed-lehner"
+  },
+  {
+    "name": "Chris Martin",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/chmartin.jpg",
+    "email": "chmartin@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "chris-martin"
+  },
+  {
+    "name": "Timothy McIlrath",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "artguy1@gmail.com",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "timothy-mcilrath"
+  },
+  {
+    "name": "Joe Muench",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jmuench.jpg",
+    "email": "jmuench@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "joe-muench"
+  },
+  {
+    "name": "Deb Pappenheimer",
+    "title": "Associate Teaching Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/dpappenh.jpg",
+    "email": "dpappenh@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "deb-pappenheimer"
+  },
+  {
+    "name": "Nancy Polster",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "polsternancy@gmail.com",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "nancy-polster"
+  },
+  {
+    "name": "Chuck Richards",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/chuckric.jpg",
+    "email": "chuckric@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "chuck-richards"
+  },
+  {
+    "name": "Priscilla Sage",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "pksage@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "priscilla-sage"
+  },
+  {
+    "name": "Shirlee Singer",
+    "title": "Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "ssinger@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "shirlee-singer"
+  },
+  {
+    "name": "Jon Sontag",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "Jon.Sontag@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "jon-sontag"
+  },
+  {
+    "name": "Gary Michael Tartakov",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "tart@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "gary-michael-tartakov"
+  },
+  {
+    "name": "Nancy Thompson",
+    "title": "Teaching Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "nthompso@iastate.edu",
+    "department": "Art and Visual Culture",
+    "college": "College of Design",
+    "id": "nancy-thompson"
+  },
+  {
+    "name": "Paul Bruski",
+    "title": "Chair - Graphic Design / Associate Professor / Dorothy Maitland Miller Professor in Graphic Design",
+    "profile_url": "https://www.design.iastate.edu/profiles/bruski/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bruski.jpg",
+    "email": "bruski@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "paul-brusk"
+  },
+  {
+    "name": "Andrea Quam",
+    "title": "Associate Professor / Director of Undergraduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/aquam/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/aquam.jpg",
+    "email": "aquam@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "andrea-quam"
+  },
+  {
+    "name": "Alex Braidwood",
+    "title": "Associate Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/abr/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/abr.jpg",
+    "email": "abr@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "alex-braidwood"
+  },
+  {
+    "name": "Eric \"Oz\" Andren MFA",
+    "title": "Assistant Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/ozpoo/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "ozpoo@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "eric-oz-andren-mfa"
+  },
+  {
+    "name": "Anson Call",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/ansonc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ansonc.jpg",
+    "email": "ansonc@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "anson-call"
+  },
+  {
+    "name": "Bernard Canniffe",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/canniffe/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/canniffe.jpg",
+    "email": "canniffe@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "bernard-canniffe"
+  },
+  {
+    "name": "Edward Cupps",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/ejc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/ejc.jpg",
+    "email": "ejc@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "edward-cupps"
+  },
+  {
+    "name": "Carol Faber",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/chfaber/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/chfaber.jpg",
+    "email": "chfaber@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "carol-faber"
+  },
+  {
+    "name": "Julius Finley",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jfinley/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jfinley.jpg",
+    "email": "jfinley@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "julius-finley"
+  },
+  {
+    "name": "Patrick Finley",
+    "title": "Assistant Professor / Chair, Honors Program / Professor in Charge, Innovation and Entrepreneurship",
+    "profile_url": "https://www.design.iastate.edu/profiles/pmfinley/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pmfinley.jpg",
+    "email": "pmfinley@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "patrick-finley"
+  },
+  {
+    "name": "Alixandria Foster",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/collinsa/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/collinsa.jpg",
+    "email": "collinsa@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "alixandria-foster"
+  },
+  {
+    "name": "Jared Hansen PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jaredch/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "jaredch@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "jared-hansen"
+  },
+  {
+    "name": "Huiwon Lim M.F.A.",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/hwlim/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/hwlim.jpg",
+    "email": "hwlim@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "huiwon-lim-m-f-a"
+  },
+  {
+    "name": "Miriam Martincic",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/miriamm/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/miriamm.jpg",
+    "email": "miriamm@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "miriam-martincic"
+  },
+  {
+    "name": "Maurice Meilleur PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/meilleur/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/meilleur.jpg",
+    "email": "meilleur@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "maurice-meilleur"
+  },
+  {
+    "name": "Ruki Neuhold-Ravikumar MFA",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/rukin/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rukin.jpg",
+    "email": "rukin@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "ruk-neuhold-ravikumar-mfa"
+  },
+  {
+    "name": "Brandon Olsen",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/olsen1/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/olsen1.jpg",
+    "email": "olsen1@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "brandon-olsen"
+  },
+  {
+    "name": "Tina Rice",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/tinarice/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tinarice.jpg",
+    "email": "tinarice@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "tina-rice"
+  },
+  {
+    "name": "Ashley Rippke",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/arippke/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "arippke@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "ashley-rippke"
+  },
+  {
+    "name": "Christopher Scott MDes.",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/csscott/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/csscott.jpg",
+    "email": "csscott@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "christopher-scott-mdes"
+  },
+  {
+    "name": "Aaron Yang PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/aayang/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/aayang.jpg",
+    "email": "aayang@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "aaron-yang"
+  },
+  {
+    "name": "Giulia Boccarossa",
+    "title": "Lecturer (Rome)",
+    "profile_url": "https://www.design.iastate.edu/profiles/giulia/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/giulia.jpg",
+    "email": "giulia@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "giulia-boccarossa"
+  },
+  {
+    "name": "Damiano Fraccaro",
+    "title": "Lecturer (Rome)",
+    "profile_url": "https://www.design.iastate.edu/profiles/fraccaro/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/fraccaro.jpg",
+    "email": "fraccaro@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "damiano-fraccaro"
+  },
+  {
+    "name": "David Mozzetta",
+    "title": "Lecturer (Rome)",
+    "profile_url": "https://www.design.iastate.edu/profiles/mozzetta/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mozzetta.jpg",
+    "email": "mozzetta@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "david-mozzetta"
+  },
+  {
+    "name": "Roger Baer",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rebaer.jpg",
+    "email": "rebaer@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "roger-baer"
+  },
+  {
+    "name": "Paula Curran",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pjcurran.jpg",
+    "email": "pjcurran@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "paula-curran"
+  },
+  {
+    "name": "Lisa Fontaine",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/fontaine.jpg",
+    "email": "fontaine@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "lisa-fontaine"
+  },
+  {
+    "name": "Sunghyun Kang",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/shrkang.jpg",
+    "email": "shrkang@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "sunghyun-kang"
+  },
+  {
+    "name": "Cheri Ure",
+    "title": "Associate Teaching Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/deak.jpg",
+    "email": "deak@iastate.edu",
+    "department": "Graphic Design",
+    "college": "College of Design",
+    "id": "cher-ure"
+  },
+  {
+    "name": "Akshay Sharma",
+    "title": "Chair - Industrial Design / Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/akshays/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/akshays.jpg",
+    "email": "akshays@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "akshay-sharma"
+  },
+  {
+    "name": "Grit Sadtler",
+    "title": "Associate Teaching Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/gsadtler/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/gsadtler.jpg",
+    "email": "gsadtler@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "grit-sadtler"
+  },
+  {
+    "name": "Miray Boga PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mboga/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mboga.jpg",
+    "email": "mboga@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "miray-boga"
+  },
+  {
+    "name": "Michael Charpin",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/charpin/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto4.jpg",
+    "email": "charpin@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "michael-charpin"
+  },
+  {
+    "name": "Vyankatesh Chinchalker",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/vmc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "vmc@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "vyankatesh-chinchalker"
+  },
+  {
+    "name": "Jason Cornaro",
+    "title": "Assistant Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/jcornaro/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jcornaro.jpg",
+    "email": "jcornaro@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "jason-cornaro"
+  },
+  {
+    "name": "Pete Evans AIA IDSA",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/pmevans/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pmevans.jpg",
+    "email": "pmevans@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "pete-evans-aia-idsa"
+  },
+  {
+    "name": "Igor Khalandovskiy",
+    "title": "Assistant Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/igork/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/igork.jpg",
+    "email": "igork@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "igor-khalandovskiy"
+  },
+  {
+    "name": "Subinay Malhotra",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/subinay/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/subinay.jpg",
+    "email": "subinay@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "subinay-malhotra"
+  },
+  {
+    "name": "Seda McKilligan PhD",
+    "title": "Senior Associate Dean / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/seda/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/seda.jpg",
+    "email": "seda@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "seda-mckilligan"
+  },
+  {
+    "name": "Matthew Obbink",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/obbinker/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/obbinker.jpg",
+    "email": "obbinker@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "matthew-obbink"
+  },
+  {
+    "name": "Bruno Oro",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/brunooro/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/brunooro.jpg",
+    "email": "brunooro@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "bruno-oro"
+  },
+  {
+    "name": "Lexi Young",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/lexiy/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/lexiy.jpg",
+    "email": "lexiy@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "lex-young"
+  },
+  {
+    "name": "Steven Herrnstadt",
+    "title": "University Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/zoe.jpg",
+    "email": "zoe@iastate.edu",
+    "department": "Industrial Design",
+    "college": "College of Design",
+    "id": "steven-herrnstadt"
+  },
+  {
+    "name": "Kotaro Nakamura AIA, LEED AP",
+    "title": "Chair - Interior Design / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/kotaro/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/kotaro.jpg",
+    "email": "kotaro@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "kotaro-nakamura-aia-leed-ap"
+  },
+  {
+    "name": "Yongyeon Cho",
+    "title": "Associate Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/yongyeon/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/yongyeon.jpg",
+    "email": "yongyeon@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "yongyeon-cho"
+  },
+  {
+    "name": "Michael Ford",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/msford/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/msford.jpg",
+    "email": "msford@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "michael-ford"
+  },
+  {
+    "name": "Julie Irish PhD",
+    "title": "Associate Professor / Director of Undergraduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/jenirish/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jenirish.jpg",
+    "email": "jenirish@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "julie-irish"
+  },
+  {
+    "name": "Trevor Kliever",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/tkliever/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tkliever.jpg",
+    "email": "tkliever@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "trevor-kliever"
+  },
+  {
+    "name": "Angela Koppes",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/akoppes/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/akoppes.jpg",
+    "email": "akoppes@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "angela-koppes"
+  },
+  {
+    "name": "Farzane Omidi , PhD",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/omidi/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/omidi.jpg",
+    "email": "omidi@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "farzane-omid"
+  },
+  {
+    "name": "Jamie Osmundson",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jamieo/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jamieo.jpg",
+    "email": "jamieo@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "jamie-osmundson"
+  },
+  {
+    "name": "Nicole Peterson",
+    "title": "Associate Professor of Teaching",
+    "profile_url": "https://www.design.iastate.edu/profiles/nicolep/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nicolep.jpg",
+    "email": "nicolep@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "nicole-peterson"
+  },
+  {
+    "name": "David Raver",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/draver/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "draver@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "david-raver"
+  },
+  {
+    "name": "Noah Weber",
+    "title": "Assistant Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/nrweber/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "nrweber@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "noah-weber"
+  },
+  {
+    "name": "Alicia Wilkinson IIDA",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/aliciamw/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto1.jpg",
+    "email": "aliciamw@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "alicia-wilkinson-iida"
+  },
+  {
+    "name": "Hamed Yekita, PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/yekita/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/yekita.jpg",
+    "email": "yekita@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "hamed-yekita"
+  },
+  {
+    "name": "Sarah Zenti",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/szenti/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/szenti.jpg",
+    "email": "szenti@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "sarah-zent"
+  },
+  {
+    "name": "Pia Schneider MArch ETH/SIA & SCIARC",
+    "title": "Affiliate Professor / Former Director, Rome Program",
+    "profile_url": "https://www.design.iastate.edu/profiles/pschneid/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/pschneid.jpg",
+    "email": "pschneid@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "pia-schneider-march-eth-sia-sciarc"
+  },
+  {
+    "name": "Diane Al Shihabi PhD",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/dshihabi.jpg",
+    "email": "dshihabi@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "diane-al-shihab"
+  },
+  {
+    "name": "Lee Cagley",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/lcagley.jpg",
+    "email": "lcagley@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "lee-cagley"
+  },
+  {
+    "name": "Dorothy Fowles",
+    "title": "Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/dfowles.jpg",
+    "email": "dfowles@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "dorothy-fowles"
+  },
+  {
+    "name": "Pamela Iasevoli",
+    "title": "Assistant Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/iasevoli.jpg",
+    "email": "iasevoli@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "pamela-iasevol"
+  },
+  {
+    "name": "Fred Malven",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/malven.jpg",
+    "email": "malven@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "fred-malven"
+  },
+  {
+    "name": "Lois Warme",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "warme@iastate.edu",
+    "department": "Interior Design",
+    "college": "College of Design",
+    "id": "lois-warme"
+  },
+  {
+    "name": "Carl Rogers",
+    "title": "Chair - Landscape Architecture / Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/rogersc/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rogersc.jpg",
+    "email": "rogersc@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "carl-rogers"
+  },
+  {
+    "name": "Heidi Hohmann",
+    "title": "Associate Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/hhohmann/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/hhohmann.jpg",
+    "email": "hhohmann@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "heid-hohmann"
+  },
+  {
+    "name": "Christopher J. Seeger GISP",
+    "title": "Morrill Professor / Extension Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/cjseeger/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cjseeger.jpg",
+    "email": "cjseeger@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "christopher-j-seeger-gisp"
+  },
+  {
+    "name": "Julia Badenhope",
+    "title": "Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jmb/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jmb.jpg",
+    "email": "jmb@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "julia-badenhope"
+  },
+  {
+    "name": "Adina Cox PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/adinacox/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/adinacox.jpg",
+    "email": "adinacox@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "adina-cox"
+  },
+  {
+    "name": "Austin Dunn",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/awdunn/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/awdunn.jpg",
+    "email": "awdunn@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "austin-dunn"
+  },
+  {
+    "name": "Chad Hunter",
+    "title": "Project Manager / Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/cahunter/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cahunter.jpg",
+    "email": "cahunter@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "chad-hunter"
+  },
+  {
+    "name": "Hans Klein-Hewett PLA, ASLA",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/hansk/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/hansk.jpg",
+    "email": "hansk@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "hans-klein-hewett-pla-asla"
+  },
+  {
+    "name": "Yanhua Lu Ph.D.",
+    "title": "Assistant Professor / Extension Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/yanhualu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/yanhualu.jpg",
+    "email": "yanhualu@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "yanhua-lu"
+  },
+  {
+    "name": "Michael Martin",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mdmartin/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mdmartin.jpg",
+    "email": "mdmartin@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "michael-martin"
+  },
+  {
+    "name": "Michael Miller",
+    "title": "Director of Operations / Adjunct Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/mcmiller/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mcmiller.jpg",
+    "email": "mcmiller@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "michael-miller"
+  },
+  {
+    "name": "Tom Neppl",
+    "title": "Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/tomneppl/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tomneppl.jpg",
+    "email": "tomneppl@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "tom-neppl"
+  },
+  {
+    "name": "Julie Stevens",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jstevens/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jstevens.jpg",
+    "email": "jstevens@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "julie-stevens"
+  },
+  {
+    "name": "Caroline Westort PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/cwestort/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/cwestort.jpg",
+    "email": "cwestort@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "caroline-westort"
+  },
+  {
+    "name": "Bambi Yost",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/byost/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/byost.jpg",
+    "email": "byost@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "bamb-yost"
+  },
+  {
+    "name": "Yijun Zeng",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/yijunz/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/yijunz.jpg",
+    "email": "yijunz@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "yijun-zeng"
+  },
+  {
+    "name": "Paul Anderson",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/fridolph.jpg",
+    "email": "fridolph@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "paul-anderson"
+  },
+  {
+    "name": "William Boon",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto3.jpg",
+    "email": "becre8v@mchsi.com",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "william-boon"
+  },
+  {
+    "name": "Mira Engler PhD",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/miraengl.jpg",
+    "email": "miraengl@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "mira-engler"
+  },
+  {
+    "name": "William Grundmann",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/nophoto2.jpg",
+    "email": "",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "william-grundmann"
+  },
+  {
+    "name": "Gary Hightshoe",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/glh.jpg",
+    "email": "",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "gary-hightshoe"
+  },
+  {
+    "name": "J. Timothy Keller",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tkeller.jpg",
+    "email": "tkeller@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "j-timothy-keller"
+  },
+  {
+    "name": "Mimi Wagner",
+    "title": "Associate Professor Emerita",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mimiw.jpg",
+    "email": "mimiw@iastate.edu",
+    "department": "Landscape Architecture",
+    "college": "College of Design",
+    "id": "mim-wagner"
+  },
+  {
+    "name": "Susan Bradbury PhD",
+    "title": "Interim Chair - Urban Planning and Development / Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/bradbury/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bradbury.jpg",
+    "email": "bradbury@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "susan-bradbury"
+  },
+  {
+    "name": "Monica Haddad PhD",
+    "title": "Professor / Director of Graduate Education",
+    "profile_url": "https://www.design.iastate.edu/profiles/haddad/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/haddad.jpg",
+    "email": "haddad@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "monica-haddad"
+  },
+  {
+    "name": "Biswa Das PhD",
+    "title": "Associate Professor / Extension Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/bdas/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bdas.jpg",
+    "email": "bdas@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "biswa-das"
+  },
+  {
+    "name": "Gary Taylor JD, AICP",
+    "title": "Professor / Extension Specialist / Faculty Success Advisor",
+    "profile_url": "https://www.design.iastate.edu/profiles/gtaylor/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/gtaylor.jpg",
+    "email": "gtaylor@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "gary-taylor-jd-aicp"
+  },
+  {
+    "name": "Carlton Basmajian PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/carlton/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/carlton.jpg",
+    "email": "carlton@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "carlton-basmajian"
+  },
+  {
+    "name": "Shawn Blaesing",
+    "title": "Lecturer",
+    "profile_url": "https://www.design.iastate.edu/profiles/blaesing/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/blaesing.jpg",
+    "email": "blaesing@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "shawn-blaesing"
+  },
+  {
+    "name": "Brian Gelder",
+    "title": "Research Manager / Adjunct Assistant Professor / Academic Lead",
+    "profile_url": "https://www.design.iastate.edu/profiles/bkgelder/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/bkgelder.jpg",
+    "email": "bkgelder@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "brian-gelder"
+  },
+  {
+    "name": "Jiwnath Ghimire PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jghimire/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jghimire.jpg",
+    "email": "jghimire@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "jiwnath-ghimire"
+  },
+  {
+    "name": "Ted Grevstad-Nordbrock PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/tedgn/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/tedgn.jpg",
+    "email": "tedgn@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "ted-grevstad-nordbrock"
+  },
+  {
+    "name": "Mike Macri",
+    "title": "Associate Professor of Practice",
+    "profile_url": "https://www.design.iastate.edu/profiles/mmacri3/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/mmacri3.jpg",
+    "email": "mmacri3@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "mike-macr"
+  },
+  {
+    "name": "Neha Mehrotra",
+    "title": "Associate Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/neham/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/neham.jpg",
+    "email": "neham@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "neha-mehrotra"
+  },
+  {
+    "name": "Robert Pfaff PhD",
+    "title": "Assistant Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/robpfaff/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/robpfaff.jpg",
+    "email": "robpfaff@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "robert-pfaff"
+  },
+  {
+    "name": "Alenka Poplin PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/apoplin/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/apoplin.jpg",
+    "email": "apoplin@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "alenka-poplin"
+  },
+  {
+    "name": "Julie Robison",
+    "title": "IDRO Assistant Director / Instructor / Community and Economic Development Specialist",
+    "profile_url": "https://www.design.iastate.edu/profiles/jrobison/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jrobison.jpg",
+    "email": "jrobison@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "julie-robison"
+  },
+  {
+    "name": "Jane Rongerude PhD",
+    "title": "Associate Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/jrong/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/jrong.jpg",
+    "email": "jrong@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "jane-rongerude"
+  },
+  {
+    "name": "Yiwen Wu PhD",
+    "title": "Assistant Teaching Professor",
+    "profile_url": "https://www.design.iastate.edu/profiles/yiwenwu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/yiwenwu.jpg",
+    "email": "yiwenwu@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "yiwen-wu"
+  },
+  {
+    "name": "Francis Owusu",
+    "title": "Affiliate Faculty",
+    "profile_url": "https://www.design.iastate.edu/profiles/fowusu/",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/fowusu.jpg",
+    "email": "fowusu@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "francis-owusu"
+  },
+  {
+    "name": "Tim Borich PhD",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/borich.jpg",
+    "email": "borich@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "tim-borich"
+  },
+  {
+    "name": "Stuart Huntington",
+    "title": "Associate Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/huntin.jpg",
+    "email": "huntin@iastate.edu",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "stuart-huntington"
+  },
+  {
+    "name": "Duane Shinn",
+    "title": "Professor Emeritus",
+    "profile_url": "https://www.design.iastate.edu/profiles//",
+    "photo_url": "https://www.design.iastate.edu/wp-content/uploads/faculty_square/rdshinn.jpg",
+    "email": "",
+    "department": "Urban Planning and Development",
+    "college": "College of Design",
+    "id": "duane-shinn"
+  }
+]

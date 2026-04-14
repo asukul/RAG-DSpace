@@ -1,0 +1,84 @@
+# gcloud builds submit upload exclusions
+.git
+.gitignore
+node_modules
+**/node_modules
+**/__pycache__
+**/.venv
+**/venv
+.jwt_secret_local
+PLAN.md
+tests/results/*.log
+tests/results/*.json
+tests/results/*.md
+
+# Local Qdrant data dir — never ship (it's huge AND Dropbox-ignored)
+qdrant-local-data
+**/qdrant-local-data
+
+# Root-level dirs NOT needed for the backend or frontend Docker build contexts.
+# The Docker builds point at ./backend and ./frontend respectively, so
+# everything else can be safely skipped from the source upload.
+#
+# ⚠ CRITICAL: `tenants/isu/` is an NTFS junction point pointing at `backend/data/`.
+# Without this exclusion, gcloud follows the junction and uploads the entire
+# 360 GB PDF corpus TWICE (once via backend/data/pdfs/, once via
+# tenants/isu/pdfs/). The first deploy attempt from 2026-04-13 hit this and
+# tried to stage 796 GB before we realized.
+#
+# ⚠ NOTE THE LEADING `/`: .gcloudignore uses gitignore syntax, where a bare
+# pattern like `data` matches `data/` at ANY depth (root, backend/data,
+# tenants/isu/data, ...). We need `/data` to anchor to the repo root only
+# so backend/data/faculty.json etc. still ship inside the backend Docker
+# image. This was a silent bug for one deploy — it left the container with
+# only the hardcoded 42-faculty fallback from verified_faculty_data.py.
+/tenants
+/platform
+/archive-enhancements
+/data
+/docs
+/papers
+
+backend/data/users.db
+backend/data/users.db-wal
+backend/data/users.db-shm
+backend/data/document_chunks
+backend/data/chunk_embeddings.parquet
+backend/data/document_embeddings.json
+
+# Raw PDFs — 359 GB. Not needed inside the backend container.
+backend/data/pdfs
+backend/data/pdfs_by_subject
+
+# Ship the SQLite index DB but skip the raw JSONL (~150 MB) — DB has all of it.
+backend/data/dspace/dspace_items_*.jsonl
+backend/data/dspace/harvest.log
+backend/data/dspace/dspace_state_*.json
+backend/data/dspace/dspace_index.db-wal
+backend/data/dspace/dspace_index.db-shm
+
+# Vertex batch pipeline artifacts — ~15 GB of chunks + embeddings. Qdrant
+# already has the vectors; the backend doesn't need these files at runtime.
+backend/data/dspace/vertex_batch_chunks.jsonl
+backend/data/dspace/vertex_batch_metadata.jsonl
+backend/data/dspace/vertex_batch_split
+backend/data/dspace/vertex_batch_output_part0
+backend/data/dspace/vertex_batch_output_part1
+backend/data/dspace/chunk_hash_index.jsonl
+
+# MIT DSpace + arXiv CS research corpora (added 2026-04-13) — not needed in container
+backend/data/mit_dspace
+backend/data/arxiv_cs
+
+# Other large research artifacts
+backend/data/openalex_works_isu.jsonl
+backend/data/embed_state
+
+# Exclude alternate harvest output dirs entirely (only the main `dspace/` dir
+# carries the index DB the backend actually uses).
+backend/data/dspace_slow
+backend/data/dspace_adaptive
+backend/data/dspace_first_run
+backend/data/faculty.json.bak.*
+frontend/dist
+frontend/node_modules
