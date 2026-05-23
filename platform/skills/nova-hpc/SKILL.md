@@ -88,11 +88,13 @@ rsync -avhP nova:<remote>/results/ /d/RAG-DSpace/<path>/             # down
 Run the bundled **`gpu_avail.sh`** and show its table. It merges **LIVE** Slurm counts
 (`sinfo` on Nova) with a **STATIC** NVIDIA datasheet spec table (Slurm doesn't track VRAM/cores/bandwidth).
 ```bash
-# from WSL — sinfo runs on Nova, awk runs locally:
-bash ~/gpu_avail.sh                                              # user's copy (also: alias `gpus`)
-tr -d '\r' < platform/skills/nova-hpc/gpu_avail.sh | bash        # version-controlled copy
+# from WSL — sinfo runs on Nova, awk runs locally. Colorized on a terminal (green/red FREE); sortable:
+bash ~/gpu_avail.sh                 # default: sort by FREE desc   (also: alias `gpus`)
+bash ~/gpu_avail.sh vram            # sort by ANY column: type free used tot vram cuda bw fp16
+bash ~/gpu_avail.sh cuda asc        # 2nd arg asc|desc (default desc; type defaults asc)
+tr -d '\r' < platform/skills/nova-hpc/gpu_avail.sh | bash   # version-controlled copy
 ```
-Columns: `GPU(gres) | FREE USE TOT` (live) `| VRAM CUDA MEM-BW FP16T ARCH` (datasheet). Notes:
+Columns: `GPU(gres) | FREE USE TOT` (live) `| VRAM CUDA MEM-BW FP16T ARCH` (datasheet). Colors auto-disable when piped. Notes:
 `a100`=80 GB confirmed from jobs; `rtx_6000`/`rtx_pro_6000`/`v100` specs are approximate
 (confirm with `nvidia-smi` in a job if it matters). **For typhoon-OCR (3B, ~22 GB) the limiter is
 bandwidth + FP16 throughput, not VRAM** → H200 > A100 > L40S; L40S/RTX-6000 are good fallbacks when
@@ -160,17 +162,26 @@ Generalizes to any Thai DSpace repo. Files (in `tenants/prt/scripts/`): `ocr_nov
    `/ptmp/.../pdfs`, uploads the manifest + scripts.
 3. **Run:** `ssh nova 'cd ~ && sbatch nova_typhoon_ocr_array.slurm'` (6 A100s, ~1/6 docs each via modulo
    shard; bump `--array`/`NSHARD` for more) or the single-GPU `nova_typhoon_ocr.slurm`. rsync results back.
-**Three non-obvious fixes baked into the slurm/script (without them: crashes or garbage):**
+**Four non-obvious fixes baked into the slurm/script (without them: crashes or garbage):**
 - **Force `cuda_v12`** — Nova driver 13.0 auto-picks the bundled `cuda_v13` runner, which is BROKEN for
   vision (degenerate `<|vision_end|>` output). The slurm moves cuda_v13 aside (self-healing).
-- **`unset CUDA_VISIBLE_DEVICES`** — Slurm sets it to 0, breaking ollama's GPU discovery (falls back to CPU).
+- **Pin the GPU by UUID** (`export CUDA_VISIBLE_DEVICES=$(nvidia-smi --query-gpu=uuid --format=csv,noheader|head -1)`)
+  — Slurm's `CUDA_VISIBLE_DEVICES=0` breaks ollama discovery, and *unsetting* it is INCONSISTENT (CPU fallback
+  on shared/heterogeneous nodes — a 6-way array half-failed that way). UUID-pinning is robust; the slurm also
+  **fail-fasts** (`grep library=CUDA` in the serve log) so a CPU-fallback task aborts instead of burning hours.
 - **typhoon's NATIVE prompt** + `strip_degenerate()` (sparse/cover pages) + per-request `num_ctx`
   (avoids the 256k auto-context CUDA VMM SIGABRT). Output flattens Markdown→plain by default
   (`EXTRA=--keep-markdown` to retain tables/page-numbers for table-heavy repos).
+- **Per-doc render isolation** — each PDF renders in a throwaway child process (`--render-one`); a
+  corrupt PDF that segfaults/hangs PyMuPDF (a C-level crash try/except can't catch, common when fitz
+  is called from many threads) kills only the child, not the task. Verified end-to-end: shard 5 went
+  rc=139 → rc=0, fail=0 once rendering moved to one-fitz-call-per-fresh-process.
 
 ## Gotchas (carry forward)
 - **Vision models (typhoon-ocr) on Nova: force `cuda_v12`** (driver-13 `cuda_v13` is broken for vision),
-  `unset CUDA_VISIBLE_DEVICES`, use the model's native prompt via `/api/generate`, cap `num_ctx`. Don't
+  **pin the GPU by UUID** (NOT `unset CUDA_VISIBLE_DEVICES` — that CPU-falls-back on some nodes),
+  use the model's native prompt via `/api/generate`, cap `num_ctx`, and render each PDF in an
+  isolated child process (corrupt PDFs segfault PyMuPDF, esp. when called from many threads). Don't
   leave old jobs running (concurrent writers + skip-guard ⇒ stale files); `scancel -u $USER` + wipe out-dir between config changes.
 - `--gres` token must match `sinfo %G` **exactly**, or the job pends/rejects.
 - `$HOME` has a quota → models + big data go on scratch/`/work`.

@@ -3,8 +3,10 @@
 Nova-side port of ocr_prt_typhoon.py. Key points learned the hard way (2026-05-22):
   - Force ollama's cuda_v12 runner on Nova (driver 13.0 auto-picks cuda_v13, which is
     BROKEN for vision -> degenerate output). Done at the env level (cuda_v13 moved aside).
-  - In the Slurm job: `unset CUDA_VISIBLE_DEVICES` (Slurm sets it to 0, breaking ollama
-    GPU discovery; cgroup already isolates the GPU).
+  - In the Slurm job: pin the GPU by UUID (`export CUDA_VISIBLE_DEVICES=$(nvidia-smi
+    --query-gpu=uuid ...)`); a plain `unset` was inconsistent -> CPU fallback on some nodes.
+  - Render each PDF in a child process (--render-one) so a corrupt PDF that segfaults or
+    hangs PyMuPDF (a C-level crash try/except can't catch) kills only the child, not the task.
   - Use typhoon-ocr's NATIVE prompt (below). The model is fine-tuned to expect it; any
     other prompt makes it echo the template instead of OCRing.
   - Set num_ctx per request (avoids the 256k auto-context CUDA VMM-pool SIGABRT).
@@ -28,13 +30,13 @@ import csv
 import json
 import os
 import re
+import subprocess
+import sys
 import threading
 import time
 import urllib.request
 from pathlib import Path
 from typing import Optional
-
-import fitz  # PyMuPDF
 
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434")
 if not OLLAMA_HOST.startswith("http"):
@@ -45,6 +47,7 @@ MAX_PAGES_PER_DOC = 6
 NUM_PREDICT = 1200          # native prompt can be verbose on dense pages; headroom vs 500
 NUM_CTX = 16384             # cap context: avoids the 256k auto-context VMM-pool crash
 PER_PAGE_TIMEOUT_S = 180
+RENDER_TIMEOUT_S = 90        # per-doc render budget; corrupt PDFs that hang/segfault fitz are skipped
 KEEP_ALIVE = "2h"
 
 # typhoon-ocr1.5's NATIVE prompt — the model is fine-tuned to expect exactly this. Any
@@ -114,27 +117,40 @@ def flatten_markdown(text: str) -> str:
     return text.strip()
 
 
-def render_pdf_pages(pdf_path: Path, max_pages: int, out_dir: Path) -> list[Path]:
-    out_dir.mkdir(parents=True, exist_ok=True)
-    paths: list[Path] = []
-    try:
-        doc = fitz.open(str(pdf_path))
-    except Exception as e:
-        log(f"  fitz.open FAILED {pdf_path.name}: {e}")
-        return []
+def _render_one_cli() -> None:
+    """Subprocess entrypoint (argv: --render-one <pdf> <out_dir> <max_pages>): render the
+    PDF's pages to <out_dir>/page-NNN.png, then exit. Run as a SEPARATE process so a corrupt
+    PDF that segfaults or hangs PyMuPDF -- a C-level crash the parent can't catch with
+    try/except -- kills only this child, leaving the OCR task running."""
+    import fitz  # PyMuPDF (imported only in the child that actually renders)
+    pdf, out_dir, max_pages = sys.argv[2], sys.argv[3], int(sys.argv[4])
+    doc = fitz.open(pdf)
     try:
         for i in range(min(len(doc), max_pages)):
-            try:
-                pix = doc[i].get_pixmap(matrix=fitz.Matrix(PNG_DPI_SCALE, PNG_DPI_SCALE))
-                p = out_dir / f"page-{i+1:03d}.png"
-                pix.save(str(p))
-                paths.append(p)
-            except Exception as e:
-                log(f"  render FAILED page {i+1} of {pdf_path.name}: {e}")
-                continue
+            pix = doc[i].get_pixmap(matrix=fitz.Matrix(PNG_DPI_SCALE, PNG_DPI_SCALE))
+            pix.save(f"{out_dir}/page-{i + 1:03d}.png")
     finally:
         doc.close()
-    return paths
+
+
+def render_pdf_pages(pdf_path: Path, max_pages: int, out_dir: Path) -> list[Path]:
+    """Render a PDF's pages to PNGs via an ISOLATED child process. A corrupt PDF that
+    crashes the child (rc<0, e.g. -11 SIGSEGV) or hangs (>RENDER_TIMEOUT_S) is skipped,
+    never fatal to the task."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        r = subprocess.run(
+            [sys.executable, os.path.abspath(__file__), "--render-one",
+             str(pdf_path), str(out_dir), str(max_pages)],
+            timeout=RENDER_TIMEOUT_S, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
+    except subprocess.TimeoutExpired:
+        log(f"  render TIMEOUT {pdf_path.name} (>{RENDER_TIMEOUT_S}s) — skipping")
+        return []
+    if r.returncode != 0:
+        log(f"  render CRASHED {pdf_path.name} (rc={r.returncode}) — skipping")
+        return []
+    return sorted(out_dir.glob("page-*.png"))
 
 
 def ocr_one_page(img_path: Path) -> Optional[str]:
@@ -257,4 +273,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) >= 2 and sys.argv[1] == "--render-one":
+        _render_one_cli()
+    else:
+        main()

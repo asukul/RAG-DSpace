@@ -15,8 +15,12 @@
 set -uo pipefail
 NSHARD=6
 
-# (1) Slurm sets CUDA_VISIBLE_DEVICES=0 -> breaks ollama GPU discovery; unset it.
-unset CUDA_VISIBLE_DEVICES GPU_DEVICE_ORDINAL ROCR_VISIBLE_DEVICES HIP_VISIBLE_DEVICES
+# (1) Pin ollama to the EXACT allocated GPU by UUID. Slurm's CUDA_VISIBLE_DEVICES=0 broke
+#     discovery, and `unset` was INCONSISTENT (CPU fallback on shared/heterogeneous nodes).
+#     nvidia-smi inside the cgroup shows only the allocated GPU, so its UUID is unambiguous.
+unset GPU_DEVICE_ORDINAL ROCR_VISIBLE_DEVICES HIP_VISIBLE_DEVICES
+export CUDA_VISIBLE_DEVICES="$(nvidia-smi --query-gpu=uuid --format=csv,noheader 2>/dev/null | head -1)"
+[ -z "$CUDA_VISIBLE_DEVICES" ] && { echo "FATAL: no GPU UUID from nvidia-smi"; exit 1; }
 # (2) Force cuda_v12 (driver-13 auto-pick of cuda_v13 is broken for vision). Self-healing.
 if [ -d "$HOME/ollama/lib/ollama/cuda_v13" ]; then
   mkdir -p "$HOME/ollama_disabled"
@@ -48,6 +52,10 @@ trap 'kill $SP 2>/dev/null || true' EXIT
 for i in $(seq 1 60); do curl -sf "http://$OLLAMA_HOST/api/tags" >/dev/null 2>&1 && break; sleep 2; done
 curl -sf "http://$OLLAMA_HOST/api/tags" >/dev/null 2>&1 || { echo "FATAL: ollama not ready"; exit 1; }
 echo "ollama up on http://$OLLAMA_HOST"
+# fail fast if ollama fell back to CPU instead of the GPU (don't waste the slot for hours)
+sleep 3
+grep -q "library=CUDA" "$HOME/ollama-serve-$SLURM_ARRAY_JOB_ID-$SLURM_ARRAY_TASK_ID.log" \
+  || { echo "FATAL: ollama on CPU (no GPU discovered) — aborting task"; exit 1; }
 
 OLLAMA_HOST="$OLLAMA_HOST" OLLAMA_MODEL="scb10x/typhoon-ocr1.5-3b" \
   "$OCRPY" "$SCRIPT" --manifest "$MANIFEST" --pdf-base "$PDF_BASE" --out-dir "$OUTDIR" \

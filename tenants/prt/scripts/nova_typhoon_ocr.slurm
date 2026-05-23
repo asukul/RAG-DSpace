@@ -12,9 +12,11 @@
 # Override via: sbatch --export=ALL,MANIFEST=...,PDF_BASE=...,OUTDIR=...,PAR=8,EXTRA=--keep-markdown
 set -uo pipefail
 
-# (1) Slurm sets CUDA_VISIBLE_DEVICES=0, which breaks ollama 0.24's GPU discovery
-#     (the cgroup already isolates us to the allocated A100). Unset so ollama finds it.
-unset CUDA_VISIBLE_DEVICES GPU_DEVICE_ORDINAL ROCR_VISIBLE_DEVICES HIP_VISIBLE_DEVICES
+# (1) Pin ollama to the EXACT allocated GPU by UUID (robust on shared/heterogeneous nodes;
+#     `unset CUDA_VISIBLE_DEVICES` was inconsistent → CPU fallback on some nodes).
+unset GPU_DEVICE_ORDINAL ROCR_VISIBLE_DEVICES HIP_VISIBLE_DEVICES
+export CUDA_VISIBLE_DEVICES="$(nvidia-smi --query-gpu=uuid --format=csv,noheader 2>/dev/null | head -1)"
+[ -z "$CUDA_VISIBLE_DEVICES" ] && { echo "FATAL: no GPU UUID from nvidia-smi"; exit 1; }
 
 # (2) Nova's driver is 13.0, so ollama auto-picks the bundled cuda_v13 runner, which is
 #     BROKEN for vision (degenerate output). Force cuda_v12 by moving v13 aside. Self-healing
